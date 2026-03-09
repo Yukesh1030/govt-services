@@ -1,0 +1,227 @@
+/* Documents Page Styles */
+
+:root {
+    --docs-surface: #ffffff;
+    --docs-bg: #f8f9fa;
+    --docs-border: #e9ecef;
+    --docs-accent: var(--clr-brand-dark, #2d241e);
+    --docs-gold: var(--clr-gold, #ffc107);
+    --docs-text: #333333;
+    --docs-text-muted: #6c757d;
+}
+
+.docs-page {
+    background-color: var(--docs-bg);
+}
+
+.docs-main {
+    padding: 2rem 0 4rem;
+}
+
+/* ── Hero / Header ── */
+.docs-header {
+    margin-bottom: 2.5rem;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--docs-text-muted);
+    margin-bottom: 1rem;
+}
+
+.breadcrumb a {
+    color: var(--docs-accent);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.breadcrumb a:hover {
+    color: var(--docs-gold);
+}
+
+.docs-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: var(--docs-accent);
+    margin-bottom: 0.5rem;
+}
+
+/* ── Filter Bar ── */
+.filter-section {
+    background: var(--docs-accent);
+    color: #fff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+}
+
+.filter-section::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    border-style: solid;
+    border-width: 15px 15px 15px 0;
+    border-color: transparent var(--docs-bg) transparent transparent;
+}
+
+.filter-label {
+    font-weight: 600;
+    font-size: 1.1rem;
+    white-space: nowrap;
+}
+
+.filter-form {
+    display: flex;
+    flex: 1;
+    gap: 0.5rem;
+}
+
+.filter-select {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 1rem;
+    background: #fff;
+    cursor: pointer;
+}
+
+.filter-btn {
+    background: var(--docs-gold);
+    color: var(--docs-accent);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.filter-btn:hover {
+    background: #e5ac00;
+    transform: translateY(-2px);
+}
+
+/* ── Document List ── */
+.docs-list-card {
+    background: var(--docs-surface);
+    border-radius: 12px;
+    border: 1px solid var(--docs-border);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.docs-list-header {
+    background: #222;
+    color: #fff;
+    padding: 1rem 1.5rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.docs-table-wrapper {
+    overflow-x: auto;
+}
+
+.docs-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.docs-table th {
+    background: var(--docs-gold);
+    color: var(--docs-accent);
+    text-align: left;
+    padding: 0.85rem 1.5rem;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.docs-table td {
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid var(--docs-border);
+    font-size: 0.95rem;
+    color: var(--docs-text);
+}
+
+.docs-table tr:last-child td {
+    border-bottom: none;
+}
+
+.docs-table tr:hover td {
+    background-color: #fcfcfc;
+}
+
+.doc-view-link {
+    color: var(--docs-accent);
+    font-weight: 600;
+    text-decoration: underline;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.doc-view-link:hover {
+    color: var(--docs-gold);
+}
+
+.doc-size {
+    color: var(--docs-text-muted);
+    font-size: 0.85rem;
+}
+
+/* ── Responsive ── */
+@media (max-width: 992px) {
+    .filter-section {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.25rem;
+    }
+    
+    .filter-section::after {
+        display: none;
+    }
+    
+    .filter-form {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .docs-title {
+        font-size: 1.75rem;
+    }
+    
+    .docs-table th, .docs-table td {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .filter-form {
+        flex-direction: column;
+    }
+    
+    .filter-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
