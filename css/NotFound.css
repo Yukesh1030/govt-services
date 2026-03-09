@@ -1,0 +1,224 @@
+/* 
+ * NotFound.css
+ * Specific styles for the 404 Error Page 
+ * Uses variables from style.css
+ */
+
+.not-found-wrapper {
+    min-height: calc(100vh - 3.5rem); /* subtract navbar height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8fafc;
+    background-image: 
+        radial-gradient(at 0% 0%, rgba(253, 224, 71, 0.1) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(93, 64, 55, 0.05) 0px, transparent 50%);
+    padding: var(--space-8);
+    overflow: hidden;
+}
+
+.not-found-content {
+    max-width: 600px;
+    text-align: center;
+    animation: fadeUpIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Graphic Area */
+.error-graphic {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-4);
+    margin-bottom: var(--space-8);
+}
+
+.number-4 {
+    font-size: 8rem;
+    font-weight: 800;
+    color: var(--clr-brand-dark);
+    line-height: 1;
+    text-shadow: 4px 4px 0px var(--clr-gold);
+    animation: floatVertical 6s ease-in-out infinite;
+}
+
+.number-4:nth-child(3) {
+    animation-delay: -3s; /* Offset the second 4's animation */
+}
+
+.radar-container {
+    width: 120px;
+    height: 120px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    position: relative;
+    border: 4px solid var(--clr-brand-dark);
+}
+
+.radar-icon {
+    font-size: 4rem;
+    color: var(--clr-brand-dark);
+    animation: spinSlow 8s linear infinite;
+}
+
+/* Radar pulse rings */
+.radar-container::before,
+.radar-container::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    border: 2px solid var(--clr-gold);
+    opacity: 0;
+    animation: radarPulse 3s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+.radar-container::after {
+    animation-delay: 1.5s;
+}
+
+/* Typography */
+.error-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--clr-text);
+    margin-bottom: var(--space-4);
+    letter-spacing: -0.02em;
+}
+
+.error-desc {
+    font-size: 1.125rem;
+    color: var(--clr-text-muted);
+    line-height: 1.6;
+    margin-bottom: var(--space-8);
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Actions */
+.error-actions {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-4);
+    margin-bottom: var(--space-12);
+}
+
+.btn-outline-dark {
+    background-color: transparent;
+    color: var(--clr-text);
+    border: 2px solid var(--clr-border-hover);
+}
+
+.btn-outline-dark:hover {
+    background-color: var(--clr-bg-surface);
+    border-color: var(--clr-text);
+}
+
+.pulse-hover {
+    transition: all 0.3s ease;
+}
+
+.pulse-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 0 4px rgba(253, 224, 71, 0.4); /* Gold glow */
+}
+
+/* Quick Help Links */
+.quick-help {
+    padding-top: var(--space-8);
+    border-top: 1px solid var(--clr-border);
+}
+
+.quick-help p {
+    color: var(--clr-text-muted);
+    font-size: 0.875rem;
+    margin-bottom: var(--space-2);
+    font-weight: 500;
+}
+
+.help-links a {
+    color: var(--clr-brand-brown);
+    font-weight: 600;
+    font-size: 0.875rem;
+    transition: color 0.2s;
+}
+
+.help-links a:hover {
+    color: var(--clr-gold);
+    text-decoration: underline;
+}
+
+/* --- Keyframes --- */
+
+@keyframes fadeUpIn {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes floatVertical {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes spinSlow {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes radarPulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1.6);
+        opacity: 0;
+    }
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .error-graphic {
+        transform: scale(0.8);
+        margin-bottom: var(--space-4);
+    }
+    
+    .number-4 {
+        font-size: 6rem;
+    }
+    
+    .radar-container {
+        width: 90px;
+        height: 90px;
+    }
+    
+    .radar-icon {
+        font-size: 3rem;
+    }
+    
+    .error-title {
+        font-size: 2rem;
+    }
+    
+    .error-actions {
+        flex-direction: column;
+    }
+}

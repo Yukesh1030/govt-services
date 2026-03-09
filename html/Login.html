@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | The Stackly Government Services</title>
+    <meta name="description" content="Secure portal login for government online services.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/Login.css">
+</head>
+<body>
+
+    <!-- Main Brown Navbar -->
+    <nav class="navbar skeleton-bg">
+        <div class="container nav-container">
+            
+            <div class="nav-links">
+                <span class="nav-brand skeleton-text" style="font-weight: 800; font-size: 1.25rem; color: #ffffff; letter-spacing: 1px; margin-right: 1.5rem; margin-left: -1rem; text-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                    THE <span style="color: var(--clr-gold);">STACKLY</span>
+                </span>
+                
+                <div class="nav-item">
+                    <a href="index.html" class="nav-link">HOME</a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-link">Home page 2</a>
+                    </div>
+                </div>
+                
+
+                <a href="About.html" class="nav-link">ABOUT US</a>
+                
+
+                <a href="Media.html" class="nav-link">MEDIA</a>
+                
+                <a href="#" class="nav-link">DIRECTORY</a>
+                
+                <div class="nav-item">
+                    <a href="#" class="nav-link">DOCUMENTS <i class="ph ph-caret-down"></i></a>
+                </div>
+                
+                <div class="nav-item">
+                    <a href="#" class="nav-link">NOTICES <i class="ph ph-caret-down"></i></a>
+                </div>
+                
+                <div class="nav-item">
+                    <a href="#" class="nav-link">SCHEMES/PROGRAMMES <i class="ph ph-caret-down"></i></a>
+                </div>
+                
+                <div style="flex-grow: 1;"></div> <!-- Spacer -->
+                
+                <a href="Dashboard.html" class="nav-link" style="padding: 0 1rem; border-right: 1px solid rgba(255,255,255,0.1);">DASHBOARD</a>
+                <a href="Login.html" class="nav-link active" style="padding: 0 1rem;">LOGIN</a>
+            </div>
+            
+            <button class="mobile-menu-btn skeleton-btn">
+                <i class="ph ph-list" style="color: var(--clr-gold);"></i>
+            </button>
+        </div>
+    </nav>
+
+
+    <!-- CSS Animated Background Shapes -->
+    <div class="bg-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <div class="login-wrapper">
+        <div class="login-card animate-scale-up">
+            <!-- Optional Back button -->
+            <a href="index.html" class="back-btn" title="Back to Home"><i class="ph ph-arrow-left"></i></a>
+
+            <h1 class="login-title">Login</h1>
+
+            <form id="loginForm" class="login-form">
+                <!-- Username Field -->
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <div class="input-wrapper">
+                        <i class="ph ph-user input-icon"></i>
+                        <input type="text" id="username" placeholder="Type your username" autocomplete="username">
+                    </div>
+                    <div class="error-msg" id="usernameError">Please enter your username</div>
+                </div>
+
+                <!-- Password Field -->
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <div class="input-wrapper">
+                        <i class="ph ph-lock-key input-icon"></i>
+                        <input type="password" id="password" placeholder="Type your password" autocomplete="current-password">
+                    </div>
+                    <div class="error-msg" id="passwordError">Please enter your password</div>
+                </div>
+
+                <div class="forgot-pwd">
+                    <a href="#">Forgot password?</a>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn-login">LOGIN</button>
+
+                <!-- Social Login -->
+                <div class="social-login-section">
+                    <span class="social-text">Or Sign Up Using</span>
+                    <div class="social-icons">
+                        <a href="#" class="social-btn btn-fb"><i class="ph-fill ph-facebook-logo"></i></a>
+                        <a href="#" class="social-btn btn-tw"><i class="ph-fill ph-twitter-logo"></i></a>
+                        <a href="#" class="social-btn btn-go"><i class="ph-fill ph-google-logo"></i></a>
+                    </div>
+                </div>
+
+                <!-- Bottom links -->
+                <div class="signup-section">
+                    <span class="social-text" style="margin-bottom: 0.5rem; display: block;">Or Sign Up Using</span>
+                    <a href="#" class="signup-link">SIGN UP</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Validations and Alert Script -->
+    <script>
+        // Simulate loading end
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.querySelectorAll('.skeleton-text, .skeleton-bg, .skeleton-btn').forEach(el => {
+                    el.classList.remove('skeleton-text', 'skeleton-bg', 'skeleton-btn');
+                });
+            }, 600);
+        });
+
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const usernameInput = document.getElementById('username');
+            const passwordInput = document.getElementById('password');
+            const usernameError = document.getElementById('usernameError');
+            const passwordError = document.getElementById('passwordError');
+            
+            let isValid = true;
+
+            // Reset errors
+            usernameError.style.display = 'none';
+            passwordError.style.display = 'none';
+            usernameInput.classList.remove('has-error');
+            passwordInput.classList.remove('has-error');
+
+            // Username validation
+            if (usernameInput.value.trim() === '') {
+                usernameError.style.display = 'block';
+                usernameInput.classList.add('has-error');
+                isValid = false;
+            }
+
+            // Password validation
+            if (passwordInput.value.trim() === '') {
+                passwordError.style.display = 'block';
+                passwordInput.classList.add('has-error');
+                isValid = false;
+            }
+
+            // Final check
+            if (isValid) {
+                // Remove button focus/active state styling briefly
+                const btn = document.querySelector('.btn-login');
+                btn.classList.add('loading');
+                btn.innerHTML = 'LOGGING IN...';
+                
+                setTimeout(() => {
+                    alert('Login'); // Simple alert required by user
+                    
+                    // Reset styling
+                    btn.classList.remove('loading');
+                    btn.innerHTML = 'LOGIN';
+                    // Optional: redirect to dashboard
+                    window.location.href = 'Dashboard.html';
+                }, 400); // Simulate network delay
+            }
+        });
+
+        // Clear error styling on input
+        document.getElementById('username').addEventListener('input', function() {
+            this.classList.remove('has-error');
+            document.getElementById('usernameError').style.display = 'none';
+        });
+        document.getElementById('password').addEventListener('input', function() {
+            this.classList.remove('has-error');
+            document.getElementById('passwordError').style.display = 'none';
+        });
+    </script>
+    <script src="../javascripts/main.js"></script>
+</body>
+</html>

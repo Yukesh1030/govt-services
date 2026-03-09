@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | The Stackly Services</title>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <!-- Base Styles & Not Found Specific Styles -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/NotFound.css">
+</head>
+<body>
+
+    <!-- Main Brown Navbar -->
+    <nav class="navbar skeleton-bg">
+        <div class="container nav-container">
+            
+            <div class="nav-links">
+                <span class="nav-brand skeleton-text" style="font-weight: 800; font-size: 1.25rem; color: #ffffff; letter-spacing: 1px; margin-right: 1.5rem; margin-left: -1rem; text-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                    THE <span style="color: var(--clr-gold);">STACKLY</span>
+                </span>
+                
+                <div class="nav-item">
+                    <a href="index.html" class="nav-link skeleton-text">HOME</a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-link">Home page 2</a>
+                    </div>
+                </div>
+                
+
+                <a href="About.html" class="nav-link skeleton-text">ABOUT US</a>
+                
+
+                <a href="Media.html" class="nav-link skeleton-text">MEDIA</a>
+                
+                <a href="#" class="nav-link skeleton-text">DIRECTORY</a>
+                
+                <div class="nav-item">
+                    <a href="#" class="nav-link skeleton-text">DOCUMENTS <i class="ph ph-caret-down"></i></a>
+                </div>
+                
+                <div class="nav-item">
+                    <a href="#" class="nav-link skeleton-text">NOTICES <i class="ph ph-caret-down"></i></a>
+                </div>
+                
+                <div class="nav-item">
+                    <a href="#" class="nav-link skeleton-text">SCHEMES/PROGRAMMES <i class="ph ph-caret-down"></i></a>
+                </div>
+                
+                <div style="flex-grow: 1;"></div> <!-- Spacer -->
+                
+                <a href="Dashboard.html" class="nav-link skeleton-text" style="padding: 0 1rem; border-right: 1px solid rgba(255,255,255,0.1);">DASHBOARD</a>
+                <a href="Login.html" class="nav-link skeleton-text" style="padding: 0 1rem;">LOGIN</a>
+            </div>
+            
+            <button class="mobile-menu-btn skeleton-btn">
+                <i class="ph ph-list" style="color:var(--clr-gold)"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- 404 Container -->
+    <main class="not-found-wrapper">
+        <div class="not-found-content">
+            
+            <!-- Animated 404 Graphic -->
+            <div class="error-graphic">
+                <div class="number-4">4</div>
+                <div class="radar-container">
+                    <i class="ph ph-radar radar-icon"></i>
+                </div>
+                <div class="number-4">4</div>
+            </div>
+
+            <!-- Text Content -->
+            <h1 class="error-title">Page Not Found</h1>
+            <p class="error-desc">We've searched everywhere, but the page you are looking for has been moved, removed, or doesn't exist.</p>
+            
+            <!-- Actions -->
+            <div class="error-actions">
+                <a href="index.html" class="btn btn-primary btn-lg pulse-hover">
+                    <i class="ph ph-house"></i>
+                    Back to Homepage
+                </a>
+                <a href="#" class="btn btn-outline-dark btn-lg">
+                    <i class="ph ph-magnifying-glass"></i>
+                    Search Services
+                </a>
+            </div>
+
+            <!-- Helper Links -->
+            <div class="quick-help">
+                <p>Looking for something specific?</p>
+                <div class="help-links">
+                    <a href="#">Latest Tenders</a> • 
+                    <a href="#">Official Directory</a> • 
+                    <a href="#">Contact Us</a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>

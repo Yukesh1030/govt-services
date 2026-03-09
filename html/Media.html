@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media & Photo Gallery | The Stackly Services</title>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <!-- Base Styles & Media Specific Styles -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/Media.css">
+</head>
+<body class="media-page">
+    <!-- Main Brown Navbar -->
+    <nav class="navbar skeleton-bg">
+        <div class="container nav-container">
+            
+            <div class="nav-links">
+                <span class="nav-brand skeleton-text" style="font-weight: 800; font-size: 1.25rem; color: #ffffff; letter-spacing: 1px; margin-right: 1.5rem; margin-left: -1rem; text-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                    THE <span style="color: var(--clr-gold);">STACKLY</span>
+                </span>
+                
+                <div class="nav-item">
+                    <a href="index.html" class="nav-link skeleton-text">HOME</a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-link">Home page 2</a>
+                    </div>
+                </div>
+                
+
+                <a href="About.html" class="nav-link skeleton-text">ABOUT US</a>
+                
+
+                <a href="Media.html" class="nav-link active skeleton-text">MEDIA</a>
+                
+                <a href="#" class="nav-link skeleton-text">DIRECTORY</a>
+                
+                <div class="nav-item">
+                    <a href="#" class="nav-link skeleton-text">DOCUMENTS <i class="ph ph-caret-down"></i></a>
+                </div>
+                
+                <div class="nav-item">
+                    <a href="#" class="nav-link skeleton-text">NOTICES <i class="ph ph-caret-down"></i></a>
+                </div>
+                
+                <div class="nav-item">
+                    <a href="#" class="nav-link skeleton-text">SCHEMES/PROGRAMMES <i class="ph ph-caret-down"></i></a>
+                </div>
+                
+                <div style="flex-grow: 1;"></div> <!-- Spacer -->
+                
+                <a href="Dashboard.html" class="nav-link skeleton-text" style="padding: 0 1rem; border-right: 1px solid rgba(255,255,255,0.1);">DASHBOARD</a>
+                <a href="Login.html" class="nav-link skeleton-text" style="padding: 0 1rem;">LOGIN</a>
+            </div>
+            
+            <button class="mobile-menu-btn skeleton-btn">
+                <i class="ph ph-list" style="color:var(--clr-gold)"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="container media-main">
+        
+        <div class="gallery-header animate-fade-up">
+            <h1 class="page-title skeleton-text">Photo Gallery</h1>
+            <div class="gallery-controls skeleton-text">
+                <button class="view-btn active"><i class="ph ph-grid-four"></i></button>
+                <button class="view-btn"><i class="ph ph-list-dashes"></i></button>
+            </div>
+        </div>
+        
+        <div class="gallery-grid">
+            
+            <!-- Gallery Item 1 -->
+            <div class="gallery-card animate-fade-up skeleton-bg" style="animation-delay: 0.1s;">
+                <div class="card-img-wrapper">
+                    <img src="../assets/gallery-1.webp" alt="Three New Laws" class="gallery-img skeleton-img">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title skeleton-text">Three New Laws</h3>
+                </div>
+                <div class="card-social">
+                    <a href="#" class="social-btn skeleton-text"><i class="ph ph-facebook-logo"></i></a>
+                    <a href="#" class="social-btn skeleton-text"><i class="ph ph-x-logo"></i></a>
+                </div>
+                <a href="#" class="card-action skeleton-text">
+                    View Gallery <i class="ph ph-caret-right"></i>
+                </a>
+            </div>
+
+            <!-- Gallery Item 2 -->
+            <div class="gallery-card animate-fade-up skeleton-bg" style="animation-delay: 0.2s;">
+                <div class="card-img-wrapper">
+                    <img src="../assets/gallery-2.webp" alt="Forensic Van" class="gallery-img skeleton-img">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title skeleton-text">Forensic Van</h3>
+                </div>
+                <div class="card-social">
+                    <a href="#" class="social-btn skeleton-text"><i class="ph ph-facebook-logo"></i></a>
+                    <a href="#" class="social-btn skeleton-text"><i class="ph ph-x-logo"></i></a>
+                </div>
+                <a href="#" class="card-action skeleton-text">
+                    View Gallery <i class="ph ph-caret-right"></i>
+                </a>
+            </div>
+
+            <!-- Gallery Item 3 -->
+            <div class="gallery-card animate-fade-up skeleton-bg" style="animation-delay: 0.3s;">
+                <div class="card-img-wrapper">
+                    <img src="../assets/gallery-3.webp" alt="Prisons and forensic details" class="gallery-img skeleton-img">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title skeleton-text">Prisons and forensic details</h3>
+                </div>
+                <div class="card-social">
+                    <a href="#" class="social-btn skeleton-text"><i class="ph ph-facebook-logo"></i></a>
+                    <a href="#" class="social-btn skeleton-text"><i class="ph ph-x-logo"></i></a>
+                </div>
+                <a href="#" class="card-action skeleton-text">
+                    View Gallery <i class="ph ph-caret-right"></i>
+                </a>
+            </div>
+
+            <!-- Gallery Item 4 -->
+            <div class="gallery-card animate-fade-up skeleton-bg" style="animation-delay: 0.4s;">
+                <div class="card-img-wrapper">
+                    <img src="../assets/gallery-4.webp" alt="Maharashtra State Police Housing & Welfare Corp. Ltd." class="gallery-img skeleton-img">
+                </div>
+                <div class="card-content" style="flex: 1;">
+                    <h3 class="card-title skeleton-text" style="font-size: 0.95rem; line-height: 1.4;">Maharashtra State Police Housing & Welfare Corp. Ltd.</h3>
+                </div>
+                <div class="card-social">
+                    <a href="#" class="social-btn skeleton-text"><i class="ph ph-facebook-logo"></i></a>
+                    <a href="#" class="social-btn skeleton-text"><i class="ph ph-x-logo"></i></a>
+                </div>
+                <a href="#" class="card-action skeleton-text">
+                    View Gallery <i class="ph ph-caret-right"></i>
+                </a>
+            </div>
+
+            <!-- Gallery Item 5 -->
+            <div class="gallery-card animate-fade-up skeleton-bg" style="animation-delay: 0.5s;">
+                <div class="card-img-wrapper">
+                    <img src="../assets/gallery-5.webp" alt="Police" class="gallery-img skeleton-img">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title skeleton-text">Police</h3>
+                </div>
+                <div class="card-social">
+                    <a href="#" class="social-btn skeleton-text"><i class="ph ph-facebook-logo"></i></a>
+                    <a href="#" class="social-btn skeleton-text"><i class="ph ph-x-logo"></i></a>
+                </div>
+                <a href="#" class="card-action skeleton-text">
+                    View Gallery <i class="ph ph-caret-right"></i>
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Top Arrow Button -->
+    <a href="#" class="back-to-top animate-fade-up" style="animation-delay: 2s;">
+        <i class="ph ph-caret-up"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="footer animate-fade-up skeleton-bg" style="animation-delay: 0.8s; margin-top: 4rem;">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="brand-logo footer-logo skeleton-img">MH</div>
+                    <p class="footer-desc skeleton-text">Home Department, Government of Maharashtra. Ensuring a strong base of law and order.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4 class="footer-heading skeleton-text">Quick Links</h4>
+                    <ul>
+                        <li class="skeleton-text"><a href="#">Government Resolutions</a></li>
+                        <li class="skeleton-text"><a href="#">Acts & Rules</a></li>
+                        <li class="skeleton-text"><a href="#">Aaple Sarkar</a></li>
+                        <li class="skeleton-text"><a href="#">e-Prosecution</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4 class="footer-heading skeleton-text">Help & Support</h4>
+                    <ul>
+                        <li class="skeleton-text"><a href="#">Contact Us</a></li>
+                        <li class="skeleton-text"><a href="#">Feedback</a></li>
+                        <li class="skeleton-text"><a href="#">Website Policies</a></li>
+                        <li class="skeleton-text"><a href="#">Web Information Manager</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="skeleton-text">&copy; 2026 The Stackly Services. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../javascripts/main.js"></script>
+</body>
+</html>

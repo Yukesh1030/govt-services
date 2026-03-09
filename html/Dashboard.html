@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | The Stackly Government Services</title>
+    <meta name="description" content="Government Online Services Dashboard — track applications, certificates, registrations and more.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/Dashboard.css">
+</head>
+<body class="dash-page">
+
+    <!-- ── Shared Navbar ── -->
+    <nav class="navbar skeleton-bg">
+        <div class="container nav-container">
+            <div class="nav-links">
+                <span class="nav-brand skeleton-text" style="font-weight:800;font-size:1.25rem;color:#fff;letter-spacing:1px;margin-right:1.5rem;margin-left:-1rem;text-shadow:0 2px 4px rgba(0,0,0,.2)">
+                    THE <span style="color:var(--clr-gold)">STACKLY</span>
+                </span>
+
+                <div class="nav-item">
+                    <a href="index.html" class="nav-link skeleton-text">HOME</a>
+                    <div class="dropdown-menu">
+                        <a href="NotFound.html" class="dropdown-link">Home page 2</a>
+                    </div>
+                </div>
+
+                <a href="About.html" class="nav-link skeleton-text">ABOUT US</a>
+                <a href="Media.html" class="nav-link skeleton-text">MEDIA</a>
+                <a href="NotFound.html" class="nav-link skeleton-text">DIRECTORY</a>
+
+                <div class="nav-item">
+                    <a href="NotFound.html" class="nav-link skeleton-text">DOCUMENTS <i class="ph ph-caret-down"></i></a>
+                </div>
+                <div class="nav-item">
+                    <a href="NotFound.html" class="nav-link skeleton-text">NOTICES <i class="ph ph-caret-down"></i></a>
+                </div>
+                <div class="nav-item">
+                    <a href="NotFound.html" class="nav-link skeleton-text">SCHEMES/PROGRAMMES <i class="ph ph-caret-down"></i></a>
+                </div>
+
+                <div style="flex-grow:1"></div>
+
+                <a href="Dashboard.html" class="nav-link active skeleton-text" style="padding:0 1rem;border-right:1px solid rgba(255,255,255,.1)">DASHBOARD</a>
+                <a href="Login.html" class="nav-link skeleton-text" style="padding:0 1rem">LOGIN</a>
+            </div>
+            <button class="mobile-menu-btn skeleton-btn">
+                <i class="ph ph-list" style="color:var(--clr-gold)"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ── Dashboard Shell ── -->
+    <div class="dash-shell">
+
+        <!-- Sidebar -->
+        <aside class="dash-sidebar" id="dashSidebar">
+            <div class="sidebar-logo">
+                <i class="ph ph-shield-star"></i>
+                <span>GovServices</span>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="Dashboard.html" class="sidebar-link active"><i class="ph ph-squares-four"></i> Overview</a>
+                <a href="NotFound.html" class="sidebar-link"><i class="ph ph-file-text"></i> My Applications</a>
+                <a href="NotFound.html" class="sidebar-link"><i class="ph ph-certificate"></i> Certificates</a>
+                <a href="NotFound.html" class="sidebar-link"><i class="ph ph-building-office"></i> Land Records</a>
+                <a href="NotFound.html" class="sidebar-link"><i class="ph ph-money"></i> Tax &amp; Payments</a>
+                <a href="NotFound.html" class="sidebar-link"><i class="ph ph-users"></i> Social Welfare</a>
+                <a href="NotFound.html" class="sidebar-link"><i class="ph ph-car"></i> Transport</a>
+                <a href="NotFound.html" class="sidebar-link"><i class="ph ph-bell"></i> Notices</a>
+
+                <div class="sidebar-divider"></div>
+                <a href="NotFound.html" class="sidebar-link"><i class="ph ph-gear"></i> Settings</a>
+                <a href="NotFound.html" class="sidebar-link"><i class="ph ph-sign-out"></i> Logout</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dash-main">
+
+            <!-- Top bar -->
+            <div class="dash-topbar">
+                <div class="dash-topbar-left">
+                    <button class="sidebar-toggle" id="sidebarToggle"><i class="ph ph-list"></i></button>
+                    <div>
+                        <h1 class="dash-page-title">Government Services Dashboard</h1>
+                        <p class="dash-page-sub">Welcome back, Citizen · Last login: 09 Mar 2026</p>
+                    </div>
+                </div>
+                <div class="dash-topbar-right">
+                    <span class="dash-live-badge"><span class="live-dot"></span> Live</span>
+                    <span class="dash-date"><i class="ph ph-calendar"></i> Mar 2026</span>
+                    <div class="dash-avatar">YK</div>
+                </div>
+            </div>
+
+            <!-- ── Stat Cards ── -->
+            <div class="dash-stats-grid">
+                <div class="stat-card animate-fade-up">
+                    <div class="stat-card-top">
+                        <div class="stat-icon-box" style="background:rgba(59,130,246,.12);color:#3b82f6"><i class="ph ph-file-text"></i></div>
+                        <i class="ph ph-dots-three stat-menu"></i>
+                    </div>
+                    <div class="stat-value">3,842</div>
+                    <div class="stat-label">Total Applications</div>
+                    <div class="stat-change positive"><i class="ph ph-trend-up"></i> 128 new this month</div>
+                    <a href="NotFound.html" class="stat-details-btn">Details</a>
+                </div>
+
+                <div class="stat-card animate-fade-up" style="animation-delay:.1s">
+                    <div class="stat-card-top">
+                        <div class="stat-icon-box" style="background:rgba(16,185,129,.12);color:#10b981"><i class="ph ph-certificate"></i></div>
+                        <i class="ph ph-dots-three stat-menu"></i>
+                    </div>
+                    <div class="stat-value">1,205</div>
+                    <div class="stat-label">Certificates Issued</div>
+                    <div class="stat-change positive"><i class="ph ph-trend-up"></i> 8.3% increase</div>
+                    <a href="NotFound.html" class="stat-details-btn">Details</a>
+                </div>
+
+                <div class="stat-card animate-fade-up" style="animation-delay:.2s">
+                    <div class="stat-card-top">
+                        <div class="stat-icon-box" style="background:rgba(245,158,11,.12);color:#f59e0b"><i class="ph ph-hourglass"></i></div>
+                        <i class="ph ph-dots-three stat-menu"></i>
+                    </div>
+                    <div class="stat-value">416</div>
+                    <div class="stat-label">Pending Reviews</div>
+                    <div class="stat-change negative"><i class="ph ph-trend-down"></i> 32 overdue</div>
+                    <a href="NotFound.html" class="stat-details-btn">Details</a>
+                </div>
+
+                <div class="stat-card animate-fade-up" style="animation-delay:.3s">
+                    <div class="stat-card-top">
+                        <div class="stat-icon-box" style="background:rgba(139,92,246,.12);color:#8b5cf6"><i class="ph ph-check-circle"></i></div>
+                        <i class="ph ph-dots-three stat-menu"></i>
+                    </div>
+                    <div class="stat-value">98.2%</div>
+                    <div class="stat-label">Service Uptime</div>
+                    <div class="stat-change positive"><i class="ph ph-trend-up"></i> 0.4% improvement</div>
+                    <a href="NotFound.html" class="stat-details-btn">Details</a>
+                </div>
+            </div>
+
+            <!-- ── Quick Actions ── -->
+            <div class="dash-section-title">Quick Services</div>
+            <div class="dash-quick-grid">
+                <a href="NotFound.html" class="quick-card">
+                    <i class="ph ph-baby"></i>
+                    <span class="qc-name">Birth Certificate</span>
+                    <span class="qc-sub">Apply / Download</span>
+                </a>
+                <a href="NotFound.html" class="quick-card">
+                    <i class="ph ph-grave"></i>
+                    <span class="qc-name">Death Certificate</span>
+                    <span class="qc-sub">Apply / Download</span>
+                </a>
+                <a href="NotFound.html" class="quick-card">
+                    <i class="ph ph-house-line"></i>
+                    <span class="qc-name">Land Records</span>
+                    <span class="qc-sub">View / Apply</span>
+                </a>
+                <a href="NotFound.html" class="quick-card">
+                    <i class="ph ph-money-wavy"></i>
+                    <span class="qc-name">Tax Payment</span>
+                    <span class="qc-sub">Pay Online</span>
+                </a>
+                <a href="NotFound.html" class="quick-card">
+                    <i class="ph ph-car-profile"></i>
+                    <span class="qc-name">Driving Licence</span>
+                    <span class="qc-sub">Apply / Renew</span>
+                </a>
+                <a href="NotFound.html" class="quick-card">
+                    <i class="ph ph-users-three"></i>
+                    <span class="qc-name">Ration Card</span>
+                    <span class="qc-sub">View / Update</span>
+                </a>
+                <a href="NotFound.html" class="quick-card">
+                    <i class="ph ph-student"></i>
+                    <span class="qc-name">Scholarship</span>
+                    <span class="qc-sub">Check Eligibility</span>
+                </a>
+                <a href="NotFound.html" class="quick-card">
+                    <i class="ph ph-first-aid-kit"></i>
+                    <span class="qc-name">Health Scheme</span>
+                    <span class="qc-sub">Enroll / Status</span>
+                </a>
+            </div>
+
+            <!-- ── Charts Row ── -->
+            <div class="dash-charts-grid">
+                <!-- Bar Chart -->
+                <div class="chart-card">
+                    <div class="chart-card-header">
+                        <span class="chart-title">Applications by Service</span>
+                        <div class="chart-tabs">
+                            <button class="chart-tab active" data-target="bar">Week</button>
+                            <button class="chart-tab" data-target="bar">Month</button>
+                        </div>
+                    </div>
+                    <canvas id="barChart" height="200"></canvas>
+                </div>
+
+                <!-- Line Chart -->
+                <div class="chart-card">
+                    <div class="chart-card-header">
+                        <span class="chart-title">Processing Trends</span>
+                        <div class="chart-tabs">
+                            <button class="chart-tab active">Applied</button>
+                            <button class="chart-tab">Approved</button>
+                        </div>
+                    </div>
+                    <canvas id="lineChart" height="200"></canvas>
+                </div>
+            </div>
+
+            <!-- ── Bottom Row ── -->
+            <div class="dash-bottom-grid">
+
+                <!-- Donut chart -->
+                <div class="chart-card">
+                    <div class="chart-card-header">
+                        <span class="chart-title">Services by District</span>
+                        <div class="chart-tabs">
+                            <button class="chart-tab active">City</button>
+                            <button class="chart-tab">Zone</button>
+                        </div>
+                    </div>
+                    <div class="donut-wrapper">
+                        <canvas id="donutChart"></canvas>
+                    </div>
+                    <div class="donut-legend" id="donutLegend"></div>
+                </div>
+
+                <!-- Recent Applications Table -->
+                <div class="chart-card">
+                    <div class="chart-card-header">
+                        <span class="chart-title">Recent Applications</span>
+                        <a href="NotFound.html" class="view-all-link">View All →</a>
+                    </div>
+                    <div class="dash-table-wrap">
+                        <table class="dash-table">
+                            <thead>
+                                <tr>
+                                    <th>Service</th>
+                                    <th>Dept.</th>
+                                    <th>Status</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="td-bold">Birth Certificate</td>
+                                    <td>Civil Reg.</td>
+                                    <td><span class="badge-status approved">Approved</span></td>
+                                    <td>07 Mar</td>
+                                </tr>
+                                <tr>
+                                    <td class="td-bold">Land Mutation</td>
+                                    <td>Revenue</td>
+                                    <td><span class="badge-status pending">Pending</span></td>
+                                    <td>05 Mar</td>
+                                </tr>
+                                <tr>
+                                    <td class="td-bold">Vehicle RC</td>
+                                    <td>Transport</td>
+                                    <td><span class="badge-status approved">Approved</span></td>
+                                    <td>03 Mar</td>
+                                </tr>
+                                <tr>
+                                    <td class="td-bold">Scholarship Form</td>
+                                    <td>Education</td>
+                                    <td><span class="badge-status review">In Review</span></td>
+                                    <td>01 Mar</td>
+                                </tr>
+                                <tr>
+                                    <td class="td-bold">Property Tax</td>
+                                    <td>Municipal</td>
+                                    <td><span class="badge-status approved">Paid</span></td>
+                                    <td>28 Feb</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div><!-- /.dash-shell -->
+
+    <script src="../javascripts/main.js"></script>
+    <script src="../javascripts/dashboard.js"></script>
+</body>
+</html>
