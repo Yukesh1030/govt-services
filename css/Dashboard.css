@@ -109,8 +109,8 @@
 .dash-main {
     flex: 1;
     min-width: 0;
-    padding: 1.5rem 1.75rem 3rem;
-    overflow-x: hidden;
+    padding: 0 1.75rem 3rem; /* Removed top padding, it will be in topbar margin/padding */
+    /* overflow-x: hidden; — Removed to allow sticky topbar to work */
 }
 
 /* ── Topbar ── */
@@ -118,9 +118,27 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 1.75rem;
+    padding: 1.25rem 0;
+    margin-bottom: 1rem;
     flex-wrap: wrap;
     gap: 1rem;
+    position: sticky;
+    top: 3.5rem; /* Height of the global navbar */
+    background: var(--dash-bg);
+    z-index: 30;
+    transition: padding 0.3s, box-shadow 0.3s;
+}
+
+/* Optional: add shadow when scrolled (can be triggered by JS, but keeping it simple for now) */
+.dash-topbar::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    right: 0;
+    height: 15px;
+    background: linear-gradient(to bottom, var(--dash-bg), transparent);
+    pointer-events: none;
 }
 
 .dash-topbar-left {

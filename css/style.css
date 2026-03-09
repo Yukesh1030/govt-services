@@ -71,9 +71,7 @@
     padding: 0;
 }
 
-html {
-    overflow-x: hidden;
-}
+/* html { overflow-x: hidden; } — Removed to allow position: sticky to work */
 
 body {
     font-family: var(--font-sans);
