@@ -37,10 +37,11 @@
 
 /* On mobile: hide the global navbar hamburger (sidebar-toggle handles it)
    On desktop: keep nav-links visible normally */
+/* On mobile: ensure the global navbar hamburger is visible
+   On desktop: keep nav-links visible normally */
 @media (max-width: 768px) {
-    .dash-page .mobile-menu-btn { display: none !important; }
-    .dash-page .nav-links { display: none !important; }
-    .dash-page .navbar .nav-brand { display: block !important; }
+    .dash-page .mobile-menu-btn { display: flex !important; } /* Restored visibility */
+    /* .dash-page .nav-links is handled by style.css 'active' class logic */
 }
 
 /* =============================================
