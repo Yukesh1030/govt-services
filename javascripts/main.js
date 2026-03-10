@@ -5,44 +5,72 @@ document.addEventListener('DOMContentLoaded', () => {
     // -------------------------------------------------------
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navLinks = document.querySelector('.nav-links');
-    const navContainer = document.querySelector('.nav-container');
 
-    if (mobileMenuBtn && navLinks) {
-        // Toggle nav open/close
-        mobileMenuBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            navLinks.classList.toggle('open');
+    // Inject backdrop dynamically if it doesn't exist
+    if (!document.querySelector('.mobile-menu-backdrop')) {
+        const backdrop = document.createElement('div');
+        backdrop.className = 'mobile-menu-backdrop';
+        document.body.appendChild(backdrop);
+    }
+
+    const backdrop = document.querySelector('.mobile-menu-backdrop');
+
+    if (mobileMenuBtn && navLinks && backdrop) {
+        const toggleMenu = () => {
+            navLinks.classList.toggle('active');
+            backdrop.classList.toggle('active');
+            
+            // Change icon based on state
             const icon = mobileMenuBtn.querySelector('i');
-            if (navLinks.classList.contains('open')) {
+            if (navLinks.classList.contains('active')) {
                 icon.classList.remove('ph-list');
                 icon.classList.add('ph-x');
+                document.body.style.overflow = 'hidden'; // Prevent scroll
             } else {
                 icon.classList.remove('ph-x');
                 icon.classList.add('ph-list');
+                document.body.style.overflow = ''; // Restore scroll
             }
-        });
+        };
 
-        // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!navContainer.contains(e.target)) {
-                navLinks.classList.remove('open');
-                const icon = mobileMenuBtn.querySelector('i');
-                if (icon) {
+        mobileMenuBtn.addEventListener('click', toggleMenu);
+        backdrop.addEventListener('click', toggleMenu);
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                const item = link.closest('.nav-item');
+                const hasDropdown = item && item.querySelector('.dropdown-menu');
+                
+                if (window.innerWidth <= 992 && hasDropdown) {
+                    // If it's a mobile dropdown link, don't close the menu yet
+                    // the toggle logic below handles this
+                } else {
+                    navLinks.classList.remove('active');
+                    backdrop.classList.remove('active');
+                    const icon = mobileMenuBtn.querySelector('i');
                     icon.classList.remove('ph-x');
                     icon.classList.add('ph-list');
+                    document.body.style.overflow = '';
                 }
-            }
+            });
         });
 
-        // Mobile dropdown accordion (tap to expand)
+        // Mobile dropdown accordion
         document.querySelectorAll('.nav-item').forEach(item => {
             const link = item.querySelector('.nav-link');
             const dropdown = item.querySelector('.dropdown-menu');
             if (link && dropdown) {
                 link.addEventListener('click', (e) => {
-                    if (window.innerWidth <= 768) {
+                    if (window.innerWidth <= 992) {
                         e.preventDefault();
+                        e.stopPropagation();
                         item.classList.toggle('open');
+                        
+                        // Close other open accordions
+                        document.querySelectorAll('.nav-item').forEach(otherItem => {
+                            if (otherItem !== item) otherItem.classList.remove('open');
+                        });
                     }
                 });
             }
@@ -68,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.skeleton-text').forEach(el => el.classList.remove('skeleton-text'));
         document.querySelectorAll('.skeleton-btn').forEach(el => el.classList.remove('skeleton-btn'));
         document.querySelectorAll('.skeleton-badge').forEach(el => el.classList.remove('skeleton-badge'));
-    }, 1800);
+    }, 600);
 
     // -------------------------------------------------------
     // Slider Logic

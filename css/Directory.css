@@ -1,0 +1,237 @@
+/* Directory Page Styles */
+
+:root {
+    --dir-surface: #ffffff;
+    --dir-bg: #f6f5f0;
+    --dir-border: #e9ecef;
+    --dir-accent: var(--clr-brand-dark, #2d241e);
+    --dir-gold: var(--clr-gold, #ffc107);
+    --dir-text: #333333;
+    --dir-text-muted: #6c757d;
+}
+
+.dir-page {
+    background-color: var(--dir-bg);
+}
+
+.dir-main {
+    padding: 2rem 0 4rem;
+}
+
+/* ── Hero / Header ── */
+.dir-header {
+    margin-bottom: 2.5rem;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--dir-text-muted);
+    margin-bottom: 1rem;
+}
+
+.breadcrumb a {
+    color: var(--dir-accent);
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    color: var(--dir-gold);
+}
+
+.dir-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: var(--dir-accent);
+    margin-bottom: 0.5rem;
+}
+
+/* ── Filter Bar ── */
+.filter-section {
+    background: #4b3621; /* Dark brown from screenshot */
+    color: #fff;
+    padding: 1.5rem;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.filter-section::after {
+    content: "";
+    position: absolute;
+    right: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-style: solid;
+    border-width: 15px 0 15px 15px;
+    border-color: transparent transparent transparent #4b3621;
+}
+
+.filter-label {
+    font-weight: 600;
+    font-size: 1rem;
+    white-space: nowrap;
+}
+
+.filter-form {
+    display: flex;
+    flex: 1;
+    gap: 0.5rem;
+}
+
+.filter-select {
+    flex: 1;
+    padding: 0.6rem 1rem;
+    border: 1px solid #ccc;
+    font-family: inherit;
+    font-size: 0.95rem;
+    background: #fff;
+}
+
+.filter-btn {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 0.6rem 1.25rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* ── Directory Table ── */
+.dir-table-card {
+    background: var(--dir-surface);
+    border: 1px solid var(--dir-border);
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.dir-table-header {
+    background: #222;
+    color: #fff;
+    padding: 1rem 1.5rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.dir-table-wrapper {
+    overflow-x: auto;
+}
+
+.dir-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 900px;
+}
+
+.dir-table th {
+    background: #ffcc33; /* Gold from screenshot */
+    color: #333;
+    text-align: left;
+    padding: 0.75rem 1rem;
+    font-weight: 700;
+    font-size: 0.85rem;
+    border: 1px solid #e0b02a;
+}
+
+.dir-table td {
+    padding: 1rem;
+    border: 1px solid var(--dir-border);
+    vertical-align: top;
+    font-size: 0.9rem;
+    color: var(--dir-text);
+}
+
+.profile-img {
+    width: 100px;
+    height: 120px;
+    object-fit: cover;
+    border: 1px solid #ddd;
+    padding: 2px;
+}
+
+.official-name {
+    font-weight: 600;
+    color: var(--dir-accent);
+}
+
+.designation {
+    font-style: italic;
+    color: var(--dir-text-muted);
+}
+
+.contact-info {
+    font-family: 'Inter', sans-serif;
+    word-break: break-all;
+}
+
+.activity-cell {
+    font-size: 0.8rem;
+    line-height: 1.4;
+    color: var(--dir-text-muted);
+}
+
+/* ── Responsive Mobile ── */
+@media (max-width: 992px) {
+    .filter-section {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .filter-section::after { display: none; }
+    .filter-form { width: 100%; }
+}
+
+@media (max-width: 768px) {
+    /* Transform table to cards on mobile */
+    .dir-table, .dir-table thead, .dir-table tbody, .dir-table th, .dir-table td, .dir-table tr {
+        display: block;
+    }
+    
+    .dir-table thead { display: none; }
+    
+    .dir-table tr {
+        margin-bottom: 1.5rem;
+        border: 2px solid var(--dir-gold);
+        border-radius: 8px;
+        background: #fff;
+    }
+    
+    .dir-table td {
+        border: none;
+        padding: 0.75rem 1rem;
+        position: relative;
+        padding-left: 40%;
+    }
+    
+    .dir-table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 1rem;
+        width: 35%;
+        font-weight: 700;
+        color: var(--dir-accent);
+        text-transform: uppercase;
+        font-size: 0.75rem;
+    }
+    
+    .dir-table td:first-child {
+        padding-left: 1rem;
+        text-align: center;
+        background: #fcfcfc;
+    }
+    .dir-table td:first-child::before { display: none; }
+    
+    .profile-img {
+        width: 120px;
+        height: 140px;
+    }
+}

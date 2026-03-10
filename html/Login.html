@@ -20,50 +20,47 @@
 </head>
 <body>
 
-    <!-- Main Brown Navbar -->
     <nav class="navbar skeleton-bg">
         <div class="container nav-container">
-            
             <div class="nav-links">
                 <a href="../index.html" class="nav-brand skeleton-text" style="font-weight: 800; font-size: 1.25rem; color: #ffffff; letter-spacing: 1px; margin-right: 1.5rem; margin-left: -1rem; text-shadow: 0 2px 4px rgba(0,0,0,0.2); text-decoration: none;">
-                    THE <span style="color: var(--clr-gold);">STACKLY</span>
+                    <span style="color: var(--clr-gold);">Stackly</span>
                 </a>
-                
+
                 <div class="nav-item">
-                    <a href="../index.html" class="nav-link">HOME</a>
+                    <a href="../index.html" class="nav-link skeleton-text">HOME</a>
+                    <p class="footer-desc">
+                    Providing transparent, efficient, and accessible services to every citizen. Join THE STACKLY community today.
+                </p>
                     <div class="dropdown-menu">
-                        <a href="#" class="dropdown-link">Home page 2</a>
+                        <a href="NotFound.html" class="dropdown-link">Home page 2</a>
                     </div>
                 </div>
-                
 
-                <a href="About.html" class="nav-link">ABOUT US</a>
-                
+                <a href="About.html" class="nav-link skeleton-text">ABOUT US</a>
+                <a href="Media.html" class="nav-link skeleton-text">MEDIA</a>
+                <a href="Directory.html" class="nav-link skeleton-text">DIRECTORY</a>
 
-                <a href="Media.html" class="nav-link">MEDIA</a>
-                
-                <a href="#" class="nav-link">DIRECTORY</a>
-                
                 <div class="nav-item">
-                    <a href="Documents.html" class="nav-link">DOCUMENTS <i class="ph ph-caret-down"></i></a>
+                    <a href="Documents.html" class="nav-link skeleton-text">DOCUMENTS <i class="ph ph-caret-down"></i></a>
                 </div>
-                
+
                 <div class="nav-item">
-                    <a href="#" class="nav-link">NOTICES <i class="ph ph-caret-down"></i></a>
+                    <a href="NotFound.html" class="nav-link skeleton-text">NOTICES <i class="ph ph-caret-down"></i></a>
                 </div>
-                
+
                 <div class="nav-item">
-                    <a href="#" class="nav-link">SCHEMES/PROGRAMMES <i class="ph ph-caret-down"></i></a>
+                    <a href="NotFound.html" class="nav-link skeleton-text">SCHEMES/PROGRAMMES <i class="ph ph-caret-down"></i></a>
                 </div>
-                
-                <div style="flex-grow: 1;"></div> <!-- Spacer -->
-                
-                <a href="Dashboard.html" class="nav-link" style="padding: 0 1rem; border-right: 1px solid rgba(255,255,255,0.1);">DASHBOARD</a>
-                <a href="Login.html" class="nav-link active" style="padding: 0 1rem;">LOGIN</a>
+
+                <div style="flex-grow: 1;"></div>
+
+                <a href="Dashboard.html" class="nav-link skeleton-text" style="padding: 0 1rem; border-right: 1px solid rgba(255,255,255,0.1);">DASHBOARD</a>
+                <a href="Login.html" class="nav-link active skeleton-text" style="padding: 0 1rem;">LOGIN</a>
             </div>
-            
+
             <button class="mobile-menu-btn skeleton-btn">
-                <i class="ph ph-list" style="color: var(--clr-gold);"></i>
+                <i class="ph ph-list" style="color:var(--clr-gold)"></i>
             </button>
         </div>
     </nav>
@@ -135,8 +132,8 @@
         // Simulate loading end
         window.addEventListener('load', () => {
             setTimeout(() => {
-                document.querySelectorAll('.skeleton-text, .skeleton-bg, .skeleton-btn').forEach(el => {
-                    el.classList.remove('skeleton-text', 'skeleton-bg', 'skeleton-btn');
+                document.querySelectorAll('.skeleton-text, .skeleton-bg, .skeleton-btn, .skeleton-badge').forEach(el => {
+                    el.classList.remove('skeleton-text', 'skeleton-bg', 'skeleton-btn', 'skeleton-badge');
                 });
             }, 600);
         });

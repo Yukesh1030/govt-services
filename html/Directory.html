@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Documents | The Stackly Services</title>
-    <meta name="description" content="Official Documents, Acts, Rules, and Government Gazettes - The Stackly Government Services.">
+    <title>Directory | The Stackly Services</title>
+    <meta name="description" content="Official Directory of the Home Department, Government of Maharashtra. Profile listings of Additional Chief Secretaries, Principal Secretaries, and other officials.">
 
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,9 +16,9 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/Documents.css">
+    <link rel="stylesheet" href="../css/Directory.css">
 </head>
-<body class="docs-page">
+<body class="dir-page">
 
     <!-- ── Main Navbar ── -->
     <nav class="navbar skeleton-bg">
@@ -37,10 +37,10 @@
 
                 <a href="About.html" class="nav-link skeleton-text">ABOUT US</a>
                 <a href="Media.html" class="nav-link skeleton-text">MEDIA</a>
-                <a href="Directory.html" class="nav-link skeleton-text">DIRECTORY</a>
+                <a href="Directory.html" class="nav-link active skeleton-text">DIRECTORY</a>
 
                 <div class="nav-item">
-                    <a href="Documents.html" class="nav-link active skeleton-text">DOCUMENTS <i class="ph ph-caret-down"></i></a>
+                    <a href="Documents.html" class="nav-link skeleton-text">DOCUMENTS <i class="ph ph-caret-down"></i></a>
                 </div>
 
                 <div class="nav-item">
@@ -64,27 +64,26 @@
     </nav>
 
     <!-- ── Main Content Area ── -->
-    <main class="container docs-main">
+    <main class="container dir-main">
         
-        <header class="docs-header">
+        <header class="dir-header">
             <nav class="breadcrumb">
                 <a href="../index.html">Home</a>
                 <i class="ph ph-caret-right"></i>
-                <span>Documents</span>
+                <span>Directory</span>
             </nav>
-            <h1 class="docs-title animate-fade-up">Documents</h1>
+            <h1 class="dir-title animate-fade-up">Directory</h1>
         </header>
 
         <!-- Filter Bar -->
         <section class="filter-section animate-fade-up" style="animation-delay: 0.1s;">
-            <div class="filter-label">Filter Document category wise</div>
+            <div class="filter-label">Filter Who's Who divisions wise</div>
             <form class="filter-form">
                 <select class="filter-select">
                     <option value="all">All</option>
-                    <option value="acts">Acts & Rules</option>
-                    <option value="gazette">Government Gazette</option>
-                    <option value="resolutions">Government Resolutions</option>
-                    <option value="reports">Annual Reports</option>
+                    <option value="acs">Additional Chief Secretary</option>
+                    <option value="ps">Principal Secretary</option>
+                    <option value="dig">DIG Orders</option>
                 </select>
                 <button type="submit" class="filter-btn">
                     <i class="ph ph-funnel"></i>
@@ -93,53 +92,40 @@
             </form>
         </section>
 
-        <!-- Document List -->
-        <div class="docs-list-card animate-fade-up" style="animation-delay: 0.2s;">
-            <div class="docs-list-header">All Documents</div>
-            <div class="docs-table-wrapper">
-                <table class="docs-table">
+        <!-- Directory List -->
+        <div class="dir-table-card animate-fade-up" style="animation-delay: 0.2s;">
+            <div class="dir-table-header">Additional Chief Secretary / Principal Secretary</div>
+            <div class="dir-table-wrapper">
+                <table class="dir-table">
                     <thead>
                         <tr>
-                            <th style="width: 55%;">Title</th>
-                            <th style="width: 20%;">Date</th>
-                            <th style="width: 25%;">View / Download</th>
+                            <th style="width: 15%;">Profile Picture</th>
+                            <th style="width: 15%;">Name</th>
+                            <th style="width: 15%;">Designation</th>
+                            <th style="width: 20%;">Email</th>
+                            <th style="width: 10%;">Phone</th>
+                            <th style="width: 10%;">Room No</th>
+                            <th style="width: 15%;">Activity</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td data-label="Title">Police Complaint Authority</td>
-                            <td data-label="Date">25/06/2014</td>
-                            <td data-label="View / Download">Accessible Version: <a href="NotFound.html" class="doc-view-link">View</a> <span class="doc-size">(134 KB)</span></td>
+                            <td data-label="Profile Picture"><img src="../assets/official-4.webp" alt="Manisha Patankar" class="profile-img skeleton-img"></td>
+                            <td data-label="Name" class="official-name">Manisha Patankar - Mahaiskar, I. A. S.</td>
+                            <td data-label="Designation" class="designation">Additional Chief Secretary (Home)</td>
+                            <td data-label="Email" class="contact-info">acs[dot]home[at]maharashtra[dot]gov[dot]in</td>
+                            <td data-label="Phone" class="contact-info">22048130</td>
+                            <td data-label="Room No" class="contact-info">535/201</td>
+                            <td data-label="Activity" class="activity-cell">EST-2 (From Under Secretary onwards), POL-1, POL-1A, POL-2, POL-4, BUD-1, BUD-2, SPL-9 (Sec.P-1), SPL-10, SPL-3B, IPS CELL</td>
                         </tr>
                         <tr>
-                            <td data-label="Title">The Maharashtra Village Police Act, 1967</td>
-                            <td data-label="Date">06/08/2003</td>
-                            <td data-label="View / Download">Accessible Version: <a href="NotFound.html" class="doc-view-link">View</a> <span class="doc-size">(3 MB)</span></td>
-                        </tr>
-                        <tr>
-                            <td data-label="Title">Right to Information Documents</td>
-                            <td data-label="Date">01/09/2022</td>
-                            <td data-label="View / Download">Accessible Version: <a href="NotFound.html" class="doc-view-link">View</a> <span class="doc-size">(2 MB)</span></td>
-                        </tr>
-                        <tr>
-                            <td data-label="Title">Government of Maharashtra Gazette (Part 1)</td>
-                            <td data-label="Date">13/07/2015</td>
-                            <td data-label="View / Download">Accessible Version: <a href="NotFound.html" class="doc-view-link">View</a> <span class="doc-size">(92 KB)</span></td>
-                        </tr>
-                        <tr>
-                            <td data-label="Title">Citizen Charter - Home Department</td>
-                            <td data-label="Date">08/02/2025</td>
-                            <td data-label="View / Download">Accessible Version: <a href="NotFound.html" class="doc-view-link">View</a> <span class="doc-size">(494 KB)</span></td>
-                        </tr>
-                        <tr>
-                            <td data-label="Title">Sh. Sachin A. Patil, IPS DIG order</td>
-                            <td data-label="Date">17/12/2024</td>
-                            <td data-label="View / Download">Accessible Version: <a href="NotFound.html" class="doc-view-link">View</a> <span class="doc-size">(436 KB)</span></td>
-                        </tr>
-                        <tr>
-                            <td data-label="Title">Right to Services Act Guidelines</td>
-                            <td data-label="Date">18/07/2020</td>
-                            <td data-label="View / Download">Accessible Version: <a href="NotFound.html" class="doc-view-link">View</a> <span class="doc-size">(2 MB)</span></td>
+                            <td data-label="Profile Picture"><img src="../assets/official-2.webp" alt="Smt. Radhika Rastogi" class="profile-img skeleton-img"></td>
+                            <td data-label="Name" class="official-name">Smt. Radhika Rastogi, I. A. S.</td>
+                            <td data-label="Designation" class="designation">Additional Chief Secretary (Appeals and Security)</td>
+                            <td data-label="Email" class="contact-info">asec[dot]homeapi[at]maharashtra[dot]gov[dot]in</td>
+                            <td data-label="Phone" class="contact-info">02222821743</td>
+                            <td data-label="Room No" class="contact-info">539/209</td>
+                            <td data-label="Activity" class="activity-cell">EST-1, EST-2 (Up To Section Officer), EST-3, CASH SECTION, POL-5 A, POL-5 B, POL-6, POL-10, SPL - 4 ( Sensor Security Systems), SPL - 4 (Security Appeals), SPL-5, SPL-7, PRISON - 1, 2, 3</td>
                         </tr>
                     </tbody>
                 </table>
@@ -179,7 +165,7 @@
             </div>
             
             <div class="footer-bottom">
-                <p class="skeleton-text">&copy; 2026 THE STACKLY Services. All Rights Reserved.</p>
+                <p class="skeleton-text">&copy; 2026 The Stackly Services. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
