@@ -1,0 +1,529 @@
+/* HomePage2 Styling */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;600&display=swap');
+
+:root {
+    --clr-hmda-blue: #0066b3;
+    --clr-hmda-dark-blue: #0f2c59;
+    --clr-hmda-green: #8bc53f;
+    --clr-text-main: #333333;
+    --clr-bg-grey: #f8f9fa;
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+}
+
+body.homepage2 {
+    font-family: var(--font-body);
+    color: var(--clr-text-main);
+    background-color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* Base Top Navigation Reset (Stackly Navbar overridden if needed, but assuming standard Stackly navbar runs above) */
+
+/* ── Hero Section ── */
+.hmda-hero-section {
+    position: relative;
+    width: 100%;
+    margin-top: 2rem;
+    padding: 0 5%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hmda-hero-left {
+    flex: 1 1 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.hmda-logo-container {
+    margin-bottom: 2rem;
+}
+
+.hmda-logo {
+    max-width: 250px;
+    height: auto;
+}
+
+.hmda-ticker {
+    display: flex;
+    align-items: center;
+    font-size: 0.85rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.hmda-badge-new {
+    background-color: #e53935;
+    color: white;
+    font-weight: 700;
+    font-size: 0.65rem;
+    padding: 2px 6px;
+    border-radius: 12px;
+    margin-right: 10px;
+    white-space: nowrap;
+}
+
+.hmda-ticker-text {
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.hmda-ticker-inner {
+    display: inline-block;
+    padding-left: 100%;
+    animation: ticker 20s linear infinite;
+}
+
+@keyframes ticker {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-100%, 0, 0); }
+}
+
+.hmda-welcome-section {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.hmda-welcome-text {
+    flex: 1;
+}
+
+.hmda-welcome-text h1 {
+    font-family: var(--font-heading);
+    color: var(--clr-hmda-dark-blue);
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.hmda-welcome-text p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+.hmda-tower-poster {
+    width: 180px;
+    flex-shrink: 0;
+    text-align: center;
+}
+
+.hmda-tower-poster img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.hmda-hero-right {
+    flex: 1.5 1 500px;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    min-height: 400px;
+}
+
+.hmda-hero-banner {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.hmda-services-menu {
+    position: absolute;
+    bottom: -20px; /* Overlap down */
+    right: 5%;
+    width: 320px;
+    background-color: var(--clr-hmda-green);
+    color: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    z-index: 10;
+}
+
+.hmda-services-menu h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 1.5rem 1.5rem 1rem;
+}
+
+.hmda-services-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.hmda-services-list li a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 1.5rem;
+    color: white;
+    text-decoration: none;
+    font-size: 0.95rem;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    transition: background-color 0.3s;
+}
+
+.hmda-services-list li a:hover {
+    background-color: rgba(0,0,0,0.1);
+}
+
+/* ── Info Blocks Section ── */
+.hmda-info-section {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 4rem;
+    background-color: var(--clr-bg-grey);
+}
+
+.hmda-notifications {
+    flex: 1 1 400px;
+    background-color: var(--clr-hmda-blue);
+    color: white;
+    padding: 4rem 5% 4rem 10%;
+}
+
+.hmda-notifications h2 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+.hmda-notif-item {
+    margin-bottom: 2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding-bottom: 1.5rem;
+}
+
+.hmda-notif-item p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.hmda-notif-item .hmda-badge-new {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 4px;
+}
+
+.hmda-sublink {
+    display: block;
+    margin-top: 0.5rem;
+    color: rgba(255,255,255,0.8);
+    font-size: 0.85rem;
+}
+
+.hmda-quick-links {
+    flex: 1.5 1 500px;
+    padding: 4rem 10% 4rem 5%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.hmda-qk-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.hmda-qk-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.hmda-qk-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    background-color: var(--clr-bg-grey);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hmda-qk-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hmda-qk-icon.icon-orange { background-color: #f26522; color: white; font-size: 2rem; }
+.hmda-qk-icon.icon-blue { background-color: #0071bc; color: white; font-size: 2rem; }
+
+.hmda-qk-text h4 {
+    color: var(--clr-hmda-dark-blue);
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.hmda-qk-text a {
+    color: var(--clr-hmda-green);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* ── Our Documents ── */
+.hmda-docs-section {
+    padding: 4rem 10%;
+    background-color: white;
+}
+
+.hmda-docs-section h2 {
+    font-family: var(--font-heading);
+    color: var(--clr-hmda-dark-blue);
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+.hmda-docs-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.hmda-doc-card {
+    background: white;
+    border: 1px solid #efefef;
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+    transition: box-shadow 0.3s;
+}
+
+.hmda-doc-card:hover {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.hmda-doc-card i {
+    font-size: 1.8rem;
+    color: var(--clr-hmda-green);
+}
+
+.hmda-doc-card span {
+    font-size: 0.95rem;
+    color: var(--clr-text-main);
+    font-weight: 500;
+}
+
+/* ── Footer ── */
+.hmda-footer {
+    background-color: var(--clr-hmda-dark-blue);
+    color: white;
+    padding-top: 3rem;
+    font-family: var(--font-body);
+}
+
+.hmda-footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10% 2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.hmda-footer-links-top {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.hmda-footer-links-top a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.hmda-footer-social {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.hmda-footer-social span {
+    font-size: 0.9rem;
+}
+
+.hmda-social-icons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.hmda-social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background-color: white;
+    color: var(--clr-hmda-dark-blue);
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.hmda-footer-main {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 2rem;
+    padding: 3rem 10%;
+}
+
+.hmda-footer-col h3 {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.hmda-footer-col p {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.hmda-footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.hmda-footer-col ul li {
+    margin-bottom: 0.75rem;
+}
+
+.hmda-footer-col ul li a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.3s;
+}
+
+.hmda-footer-col ul li a:hover {
+    color: white;
+}
+
+.hmda-footer-col ul li a::before {
+    content: '›';
+    margin-right: 8px;
+    color: rgba(255,255,255,0.5);
+}
+
+.hmda-footer-bottom {
+    background-color: #0b2144;
+    padding: 1.5rem 10%;
+    text-align: center;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.5);
+}
+
+/* Floating Action Button */
+.hmda-fab-up {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 45px;
+    height: 45px;
+    background-color: var(--clr-hmda-green);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    font-size: 1.5rem;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 100;
+}
+
+/* ── Responsive ── */
+@media (max-width: 992px) {
+    .hmda-welcome-section {
+        flex-direction: column;
+    }
+    .hmda-tower-poster {
+        width: 100%;
+        max-width: 250px;
+        align-self: center;
+    }
+    .hmda-services-menu {
+        position: relative;
+        width: 100%;
+        bottom: 0;
+        right: 0;
+    }
+    .hmda-notifications, .hmda-quick-links {
+        padding: 2rem 5%;
+    }
+    .hmda-quick-links {
+        grid-template-columns: 1fr;
+    }
+    .hmda-docs-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .hmda-footer-main {
+        grid-template-columns: 1fr;
+    }
+    .hmda-footer-top {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hmda-docs-grid {
+        grid-template-columns: 1fr;
+    }
+    .hmda-hero-section {
+        padding: 0 1rem;
+    }
+}
+
+/* ── Scroll Animations (In & Out) ── */
+.anim-el {
+    opacity: 0;
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.anim-up { transform: translateY(50px); }
+.anim-left { transform: translateX(-50px); }
+.anim-right { transform: translateX(50px); }
+.anim-zoom { transform: scale(0.95); }
+
+/* When element is in viewport, reset transform and opacity */
+.anim-el.is-visible {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+}
