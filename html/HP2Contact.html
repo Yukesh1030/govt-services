@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | HMDA Metropolitan Development Authority</title>
+    <meta name="description" content="Contact the Hyderabad Metropolitan Development Authority (HMDA) for enquiries, grievances, and service requests.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/HomePage2.css">
+    <link rel="stylesheet" href="../css/HP2Pages.css">
+</head>
+<body class="homepage2 hp2-page">
+
+    <!-- HP2 Navbar -->
+    <nav class="hp2-navbar">
+        <div class="hp2-nav-inner">
+            <a href="HomePage2.html" class="hp2-brand">
+                <div class="hp2-brand-icon"><i class="ph ph-buildings"></i></div>
+                <div>
+                    <span class="hp2-brand-name">HMDA</span>
+                    <span class="hp2-brand-sub">Metro Development</span>
+                </div>
+            </a>
+            <div class="hp2-nav-links" id="hp2NavLinks">
+                <div class="hp2-nav-item hp2-has-drop">
+                    <a href="#" class="hp2-nav-link">Home <i class="ph ph-caret-down hp2-caret"></i></a>
+                    <div class="hp2-dropdown">
+                        <a href="../index.html" class="hp2-drop-link"><i class="ph ph-house"></i> Home 1 (Stackly)</a>
+                        <a href="HomePage2.html" class="hp2-drop-link"><i class="ph ph-buildings"></i> Home 2 (HMDA)</a>
+                    </div>
+                </div>
+                <a href="HP2Contact.html" class="hp2-nav-link hp2-active">Contact</a>
+                <a href="HP2PressRelease.html" class="hp2-nav-link">Press Release</a>
+                <a href="HP2Services.html" class="hp2-nav-link">Services</a>
+                <a href="Login.html" class="hp2-nav-link hp2-login-btn"><i class="ph ph-sign-in"></i> Login</a>
+            </div>
+            <button class="hp2-mobile-btn" onclick="hp2ToggleMenu()" id="hp2MobileBtn"><i class="ph ph-list"></i></button>
+        </div>
+    </nav>
+    <div class="hp2-nav-backdrop" id="hp2Backdrop" onclick="hp2ToggleMenu()"></div>
+
+    <!-- Hero -->
+    <section class="hp2p-hero anim-el anim-up">
+        <div class="hp2-container">
+            <div class="hp2p-hero-inner">
+                <span class="hp2-badge hp2-badge-teal">Get in Touch</span>
+                <h1>Contact <span class="hp2p-accent">HMDA</span></h1>
+                <p>Have a query, want to track an application, or need help with a service? Reach out to us — we're here to help every step of the way.</p>
+                <div class="hp2p-hero-chips">
+                    <span><i class="ph ph-clock"></i> Mon–Sat · 10 AM–5:30 PM</span>
+                    <span><i class="ph ph-phone"></i> 1800-599-4345 Toll-free</span>
+                    <span><i class="ph ph-envelope-simple"></i> commissioner@hmda.gov.in</span>
+                </div>
+            </div>
+        </div>
+        <div class="hp2p-hero-orbs">
+            <div class="hp2p-orb hp2p-orb1"></div>
+            <div class="hp2p-orb hp2p-orb2"></div>
+        </div>
+    </section>
+
+    <!-- Quick Contact Tiles -->
+    <section class="hp2-section" style="background:#f0fdfa;padding:3rem 0">
+        <div class="hp2-container">
+            <div class="hp2p-tiles-grid">
+                <div class="hp2p-tile anim-el anim-up" style="transition-delay:.05s">
+                    <div class="hp2p-tile-icon" style="background:rgba(13,148,136,0.12);color:#0d9488"><i class="ph ph-phone-call"></i></div>
+                    <h3>Helpline</h3>
+                    <p class="hp2p-tile-val">1800-599-4345</p>
+                    <span>Toll-free · Mon–Sat 9AM–6PM</span>
+                </div>
+                <div class="hp2p-tile anim-el anim-up" style="transition-delay:.1s">
+                    <div class="hp2p-tile-icon" style="background:rgba(2,132,199,0.12);color:#0284c7"><i class="ph ph-envelope-open"></i></div>
+                    <h3>Email</h3>
+                    <p class="hp2p-tile-val">commissioner@hmda.gov.in</p>
+                    <span>Response within 2 working days</span>
+                </div>
+                <div class="hp2p-tile anim-el anim-up" style="transition-delay:.15s">
+                    <div class="hp2p-tile-icon" style="background:rgba(124,58,237,0.12);color:#7c3aed"><i class="ph ph-map-pin"></i></div>
+                    <h3>Head Office</h3>
+                    <p class="hp2p-tile-val">Jalasoudha Building</p>
+                    <span>Erramanzil, Hyderabad – 500082</span>
+                </div>
+                <div class="hp2p-tile anim-el anim-up" style="transition-delay:.2s">
+                    <div class="hp2p-tile-icon" style="background:rgba(245,158,11,0.12);color:#d97706"><i class="ph ph-chat-circle-text"></i></div>
+                    <h3>WhatsApp</h3>
+                    <p class="hp2p-tile-val">+91 98765 43210</p>
+                    <span>Quick queries &amp; status updates</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Contact Grid -->
+    <section class="hp2-section" style="background:#fff">
+        <div class="hp2-container">
+            <div class="hp2-contact-grid" style="gap:3rem">
+                <!-- Info -->
+                <div class="anim-el anim-left">
+                    <span class="hp2-badge hp2-badge-teal">Offices</span>
+                    <h2 style="font-size:2rem;font-weight:800;color:#0f172a;margin:.5rem 0 1rem;letter-spacing:-.03em">Regional Offices</h2>
+                    <div class="hp2p-office-list">
+                        <div class="hp2p-office">
+                            <div class="hp2p-office-head"><i class="ph ph-buildings"></i> HMDA Head Office</div>
+                            <p>B-Block, 1st &amp; 2nd Floor, Jalasoudha Building, Erramanzil, Hyderabad – 500082</p>
+                            <span><i class="ph ph-phone"></i> 040-2331-8888</span>
+                        </div>
+                        <div class="hp2p-office">
+                            <div class="hp2p-office-head"><i class="ph ph-buildings"></i> Cyberabad Office</div>
+                            <p>MindSpace, Raheja IT Park Tower, Madhapur, Hyderabad – 500081</p>
+                            <span><i class="ph ph-phone"></i> 040-4567-8900</span>
+                        </div>
+                        <div class="hp2p-office">
+                            <div class="hp2p-office-head"><i class="ph ph-buildings"></i> Sangareddy Office</div>
+                            <p>Collector's Office Complex, Sangareddy – 502001</p>
+                            <span><i class="ph ph-phone"></i> 08455-224455</span>
+                        </div>
+                        <div class="hp2p-office">
+                            <div class="hp2p-office-head"><i class="ph ph-buildings"></i> Maheshwaram Office</div>
+                            <p>Revenue Complex, Maheshwaram – 509210</p>
+                            <span><i class="ph ph-phone"></i> 040-2444-5566</span>
+                        </div>
+                    </div>
+
+                    <!-- Social -->
+                    <div class="hp2p-social-strip">
+                        <span>Follow HMDA</span>
+                        <div class="hp2p-socials">
+                            <a href="NotFound.html" class="hp2p-soc"><i class="ph ph-facebook-logo"></i></a>
+                            <a href="NotFound.html" class="hp2p-soc"><i class="ph ph-twitter-logo"></i></a>
+                            <a href="NotFound.html" class="hp2p-soc"><i class="ph ph-youtube-logo"></i></a>
+                            <a href="NotFound.html" class="hp2p-soc"><i class="ph ph-instagram-logo"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <div class="anim-el anim-right">
+                    <div class="hp2-contact-form-wrap">
+                        <form class="hp2-contact-form" onsubmit="hp2FormSend(event)">
+                            <h3>Send a Message</h3>
+                            <div class="hp2-form-row">
+                                <div class="hp2-form-field">
+                                    <label>Full Name</label>
+                                    <input type="text" placeholder="Your full name" required>
+                                </div>
+                                <div class="hp2-form-field">
+                                    <label>Mobile Number</label>
+                                    <input type="tel" placeholder="+91 XXXXXXXXXX" required>
+                                </div>
+                            </div>
+                            <div class="hp2-form-field">
+                                <label>Email Address</label>
+                                <input type="email" placeholder="your@email.com" required>
+                            </div>
+                            <div class="hp2-form-field">
+                                <label>Department</label>
+                                <select required>
+                                    <option value="">Select department</option>
+                                    <option>Planning &amp; Engineering</option>
+                                    <option>Building Permissions (TG-bPASS)</option>
+                                    <option>TDR &amp; LRS</option>
+                                    <option>Urban Forestry</option>
+                                    <option>Estates &amp; Land</option>
+                                    <option>ORR / HGCL</option>
+                                    <option>General Enquiry</option>
+                                </select>
+                            </div>
+                            <div class="hp2-form-field">
+                                <label>Subject</label>
+                                <input type="text" placeholder="Brief subject of your query" required>
+                            </div>
+                            <div class="hp2-form-field">
+                                <label>Message</label>
+                                <textarea rows="5" placeholder="Describe your query in detail..." required></textarea>
+                            </div>
+                            <button type="submit" class="hp2-form-btn" id="hp2SendBtn">
+                                <i class="ph ph-paper-plane-tilt"></i> Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map placeholder -->
+    <section class="hp2p-map-section anim-el anim-up">
+        <div class="hp2-container">
+            <div class="hp2-sec-head" style="margin-bottom:2rem">
+                <span class="hp2-badge hp2-badge-teal">Location</span>
+                <h2 style="font-size:1.75rem;color:#0f172a;font-weight:800;margin:.5rem 0">Find Our Office</h2>
+            </div>
+            <div class="hp2p-map-box">
+                <i class="ph ph-map-pin-area"></i>
+                <p>Jalasoudha Building, Erramanzil, Hyderabad – 500082</p>
+                <a href="NotFound.html" class="hp2-view-all-btn" style="margin-top:1rem">Open in Google Maps <i class="ph ph-arrow-up-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer from HomePage2 -->
+    <footer class="footer-dark anim-el anim-up" style="transition-delay:0.1s;margin-top:0">
+        <div class="container">
+            <div class="footer-grid-main">
+                <div class="footer-brand"><div class="brand-logo">THE STACKLY / HMDA</div><p>Hyderabad Metropolitan Development Authority — serving citizens across 10,472 Sq.km of the Metropolitan Region.</p></div>
+                <div class="footer-links"><h4 class="footer-heading">Quick Links</h4><ul><li><a href="HomePage2.html">HMDA Home</a></li><li><a href="HP2Services.html">Services</a></li><li><a href="HP2PressRelease.html">Press Releases</a></li><li><a href="HP2Contact.html">Contact</a></li><li><a href="Login.html">Login</a></li></ul></div>
+                <div class="footer-links"><h4 class="footer-heading">Resources</h4><ul><li><a href="NotFound.html">HMDA Act Book</a></li><li><a href="NotFound.html">Master Plan Maps</a></li><li><a href="NotFound.html">RTI Guidelines</a></li><li><a href="NotFound.html">Tenders</a></li><li><a href="NotFound.html">FAQs</a></li></ul></div>
+                <div class="footer-contact"><ul><li><i class="ph ph-phone"></i><span>1800-599-4345</span></li><li><i class="ph ph-envelope-simple"></i><span>commissioner@hmda.gov.in</span></li><li><i class="ph ph-clock"></i><span>Mon–Sat: 10AM–5:30PM</span></li></ul></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2026 HMDA — Hyderabad Metropolitan Development Authority. All rights reserved.</p></div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar
+        function hp2ToggleMenu() {
+            const links = document.getElementById('hp2NavLinks');
+            const backdrop = document.getElementById('hp2Backdrop');
+            const btn = document.getElementById('hp2MobileBtn');
+            const open = links.classList.toggle('open');
+            backdrop.classList.toggle('open', open);
+            btn.querySelector('i').className = open ? 'ph ph-x' : 'ph ph-list';
+        }
+        // Animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const obs = new IntersectionObserver((entries) => {
+                entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('is-visible'); });
+            }, { threshold: 0.12 });
+            document.querySelectorAll('.anim-el').forEach(el => obs.observe(el));
+        });
+        // Form
+        function hp2FormSend(e) {
+            e.preventDefault();
+            const btn = document.getElementById('hp2SendBtn');
+            const orig = btn.innerHTML;
+            btn.innerHTML = '<i class="ph ph-check-circle"></i> Message Sent!';
+            btn.style.background = '#059669';
+            e.target.reset();
+            setTimeout(() => { btn.innerHTML = orig; btn.style.background = ''; }, 3500);
+        }
+    </script>
+</body>
+</html>

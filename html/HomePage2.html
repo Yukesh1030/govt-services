@@ -21,58 +21,49 @@
 </head>
 <body class="homepage2">
 
-    <!-- Main Stackly Navbar -->
-    <nav class="navbar">
-        <div class="container nav-container">
-            <div class="nav-links">
-                <a href="../index.html" class="nav-brand skeleton-text" style="font-weight: 800; font-size: 1.25rem; color: #ffffff; letter-spacing: 1px; margin-right: 1.5rem; margin-left: -1rem; text-shadow: 0 2px 4px rgba(0,0,0,0.2); text-decoration: none;">
-                    <span style="color: var(--clr-gold);">Stackly</span>
-                </a>
+    <!-- HP2 Custom Navbar -->
+    <nav class="hp2-navbar">
+        <div class="hp2-nav-inner">
+            <!-- Brand -->
+            <a href="HomePage2.html" class="hp2-brand">
+                <div class="hp2-brand-icon"><i class="ph ph-buildings"></i></div>
+                <div>
+                    <span class="hp2-brand-name">HMDA</span>
+                    <span class="hp2-brand-sub">Metro Development</span>
+                </div>
+            </a>
 
-                <div class="nav-item">
-                    <a href="../index.html" class="nav-link skeleton-text">HOME</a>
-                    <div class="dropdown-menu">
-                        <a href="HomePage2.html" class="dropdown-link">Home page 2</a>
+            <!-- Links -->
+            <div class="hp2-nav-links" id="hp2NavLinks">
+                <!-- Home1 with hover dropdown -->
+                <div class="hp2-nav-item hp2-has-drop">
+                    <a href="#" class="hp2-nav-link hp2-active">
+                        Home <i class="ph ph-caret-down hp2-caret"></i>
+                    </a>
+                    <div class="hp2-dropdown">
+                        <a href="../index.html" class="hp2-drop-link">
+                            <i class="ph ph-house"></i> Home 1 (Stackly)
+                        </a>
+                        <a href="HomePage2.html" class="hp2-drop-link">
+                            <i class="ph ph-buildings"></i> Home 2 (HMDA)
+                        </a>
                     </div>
                 </div>
 
-                <div class="nav-item">
-                    <a href="About.html" class="nav-link skeleton-text">ABOUT US</a>
-                </div>
-
-                <!-- Dropdown: Media -->
-                <div class="nav-item">
-                    <a href="Media.html" class="nav-link skeleton-text">MEDIA</a>
-                </div>
-
-                <div class="nav-item">
-                    <a href="Directory.html" class="nav-link skeleton-text">DIRECTORY</a>
-                </div>
-
-                <div class="nav-item">
-                    <a href="Documents.html" class="nav-link skeleton-text">DOCUMENTS <i class="ph ph-caret-down"></i></a>
-                    <!-- Assuming standard dropdown, just a stub for consistency -->
-                </div>
-
-                <div class="nav-item">
-                    <a href="NotFound.html" class="nav-link skeleton-text">NOTICES <i class="ph ph-caret-down"></i></a>
-                </div>
-                
-                <div class="nav-item">
-                    <a href="NotFound.html" class="nav-link skeleton-text">SCHEMES/PROGRAMMES <i class="ph ph-caret-down"></i></a>
-                </div>
-
-                <div class="nav-item">
-                    <a href="Dashboard.html" class="nav-link skeleton-text">DASHBOARD</a>
-                </div>
-
-                <div class="nav-item">
-                    <a href="Login.html" class="nav-link skeleton-text">LOGIN</a>
-                </div>
+                <a href="#hp2-contact" class="hp2-nav-link">Contact</a>
+                <a href="Media.html" class="hp2-nav-link">Press Release</a>
+                <a href="Directory.html" class="hp2-nav-link">Services</a>
+                <a href="Login.html" class="hp2-nav-link hp2-login-btn">
+                    <i class="ph ph-sign-in"></i> Login
+                </a>
             </div>
+
+            <button class="hp2-mobile-btn" onclick="hp2ToggleMenu()" id="hp2MobileBtn">
+                <i class="ph ph-list"></i>
+            </button>
         </div>
     </nav>
-    <div class="nav-backdrop"></div>
+    <div class="hp2-nav-backdrop" id="hp2Backdrop" onclick="hp2ToggleMenu()"></div>
 
     <!-- HomePage2 Specific Layout Content -->
     <main>
@@ -235,98 +226,457 @@
         </section>
     </main>
 
-    <!-- Footer Section -->
-    <footer class="hmda-footer">
-        <div class="hmda-footer-top anim-el anim-left">
-            <div class="hmda-footer-links-top">
-                <a href="#">About Us</a>
-                <a href="#">Projects</a>
-                <a href="#">Media</a>
-                <a href="#">Career</a>
+    <!-- ====== HP2 SECTION 1: Key Stats Dashboard ====== -->
+    <section class="hp2-section hp2-stats-section">
+        <div class="hp2-container">
+            <div class="hp2-sec-head anim-el anim-up">
+                <span class="hp2-badge">By the Numbers</span>
+                <h2>Hyderabad Metro Region at a Glance</h2>
+                <p>Key metrics driving urban development and citizen welfare across the metropolitan area.</p>
             </div>
-            <div class="hmda-footer-social">
-                <span>Connect With Us</span>
-                <div class="hmda-social-icons">
-                    <a href="#"><i class="ph-fill ph-facebook-logo"></i></a>
-                    <a href="#"><i class="ph-fill ph-twitter-logo"></i></a>
-                    <a href="#"><i class="ph-fill ph-linkedin-logo"></i></a>
-                    <a href="#"><i class="ph-fill ph-youtube-logo"></i></a>
+            <div class="hp2-stats-grid">
+                <div class="hp2-stat-card anim-el anim-up" style="transition-delay:0.1s">
+                    <div class="hp2-stat-icon"><i class="ph ph-map-trifold"></i></div>
+                    <span class="hp2-stat-num" data-count="10472">0</span>
+                    <span class="hp2-stat-unit">Sq.km</span>
+                    <span class="hp2-stat-lbl">Total HMR Area</span>
+                </div>
+                <div class="hp2-stat-card anim-el anim-up" style="transition-delay:0.2s">
+                    <div class="hp2-stat-icon"><i class="ph ph-buildings"></i></div>
+                    <span class="hp2-stat-num" data-count="1355">0</span>
+                    <span class="hp2-stat-unit">+</span>
+                    <span class="hp2-stat-lbl">Revenue Villages</span>
+                </div>
+                <div class="hp2-stat-card anim-el anim-up" style="transition-delay:0.3s">
+                    <div class="hp2-stat-icon"><i class="ph ph-users-three"></i></div>
+                    <span class="hp2-stat-num" data-count="104">0</span>
+                    <span class="hp2-stat-unit"></span>
+                    <span class="hp2-stat-lbl">Mandals</span>
+                </div>
+                <div class="hp2-stat-card anim-el anim-up" style="transition-delay:0.4s">
+                    <div class="hp2-stat-icon"><i class="ph ph-road-horizon"></i></div>
+                    <span class="hp2-stat-num" data-count="354">0</span>
+                    <span class="hp2-stat-unit">km</span>
+                    <span class="hp2-stat-lbl">Regional Ring Road</span>
+                </div>
+                <div class="hp2-stat-card anim-el anim-up" style="transition-delay:0.5s">
+                    <div class="hp2-stat-icon"><i class="ph ph-tree-evergreen"></i></div>
+                    <span class="hp2-stat-num" data-count="11">0</span>
+                    <span class="hp2-stat-unit"></span>
+                    <span class="hp2-stat-lbl">Districts Covered</span>
                 </div>
             </div>
         </div>
+    </section>
 
-        <div class="hmda-footer-main anim-el anim-up">
-            <div class="hmda-footer-col">
-                <h3>Hyderabad Metropolitan Development Authority</h3>
-                <p>Swarna Jayanti Complex, Sanjeeva Reddy Nagar, Srinivasa<br>
-                Nagar, Ameerpet, Hyderabad – 500038. Telangana, India.</p>
-                <p>Email: applicantsupport@hmda.gov.in Visiting Hours : 3PM to<br>
-                5PM HMDA LRS Help Desk: 27018115.</p>
+    <!-- ====== HP2 SECTION 2: Ongoing Projects ====== -->
+    <section class="hp2-section hp2-projects-section">
+        <div class="hp2-container">
+            <div class="hp2-sec-head anim-el anim-up">
+                <span class="hp2-badge hp2-badge-teal">Infrastructure</span>
+                <h2>Ongoing Development Projects</h2>
+                <p>Major urban infrastructure initiatives transforming the Hyderabad Metropolitan Region.</p>
             </div>
-            <div class="hmda-footer-col">
-                <h3>Important Links</h3>
-                <ul>
-                    <li><a href="#">About HMDA</a></li>
-                    <li><a href="#">Hyderabad History</a></li>
-                    <li><a href="#">FAQ's</a></li>
-                    <li><a href="#">Awards</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">HMDA Projects</a></li>
-                    <li><a href="#">Planning</a></li>
-                </ul>
-            </div>
-            <div class="hmda-footer-col">
-                <h3>Useful Links</h3>
-                <ul>
-                    <li><a href="#">RTI Act Info</a></li>
-                    <li><a href="#">HMDA Service Regulation</a></li>
-                    <li><a href="#">Tenders</a></li>
-                    <li><a href="#">Accounts</a></li>
-                    <li><a href="#">Feedback</a></li>
-                    <li><a href="#">Ask a Question</a></li>
-                </ul>
+            <div class="hp2-projects-grid">
+                <div class="hp2-proj-card anim-el anim-up" style="transition-delay:0.1s">
+                    <div class="hp2-proj-thumb" style="background:linear-gradient(135deg,#0d9488,#0f766e)">
+                        <i class="ph ph-road-horizon"></i>
+                    </div>
+                    <div class="hp2-proj-body">
+                        <span class="hp2-proj-tag hp2-tag-active">Active</span>
+                        <h3>Regional Ring Road (RRR)</h3>
+                        <p>354 km expressway connecting all major National &amp; State Highways around Hyderabad city.</p>
+                        <div class="hp2-proj-progress">
+                            <div class="hp2-prog-bar" style="width:65%"></div>
+                        </div>
+                        <span class="hp2-prog-label">65% Complete</span>
+                    </div>
+                </div>
+                <div class="hp2-proj-card anim-el anim-up" style="transition-delay:0.2s">
+                    <div class="hp2-proj-thumb" style="background:linear-gradient(135deg,#0369a1,#0284c7)">
+                        <i class="ph ph-tree-evergreen"></i>
+                    </div>
+                    <div class="hp2-proj-body">
+                        <span class="hp2-proj-tag hp2-tag-active">Active</span>
+                        <h3>Urban Forestry Initiative</h3>
+                        <p>Planting 10 lakh trees across the metropolitan region to restore ecological balance.</p>
+                        <div class="hp2-proj-progress">
+                            <div class="hp2-prog-bar" style="width:80%"></div>
+                        </div>
+                        <span class="hp2-prog-label">80% Complete</span>
+                    </div>
+                </div>
+                <div class="hp2-proj-card anim-el anim-up" style="transition-delay:0.3s">
+                    <div class="hp2-proj-thumb" style="background:linear-gradient(135deg,#7c3aed,#6d28d9)">
+                        <i class="ph ph-house-line"></i>
+                    </div>
+                    <div class="hp2-proj-body">
+                        <span class="hp2-proj-tag hp2-tag-planned">Planning</span>
+                        <h3>Affordable Housing Scheme</h3>
+                        <p>2BHK housing initiative under Land Pooling Scheme for economically weaker sections.</p>
+                        <div class="hp2-proj-progress">
+                            <div class="hp2-prog-bar" style="width:35%"></div>
+                        </div>
+                        <span class="hp2-prog-label">35% Complete</span>
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
 
-        <div class="hmda-footer-bottom">
-            <p>Copyright © 2025. All rights reserved by HMDA, Telangana.</p>
+    <!-- ====== HP2 SECTION 3: Urban Services Grid ====== -->
+    <section class="hp2-section hp2-services-section">
+        <div class="hp2-container">
+            <div class="hp2-sec-head hp2-sec-head-light anim-el anim-up">
+                <span class="hp2-badge hp2-badge-white">e-Services</span>
+                <h2 style="color:#fff">Digital Urban Services</h2>
+                <p style="color:#94a3b8">Apply, track, and manage all HMDA services online — 24/7.</p>
+            </div>
+            <div class="hp2-services-flex">
+                <a href="NotFound.html" class="hp2-svc-card anim-el anim-up" style="transition-delay:0.05s">
+                    <div class="hp2-svc-icon" style="background:rgba(13,148,136,0.2);color:#2dd4bf"><i class="ph ph-buildings"></i></div>
+                    <h3>Building Permission</h3>
+                    <p>Apply for new constructions via TG-bPASS portal</p>
+                    <span class="hp2-svc-arrow"><i class="ph ph-arrow-up-right"></i></span>
+                </a>
+                <a href="NotFound.html" class="hp2-svc-card anim-el anim-up" style="transition-delay:0.10s">
+                    <div class="hp2-svc-icon" style="background:rgba(2,132,199,0.2);color:#38bdf8"><i class="ph ph-file-deed"></i></div>
+                    <h3>TDR Certificate</h3>
+                    <p>Digitise and apply for Transferable Development Rights</p>
+                    <span class="hp2-svc-arrow"><i class="ph ph-arrow-up-right"></i></span>
+                </a>
+                <a href="NotFound.html" class="hp2-svc-card anim-el anim-up" style="transition-delay:0.15s">
+                    <div class="hp2-svc-icon" style="background:rgba(124,58,237,0.2);color:#a78bfa"><i class="ph ph-map-pin-plus"></i></div>
+                    <h3>Layout Approval</h3>
+                    <p>Group housing &amp; layout permissions online only</p>
+                    <span class="hp2-svc-arrow"><i class="ph ph-arrow-up-right"></i></span>
+                </a>
+                <a href="NotFound.html" class="hp2-svc-card anim-el anim-up" style="transition-delay:0.20s">
+                    <div class="hp2-svc-icon" style="background:rgba(245,158,11,0.2);color:#fbbf24"><i class="ph ph-calendar-check"></i></div>
+                    <h3>Venue Booking</h3>
+                    <p>Book Necklace Road, People's Plaza and Party Zone</p>
+                    <span class="hp2-svc-arrow"><i class="ph ph-arrow-up-right"></i></span>
+                </a>
+                <a href="NotFound.html" class="hp2-svc-card anim-el anim-up" style="transition-delay:0.25s">
+                    <div class="hp2-svc-icon" style="background:rgba(239,68,68,0.2);color:#f87171"><i class="ph ph-gavel"></i></div>
+                    <h3>Online Auctions</h3>
+                    <p>Participate in HMDA property &amp; estate auctions</p>
+                    <span class="hp2-svc-arrow"><i class="ph ph-arrow-up-right"></i></span>
+                </a>
+                <a href="NotFound.html" class="hp2-svc-card anim-el anim-up" style="transition-delay:0.30s">
+                    <div class="hp2-svc-icon" style="background:rgba(16,185,129,0.2);color:#34d399"><i class="ph ph-certificate"></i></div>
+                    <h3>OC / Completion</h3>
+                    <p>Apply for Occupancy &amp; Completion Certificates</p>
+                    <span class="hp2-svc-arrow"><i class="ph ph-arrow-up-right"></i></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== HP2 SECTION 4: Latest Press Releases ====== -->
+    <section class="hp2-section hp2-press-section">
+        <div class="hp2-container">
+            <div class="hp2-sec-head anim-el anim-up">
+                <span class="hp2-badge hp2-badge-teal">Latest Updates</span>
+                <h2>Press Releases &amp; Announcements</h2>
+                <p>Stay updated with the latest government orders, notifications, and press releases.</p>
+            </div>
+            <div class="hp2-press-grid">
+                <article class="hp2-press-card hp2-press-featured anim-el anim-left">
+                    <div class="hp2-press-cat">Official G.O.</div>
+                    <h3>Extension of HMR Boundaries to Regional Ring Road</h3>
+                    <p>G.O. Ms. No. 68 MA &amp; UD dt.:12-03-2025 extends HMR up to the RRR, covering 1355 Revenue Villages across 104 Mandals in 11 Districts with 10,472 Sq.km area.</p>
+                    <div class="hp2-press-meta">
+                        <span><i class="ph ph-calendar-blank"></i> March 12, 2025</span>
+                        <a href="NotFound.html" class="hp2-press-read">Read More <i class="ph ph-arrow-right"></i></a>
+                    </div>
+                </article>
+                <div class="hp2-press-list">
+                    <article class="hp2-press-item anim-el anim-right" style="transition-delay:0.1s">
+                        <span class="hp2-press-dot hp2-dot-red"></span>
+                        <div>
+                            <h4>TDR Platform Digitisation Complete</h4>
+                            <span>All TDRs now processed exclusively online</span>
+                            <div class="hp2-press-meta"><span><i class="ph ph-calendar-blank"></i> Feb 28, 2025</span></div>
+                        </div>
+                    </article>
+                    <article class="hp2-press-item anim-el anim-right" style="transition-delay:0.2s">
+                        <span class="hp2-press-dot hp2-dot-teal"></span>
+                        <div>
+                            <h4>TG-bPASS Mandatory for New Building Permissions</h4>
+                            <span>All new applications from April 24, 2024 via TG-bPASS</span>
+                            <div class="hp2-press-meta"><span><i class="ph ph-calendar-blank"></i> Apr 20, 2024</span></div>
+                        </div>
+                    </article>
+                    <article class="hp2-press-item anim-el anim-right" style="transition-delay:0.3s">
+                        <span class="hp2-press-dot hp2-dot-blue"></span>
+                        <div>
+                            <h4>Online Venue Booking for Film Shoots Now Live</h4>
+                            <span>Necklace Road, People's Plaza &amp; Party Zone</span>
+                            <div class="hp2-press-meta"><span><i class="ph ph-calendar-blank"></i> Jan 10, 2025</span></div>
+                        </div>
+                    </article>
+                    <article class="hp2-press-item anim-el anim-right" style="transition-delay:0.4s">
+                        <span class="hp2-press-dot hp2-dot-orange"></span>
+                        <div>
+                            <h4>BPP Venue Booking Portal Launched</h4>
+                            <span>Online portal for Necklace Road &amp; associated venues</span>
+                            <div class="hp2-press-meta"><span><i class="ph ph-calendar-blank"></i> Dec 5, 2024</span></div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <div style="text-align:center;margin-top:2rem">
+                <a href="Media.html" class="hp2-view-all-btn">View All Press Releases <i class="ph ph-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== HP2 SECTION 5: Contact Us ====== -->
+    <section class="hp2-section hp2-contact-section" id="hp2-contact">
+        <div class="hp2-container">
+            <div class="hp2-contact-grid">
+                <!-- Left: Contact Info -->
+                <div class="hp2-contact-info anim-el anim-left">
+                    <span class="hp2-badge hp2-badge-teal">Reach Us</span>
+                    <h2>Contact HMDA</h2>
+                    <p>Have a query about your application, project, or permit? Our offices are open Monday through Saturday.</p>
+                    <div class="hp2-contact-items">
+                        <div class="hp2-ci">
+                            <div class="hp2-ci-icon"><i class="ph ph-map-pin"></i></div>
+                            <div>
+                                <strong>HMDA Head Office</strong>
+                                <span>B-Block, 1st &amp; 2nd Floor, Jalasoudha Building,<br>Erramanzil, Hyderabad – 500082</span>
+                            </div>
+                        </div>
+                        <div class="hp2-ci">
+                            <div class="hp2-ci-icon"><i class="ph ph-phone"></i></div>
+                            <div>
+                                <strong>Helpline</strong>
+                                <span>1800-599-4345 (Toll-free, Mon–Sat, 9AM–6PM)</span>
+                            </div>
+                        </div>
+                        <div class="hp2-ci">
+                            <div class="hp2-ci-icon"><i class="ph ph-envelope-simple"></i></div>
+                            <div>
+                                <strong>Email</strong>
+                                <span>commissioner@hmda.gov.in</span>
+                            </div>
+                        </div>
+                        <div class="hp2-ci">
+                            <div class="hp2-ci-icon"><i class="ph ph-clock"></i></div>
+                            <div>
+                                <strong>Office Hours</strong>
+                                <span>Mon – Sat: 10:00 AM – 5:30 PM | Sun: Closed</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Contact Form -->
+                <div class="hp2-contact-form-wrap anim-el anim-right">
+                    <form class="hp2-contact-form" onsubmit="hp2FormSend(event)">
+                        <h3>Send a Message</h3>
+                        <div class="hp2-form-row">
+                            <div class="hp2-form-field">
+                                <label>Full Name</label>
+                                <input type="text" placeholder="Your full name" required>
+                            </div>
+                            <div class="hp2-form-field">
+                                <label>Mobile Number</label>
+                                <input type="tel" placeholder="+91 XXXXXXXXXX" required>
+                            </div>
+                        </div>
+                        <div class="hp2-form-field">
+                            <label>Email Address</label>
+                            <input type="email" placeholder="your@email.com" required>
+                        </div>
+                        <div class="hp2-form-field">
+                            <label>Subject</label>
+                            <select required>
+                                <option value="">Select subject</option>
+                                <option>Building Permission Query</option>
+                                <option>TDR Certificate</option>
+                                <option>Venue Booking</option>
+                                <option>Layout Approval</option>
+                                <option>General Enquiry</option>
+                            </select>
+                        </div>
+                        <div class="hp2-form-field">
+                            <label>Message</label>
+                            <textarea rows="4" placeholder="Describe your query in detail..." required></textarea>
+                        </div>
+                        <button type="submit" class="hp2-form-btn" id="hp2SendBtn">
+                            <i class="ph ph-paper-plane-tilt"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer-dark anim-el anim-up" style="transition-delay: 0.1s; margin-top: 4rem;">
+        <div class="container">
+            <!-- Main Footer Links -->
+            <div class="footer-grid-main">
+                <!-- Col 1: Brand & Socials -->
+                <div class="footer-brand anim-el anim-left" style="transition-delay: 0.2s;">
+                    <div class="brand-logo">THE STACKLY</div>
+                    <p>Government Portal connects citizens with essential public services. Find policies, apply for schemes, and participate in digital governance with us.</p>
+                    <div class="footer-socials">
+                        <a href="NotFound.html" class="footer-social-icon"><i class="ph ph-facebook-logo"></i></a>
+                        <a href="NotFound.html" class="footer-social-icon"><i class="ph ph-twitter-logo"></i></a>
+                        <a href="NotFound.html" class="footer-social-icon"><i class="ph ph-linkedin-logo"></i></a>
+                        <a href="NotFound.html" class="footer-social-icon"><i class="ph ph-instagram-logo"></i></a>
+                        <a href="NotFound.html" class="footer-social-icon"><i class="ph ph-youtube-logo"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Col 2: Quick Links -->
+                <div class="footer-links anim-el anim-up" style="transition-delay: 0.3s;">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="Directory.html">Departments</a></li>
+                        <li><a href="Documents.html">Resolutions</a></li>
+                        <li><a href="Dashboard.html">Services Portal</a></li>
+                        <li><a href="About.html">About Us</a></li>
+                        <li><a href="Login.html">Citizen Login</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Col 3: Resource Center -->
+                <div class="footer-links anim-el anim-up" style="transition-delay: 0.4s;">
+                    <h4 class="footer-heading">Resources</h4>
+                    <ul>
+                        <li><a href="Media.html">Press Releases</a></li>
+                        <li><a href="NotFound.html">Acts & Rules</a></li>
+                        <li><a href="NotFound.html">Tenders</a></li>
+                        <li><a href="NotFound.html">RTI Guidelines</a></li>
+                        <li><a href="NotFound.html">Help Center</a></li>
+                        <li><a href="NotFound.html">FAQs</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Col 4: Contact & Stats Box -->
+                <div class="footer-contact anim-el anim-right" style="transition-delay: 0.5s;">
+                    <ul>
+                        <li>
+                            <i class="ph ph-map-pin"></i>
+                            <span>Secretariat Building, Fort St. George,<br>Tamil Nadu - 600009</span>
+                        </li>
+                        <li>
+                            <i class="ph ph-phone"></i>
+                            <span>1800-425-1333</span>
+                        </li>
+                        <li>
+                            <i class="ph ph-envelope-simple"></i>
+                            <span>support@tn.gov.in</span>
+                        </li>
+                        <li>
+                            <i class="ph ph-clock"></i>
+                            <span>Mon - Sat: 10:00 AM - 6:00 PM<br>Sun: Closed</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="footer-stats-box">
+                        <h5>250+ Services Online</h5>
+                        <p class="stats-highlight">Get instant certificates</p>
+                        <p class="stats-sub">New services added monthly</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Newsletter Bar -->
+            <div class="footer-newsletter anim-el anim-up" style="transition-delay: 0.6s;">
+                <div class="newsletter-text">
+                    <h4>Get Government Updates</h4>
+                    <p>Subscribe to receive daily news and service alerts</p>
+                </div>
+                <form class="newsletter-form" onsubmit="event.preventDefault();">
+                    <i class="ph ph-envelope-simple" style="padding-left: 1rem; color: #64748b; font-size: 1.25rem;"></i>
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit">
+                        Subscribe <i class="ph ph-arrow-right"></i>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p>&copy; 2026 The Stackly e-Governance Prototype. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
     <!-- Floating UI elements -->
     <a href="#" class="hmda-fab-up"><i class="ph ph-caret-up"></i></a>
 
-    <!-- Main scripts for navbar logic -->
     <script src="../javascripts/main.js"></script>
-    
-    <!-- IntersectionObserver Animations Script -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Function to handle IntersectionObserver logic
-            // In and Out animations
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.15 // Trigger when 15% is visible
-            };
 
+    <script>
+        // ── IntersectionObserver (scroll animations) ──
+        document.addEventListener('DOMContentLoaded', () => {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
-                    // Add 'is-visible' class when in view, remove when out
-                    // This creates the "in animations and out animations" 
                     if (entry.isIntersecting) {
                         entry.target.classList.add('is-visible');
                     } else {
-                        // Remove class to animate OUT
                         entry.target.classList.remove('is-visible');
                     }
                 });
-            }, observerOptions);
+            }, { threshold: 0.15 });
 
-            // Select all elements with the 'anim-el' class
-            const animatedElements = document.querySelectorAll('.anim-el');
-            animatedElements.forEach(el => observer.observe(el));
+            document.querySelectorAll('.anim-el').forEach(el => observer.observe(el));
         });
+
+        // ── HP2 Mobile Menu ──
+        function hp2ToggleMenu() {
+            const links = document.getElementById('hp2NavLinks');
+            const backdrop = document.getElementById('hp2Backdrop');
+            const btn = document.getElementById('hp2MobileBtn');
+            const open = links.classList.toggle('open');
+            backdrop.classList.toggle('open', open);
+            btn.querySelector('i').className = open ? 'ph ph-x' : 'ph ph-list';
+        }
+
+        // ── HP2 Stat Counters ──
+        (function() {
+            function animCount(el) {
+                const target = parseInt(el.dataset.count, 10);
+                const dur = 1800;
+                const start = performance.now();
+                (function step(now) {
+                    const p = Math.min((now - start) / dur, 1);
+                    const ease = 1 - Math.pow(1 - p, 3);
+                    el.textContent = Math.floor(ease * target).toLocaleString('en-IN');
+                    if (p < 1) requestAnimationFrame(step);
+                    else el.textContent = target.toLocaleString('en-IN');
+                })(start);
+            }
+            const cObserver = new IntersectionObserver((entries) => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) {
+                        animCount(e.target);
+                        cObserver.unobserve(e.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            document.querySelectorAll('.hp2-stat-num[data-count]').forEach(el => cObserver.observe(el));
+        })();
+
+        // ── HP2 Contact Form ──
+        function hp2FormSend(e) {
+            e.preventDefault();
+            const btn = document.getElementById('hp2SendBtn');
+            const orig = btn.innerHTML;
+            btn.innerHTML = '<i class="ph ph-check-circle"></i> Message Sent!';
+            btn.style.background = '#059669';
+            e.target.reset();
+            setTimeout(() => { btn.innerHTML = orig; btn.style.background = ''; }, 3500);
+        }
     </script>
+
 </body>
 </html>

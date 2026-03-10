@@ -235,3 +235,640 @@
         height: 140px;
     }
 }
+
+/* =============================================
+   DS (Directory Sections) New Section Styles
+   ============================================= */
+
+/* ── Shared ── */
+.ds-section {
+    padding: 5rem 0;
+}
+
+.ds-section-head {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.ds-section-head h2 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: #0f172a;
+    margin: 0.75rem 0 0.5rem;
+}
+
+.ds-section-head p {
+    color: #64748b;
+    font-size: 1.05rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.ds-pill {
+    display: inline-block;
+    padding: 0.3rem 1rem;
+    background: #4a3600;
+    color: #fde047;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-radius: 999px;
+}
+
+.ds-pill-alt {
+    background: #ede9fe;
+    color: #5b21b6;
+}
+
+.ds-pill-white {
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+/* ── Animation System ── */
+.ds-anim {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
+    transition-delay: var(--delay, 0s);
+}
+
+.ds-anim[data-anim="zoom-in"] {
+    transform: scale(0.92);
+}
+
+.ds-anim[data-anim="slide-left"] {
+    transform: translateX(-40px);
+}
+
+.ds-anim.ds-visible {
+    opacity: 1;
+    transform: translate(0) scale(1);
+}
+
+/* ── Section 1: Counters ── */
+.ds-counters-section {
+    background: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.ds-counters-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.ds-counter-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 1rem;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: box-shadow 0.3s, transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.ds-counter-card:hover {
+    box-shadow: 0 12px 30px -8px rgba(0,0,0,0.12);
+    transform: translateY(-5px);
+}
+
+.ds-counter-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+}
+
+.ds-counter-num {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: -0.04em;
+    line-height: 1;
+}
+
+.ds-counter-label {
+    font-size: 0.9rem;
+    color: #64748b;
+    font-weight: 500;
+}
+
+/* ── Section 2: Apply Online ── */
+.ds-apply-section {
+    background: #fff;
+}
+
+.ds-apply-tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.ds-tab-btn {
+    padding: 0.6rem 1.5rem;
+    border: 1px solid #e2e8f0;
+    background: #f8fafc;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    color: #475569;
+    transition: all 0.2s ease;
+    font-family: 'Inter', sans-serif;
+}
+
+.ds-tab-btn:hover, .ds-tab-btn.active {
+    background: #4a3600;
+    color: #fde047;
+    border-color: #4a3600;
+}
+
+.ds-apply-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+}
+
+.ds-apply-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 2rem 1rem;
+    background: #fff;
+    border: 2px solid #e2e8f0;
+    border-radius: 1rem;
+    text-align: center;
+    text-decoration: none;
+    color: #0f172a;
+    transition: all 0.3s ease;
+}
+
+.ds-apply-card i {
+    font-size: 2.25rem;
+    color: #5d4037;
+    transition: transform 0.3s;
+}
+
+.ds-apply-card:hover {
+    border-color: #5d4037;
+    background: #fdf5e4;
+    box-shadow: 0 8px 24px -6px rgba(74,54,0,0.15);
+    transform: translateY(-4px);
+}
+
+.ds-apply-card:hover i {
+    transform: scale(1.15);
+}
+
+.ds-apply-card span {
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.ds-apply-card small {
+    font-size: 0.8rem;
+    color: #64748b;
+    font-weight: 500;
+    background: #f1f5f9;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+}
+
+/* ── Section 3: Track Status ── */
+.ds-track-section {
+    background: linear-gradient(135deg, #1a1e2d 0%, #2d241e 100%);
+    color: #fff;
+}
+
+.ds-track-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.ds-track-info h2 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: #fff;
+    margin: 0.75rem 0 1rem;
+}
+
+.ds-track-info > p {
+    color: #94a3b8;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.ds-track-steps {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.ds-track-steps li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #cbd5e1;
+    font-size: 1rem;
+}
+
+.ds-step-dot {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #fde047;
+    color: #1a1e2d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+}
+
+.ds-track-form-box {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 1.25rem;
+    padding: 2.5rem;
+    backdrop-filter: blur(10px);
+}
+
+.ds-form-label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #94a3b8;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.ds-form-input {
+    width: 100%;
+    padding: 0.85rem 1.1rem;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 0.6rem;
+    background: rgba(0,0,0,0.3);
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s;
+    margin-bottom: 0.5rem;
+}
+
+.ds-form-input::placeholder { color: #475569; }
+.ds-form-input:focus { border-color: #fde047; }
+
+.ds-track-btn {
+    margin-top: 1rem;
+    width: 100%;
+    padding: 0.9rem;
+    border: none;
+    border-radius: 0.6rem;
+    background: #fde047;
+    color: #1a1e2d;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-family: 'Inter', sans-serif;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.ds-track-btn:hover { background: #f9c600; transform: translateY(-2px); }
+
+.ds-track-result { margin-top: 1.5rem; }
+
+.ds-track-status-bar {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding-top: 0.5rem;
+}
+
+.ds-track-status-bar::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    height: 2px;
+    background: rgba(255,255,255,0.1);
+    z-index: 0;
+}
+
+.ds-status-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.75rem;
+    color: #475569;
+    position: relative;
+    z-index: 1;
+}
+
+.ds-status-step i { font-size: 1.75rem; color: #475569; }
+.ds-status-step.done i { color: #10b981; }
+.ds-status-step.active i { color: #fde047; }
+.ds-status-step span { color: #94a3b8; }
+.ds-status-step.done span, .ds-status-step.active span { color: #fff; }
+
+/* ── Section 4: Grievance ── */
+.ds-grievance-section {
+    background: #f8fafc;
+}
+
+.ds-grievance-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.ds-grievance-stat {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 1rem;
+    padding: 1.25rem 1.5rem;
+    transition: box-shadow 0.3s, transform 0.3s;
+    margin-bottom: 1rem;
+}
+
+.ds-grievance-stat:hover {
+    box-shadow: 0 8px 20px -6px rgba(0,0,0,0.1);
+    transform: translateX(5px);
+}
+
+.ds-gsicon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #fee2e2;
+    color: #dc2626;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+}
+
+.ds-gsdata strong {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: -0.02em;
+}
+
+.ds-gsdata span {
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+.ds-grievance-form {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 1.25rem;
+    padding: 2rem;
+}
+
+.ds-grievance-form h4 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+    color: #0f172a;
+}
+
+.ds-grievance-section .ds-form-input {
+    background: #f8fafc;
+    color: #0f172a;
+    border: 1.5px solid #e2e8f0;
+    margin-bottom: 0.75rem;
+}
+
+.ds-grievance-section .ds-form-input:focus { border-color: #5d4037; }
+.ds-grievance-section .ds-form-input::placeholder { color: #94a3b8; }
+
+.ds-form-textarea { resize: vertical; min-height: 100px; }
+
+.ds-submit-btn {
+    width: 100%;
+    padding: 0.85rem;
+    background: #4a3600;
+    color: #fde047;
+    border: none;
+    border-radius: 0.6rem;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-family: 'Inter', sans-serif;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.ds-submit-btn:hover { background: #5d4037; transform: translateY(-2px); }
+
+/* ── Section 5: Downloads ── */
+.ds-downloads-section {
+    background: #fff;
+}
+
+.ds-downloads-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.ds-download-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 0.875rem;
+    background: #fff;
+    text-decoration: none;
+    color: #0f172a;
+    transition: all 0.25s ease;
+}
+
+.ds-download-item:hover {
+    border-color: #5d4037;
+    background: #fdf5e4;
+    box-shadow: 0 6px 20px -6px rgba(74,54,0,0.15);
+    transform: translateX(5px);
+}
+
+.ds-dl-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 0.6rem;
+    background: #fee2e2;
+    color: #dc2626;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.35rem;
+    flex-shrink: 0;
+}
+
+.ds-dl-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.ds-dl-info strong {
+    display: block;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #0f172a;
+}
+
+.ds-dl-info span {
+    font-size: 0.8rem;
+    color: #94a3b8;
+}
+
+.ds-dl-arrow {
+    font-size: 1.25rem;
+    color: #94a3b8;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.ds-download-item:hover .ds-dl-arrow {
+    color: #5d4037;
+    transform: translateY(2px);
+}
+
+/* ── Section 6: Helplines ── */
+.ds-helpline-section {
+    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+}
+
+.ds-helpline-section .ds-section-head h2 { color: #fff; }
+.ds-helpline-section .ds-section-head p { color: #94a3b8; }
+
+.ds-helpline-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.ds-helpline-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 1.25rem;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.ds-helpline-card:hover {
+    background: rgba(255,255,255,0.09);
+    border-color: rgba(255,255,255,0.25);
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px -10px rgba(0,0,0,0.4);
+}
+
+.ds-hl-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+    transition: transform 0.3s;
+}
+
+.ds-helpline-card:hover .ds-hl-icon { transform: scale(1.1) rotate(-5deg); }
+
+.ds-helpline-card h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.ds-hl-number {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #fde047;
+    letter-spacing: -0.03em;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.ds-hl-number:hover { color: #fff; }
+
+.ds-hl-badge {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    background: #fee2e2;
+    color: #dc2626;
+    font-weight: 600;
+}
+
+/* =============================================
+   DS Sections Responsive
+   ============================================= */
+@media (max-width: 1024px) {
+    .ds-counters-grid { grid-template-columns: repeat(2, 1fr); }
+    .ds-helpline-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .ds-section { padding: 3rem 0; }
+    .ds-section-head h2 { font-size: 1.65rem; }
+    .ds-counters-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    .ds-apply-grid { grid-template-columns: repeat(2, 1fr); }
+    .ds-grievance-grid { grid-template-columns: 1fr; }
+    .ds-track-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .ds-helpline-grid { grid-template-columns: repeat(2, 1fr); }
+    .ds-counter-num { font-size: 2rem; }
+    .ds-track-form-box { padding: 1.5rem; }
+    .ds-track-info h2 { font-size: 1.65rem; }
+}
+
+@media (max-width: 480px) {
+    .ds-section { padding: 2rem 0; }
+    .ds-counters-grid { grid-template-columns: 1fr 1fr; }
+    .ds-apply-grid { grid-template-columns: 1fr; }
+    .ds-helpline-grid { grid-template-columns: 1fr; }
+    .ds-apply-tabs { justify-content: center; }
+    .ds-counter-card { padding: 1.25rem 1rem; }
+    .ds-hl-number { font-size: 1.75rem; }
+}

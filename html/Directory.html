@@ -21,43 +21,26 @@
 <body class="dir-page">
 
     <!-- ── Main Navbar ── -->
-    <nav class="navbar skeleton-bg">
+    <nav class="navbar">
         <div class="container nav-container">
-            <div class="nav-links">
-                <a href="../index.html" class="nav-brand skeleton-text" style="font-weight: 800; font-size: 1.25rem; color: #ffffff; letter-spacing: 1px; margin-right: 1.5rem; margin-left: -1rem; text-shadow: 0 2px 4px rgba(0,0,0,0.2); text-decoration: none;">
-                    <span style="color: var(--clr-gold);">Stackly</span>
-                </a>
+            <a href="/index.html"><span class="nav-brand-span">Stackly</span></a>
 
+            <div class="nav-links">
                 <div class="nav-item">
-                    <a href="../index.html" class="nav-link skeleton-text">HOME</a>
+                    <a href="../index.html" class="nav-link">Home</a>
                     <div class="dropdown-menu">
                         <a href="HomePage2.html" class="dropdown-link">Home page 2</a>
                     </div>
                 </div>
 
-                <a href="About.html" class="nav-link skeleton-text">ABOUT US</a>
-                <a href="Media.html" class="nav-link skeleton-text">MEDIA</a>
-                <a href="Directory.html" class="nav-link active skeleton-text">DIRECTORY</a>
-
-                <div class="nav-item">
-                    <a href="Documents.html" class="nav-link skeleton-text">DOCUMENTS <i class="ph ph-caret-down"></i></a>
-                </div>
-
-                <div class="nav-item">
-                    <a href="NotFound.html" class="nav-link skeleton-text">NOTICES <i class="ph ph-caret-down"></i></a>
-                </div>
-
-                <div class="nav-item">
-                    <a href="NotFound.html" class="nav-link skeleton-text">SCHEMES/PROGRAMMES <i class="ph ph-caret-down"></i></a>
-                </div>
-
-                <div style="flex-grow: 1;"></div>
-
-                <a href="Dashboard.html" class="nav-link skeleton-text" style="padding: 0 1rem; border-right: 1px solid rgba(255,255,255,0.1);">DASHBOARD</a>
-                <a href="Login.html" class="nav-link skeleton-text" style="padding: 0 1rem;">LOGIN</a>
+                <a href="About.html" class="nav-link">About</a>
+                <a href="Directory.html" class="nav-link active">Online Service</a>
+                <a href="Media.html" class="nav-link">Media</a>
+                <a href="Dashboard.html" class="nav-link">Dashboard</a>
+                <a href="Login.html" class="nav-link">Login</a>
             </div>
 
-            <button class="mobile-menu-btn skeleton-btn">
+            <button class="mobile-menu-btn">
                 <i class="ph ph-list" style="color:var(--clr-gold)"></i>
             </button>
         </div>
@@ -133,39 +116,364 @@
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer animate-fade-up skeleton-bg" style="animation-delay: 0.4s;">
+    <!-- ========== SECTION 1: Key Service Counters ========== -->
+    <section class="ds-section ds-counters-section">
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <div class="brand-logo footer-logo skeleton-img">MH</div>
-                    <p class="footer-desc">
-                    Providing transparent, efficient, and accessible services to every citizen. Join THE STACKLY community today.
-                </p></div>
+            <div class="ds-section-head ds-anim" data-anim="fade-up">
+                <span class="ds-pill">At a Glance</span>
+                <h2>Government Services at Scale</h2>
+                <p>Live service metrics showcasing the reach of Maharashtra's e-Governance initiatives.</p>
+            </div>
+            <div class="ds-counters-grid">
+                <div class="ds-counter-card ds-anim" data-anim="zoom-in" style="--delay:0.1s">
+                    <div class="ds-counter-icon" style="background:rgba(59,130,246,0.1)"><i class="ph ph-users" style="color:#3b82f6"></i></div>
+                    <span class="ds-counter-num" data-target="12400000">0</span>
+                    <span class="ds-counter-label">Citizens Served Annually</span>
+                </div>
+                <div class="ds-counter-card ds-anim" data-anim="zoom-in" style="--delay:0.2s">
+                    <div class="ds-counter-icon" style="background:rgba(168,85,247,0.1)"><i class="ph ph-storefront" style="color:#a855f7"></i></div>
+                    <span class="ds-counter-num" data-target="3500">0</span>
+                    <span class="ds-counter-label">Seva Kendras Operational</span>
+                </div>
+                <div class="ds-counter-card ds-anim" data-anim="zoom-in" style="--delay:0.3s">
+                    <div class="ds-counter-icon" style="background:rgba(16,185,129,0.1)"><i class="ph ph-check-circle" style="color:#10b981"></i></div>
+                    <span class="ds-counter-num" data-target="250">0</span>
+                    <span class="ds-counter-label">Services Available Online</span>
+                </div>
+                <div class="ds-counter-card ds-anim" data-anim="zoom-in" style="--delay:0.4s">
+                    <div class="ds-counter-icon" style="background:rgba(249,115,22,0.1)"><i class="ph ph-flag" style="color:#f97316"></i></div>
+                    <span class="ds-counter-num" data-target="36">0</span>
+                    <span class="ds-counter-label">Districts Covered</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 2: Apply for Services Online ========== -->
+    <section class="ds-section ds-apply-section">
+        <div class="container">
+            <div class="ds-section-head ds-anim" data-anim="fade-up">
+                <span class="ds-pill ds-pill-alt">Apply Online</span>
+                <h2>Start Your Application</h2>
+                <p>Select a service category below and begin your digital application in under 5 minutes.</p>
+            </div>
+            <div class="ds-apply-tabs">
+                <button class="ds-tab-btn active" onclick="dsSetTab(this,'civil')">Civil Services</button>
+                <button class="ds-tab-btn" onclick="dsSetTab(this,'revenue')">Revenue</button>
+                <button class="ds-tab-btn" onclick="dsSetTab(this,'police')">Police</button>
+                <button class="ds-tab-btn" onclick="dsSetTab(this,'health')">Health</button>
+            </div>
+            <div class="ds-apply-grid" id="ds-tab-civil">
+                <a href="NotFound.html" class="ds-apply-card ds-anim" data-anim="fade-up" style="--delay:0.1s">
+                    <i class="ph ph-baby"></i><span>Birth Certificate</span><small>Apply in 2 mins</small>
+                </a>
+                <a href="NotFound.html" class="ds-apply-card ds-anim" data-anim="fade-up" style="--delay:0.2s">
+                    <i class="ph ph-heart-break"></i><span>Death Certificate</span><small>Apply in 2 mins</small>
+                </a>
+                <a href="NotFound.html" class="ds-apply-card ds-anim" data-anim="fade-up" style="--delay:0.3s">
+                    <i class="ph ph-currency-inr"></i><span>Income Certificate</span><small>Apply in 3 mins</small>
+                </a>
+                <a href="NotFound.html" class="ds-apply-card ds-anim" data-anim="fade-up" style="--delay:0.4s">
+                    <i class="ph ph-user-check"></i><span>Caste Certificate</span><small>Apply in 3 mins</small>
+                </a>
+                <a href="NotFound.html" class="ds-apply-card ds-anim" data-anim="fade-up" style="--delay:0.5s">
+                    <i class="ph ph-house-line"></i><span>Domicile Certificate</span><small>Apply in 4 mins</small>
+                </a>
+                <a href="NotFound.html" class="ds-apply-card ds-anim" data-anim="fade-up" style="--delay:0.6s">
+                    <i class="ph ph-rings-two"></i><span>Marriage Certificate</span><small>Apply in 5 mins</small>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 3: Track Application Status ========== -->
+    <section class="ds-section ds-track-section">
+        <div class="container">
+            <div class="ds-track-inner ds-anim" data-anim="fade-up">
+                <div class="ds-track-info">
+                    <span class="ds-pill ds-pill-white">Track Status</span>
+                    <h2>Check Your Application</h2>
+                    <p>Enter your Application Reference Number (ARN) to instantly track the real-time status of your submitted service request.</p>
+                    <ul class="ds-track-steps">
+                        <li><span class="ds-step-dot">1</span> Enter your ARN below</li>
+                        <li><span class="ds-step-dot">2</span> Verify with your mobile OTP</li>
+                        <li><span class="ds-step-dot">3</span> View live processing status</li>
+                    </ul>
+                </div>
+                <div class="ds-track-form-box">
+                    <form onsubmit="event.preventDefault(); dsTrackApp();">
+                        <label class="ds-form-label">Application Reference Number (ARN)</label>
+                        <input class="ds-form-input" id="ds-arn-input" type="text" placeholder="e.g. MH2026-XXXX-XXXX" required>
+                        <label class="ds-form-label" style="margin-top:1rem;">Mobile Number</label>
+                        <input class="ds-form-input" type="tel" placeholder="+91 00000 00000">
+                        <button class="ds-track-btn" type="submit">
+                            <i class="ph ph-magnifying-glass"></i> Track Now
+                        </button>
+                    </form>
+                    <div class="ds-track-result" id="ds-track-result" style="display:none;">
+                        <div class="ds-track-status-bar">
+                            <div class="ds-status-step done"><i class="ph ph-check-circle"></i><span>Submitted</span></div>
+                            <div class="ds-status-step done"><i class="ph ph-check-circle"></i><span>Verified</span></div>
+                            <div class="ds-status-step active"><i class="ph ph-clock"></i><span>Processing</span></div>
+                            <div class="ds-status-step"><i class="ph ph-circle"></i><span>Approved</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 4: Grievance Redressal ========== -->
+    <section class="ds-section ds-grievance-section">
+        <div class="container">
+            <div class="ds-section-head ds-anim" data-anim="fade-up">
+                <span class="ds-pill">Citizen Voice</span>
+                <h2>Grievance Redressal Portal</h2>
+                <p>Submit, track, and resolve your complaints with full transparency and accountability.</p>
+            </div>
+            <div class="ds-grievance-grid">
+                <div class="ds-grievance-stat ds-anim" data-anim="slide-left" style="--delay:0.1s">
+                    <div class="ds-gsicon"><i class="ph ph-chat-circle-text"></i></div>
+                    <div class="ds-gsdata">
+                        <strong>1,28,450</strong>
+                        <span>Complaints Registered (2025)</span>
+                    </div>
+                </div>
+                <div class="ds-grievance-stat ds-anim" data-anim="slide-left" style="--delay:0.2s">
+                    <div class="ds-gsicon" style="background:#d1fae5; color:#10b981"><i class="ph ph-seal-check"></i></div>
+                    <div class="ds-gsdata">
+                        <strong>1,19,200</strong>
+                        <span>Resolved Successfully</span>
+                    </div>
+                </div>
+                <div class="ds-grievance-stat ds-anim" data-anim="slide-left" style="--delay:0.3s">
+                    <div class="ds-gsicon" style="background:#fef3c7; color:#d97706"><i class="ph ph-clock-countdown"></i></div>
+                    <div class="ds-gsdata">
+                        <strong>7 Days</strong>
+                        <span>Average Resolution Time</span>
+                    </div>
+                </div>
+                <div class="ds-grievance-form ds-anim" data-anim="fade-up" style="--delay:0.2s">
+                    <h4>Submit a Grievance</h4>
+                    <form onsubmit="event.preventDefault(); dsShowGrievanceAlert();">
+                        <select class="ds-form-input">
+                            <option>Select Department</option>
+                            <option>Home Department</option>
+                            <option>Revenue Department</option>
+                            <option>Health Department</option>
+                            <option>Transport Department</option>
+                        </select>
+                        <textarea class="ds-form-input ds-form-textarea" placeholder="Describe your grievance briefly..." rows="4"></textarea>
+                        <button class="ds-submit-btn" type="submit"><i class="ph ph-paper-plane-tilt"></i> Submit Grievance</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 5: Downloads & Forms ========== -->
+    <section class="ds-section ds-downloads-section">
+        <div class="container">
+            <div class="ds-section-head ds-anim" data-anim="fade-up">
+                <span class="ds-pill ds-pill-alt">Forms & Circulars</span>
+                <h2>Downloads Centre</h2>
+                <p>Access all official forms, GRs, and circulars in one place.</p>
+            </div>
+            <div class="ds-downloads-grid">
+                <a href="NotFound.html" class="ds-download-item ds-anim" data-anim="fade-up" style="--delay:0.1s">
+                    <div class="ds-dl-icon"><i class="ph ph-file-pdf"></i></div>
+                    <div class="ds-dl-info">
+                        <strong>RTI Application Form</strong>
+                        <span>PDF • 120 KB • Updated Jan 2026</span>
+                    </div>
+                    <i class="ph ph-download-simple ds-dl-arrow"></i>
+                </a>
+                <a href="NotFound.html" class="ds-download-item ds-anim" data-anim="fade-up" style="--delay:0.2s">
+                    <div class="ds-dl-icon" style="background:#ede9fe; color:#7c3aed"><i class="ph ph-file-pdf"></i></div>
+                    <div class="ds-dl-info">
+                        <strong>Caste Certificate Form</strong>
+                        <span>PDF • 85 KB • Updated Feb 2026</span>
+                    </div>
+                    <i class="ph ph-download-simple ds-dl-arrow"></i>
+                </a>
+                <a href="NotFound.html" class="ds-download-item ds-anim" data-anim="fade-up" style="--delay:0.3s">
+                    <div class="ds-dl-icon" style="background:#fef3c7; color:#d97706"><i class="ph ph-file-text"></i></div>
+                    <div class="ds-dl-info">
+                        <strong>Police Verification Form</strong>
+                        <span>PDF • 200 KB • Updated Mar 2026</span>
+                    </div>
+                    <i class="ph ph-download-simple ds-dl-arrow"></i>
+                </a>
+                <a href="NotFound.html" class="ds-download-item ds-anim" data-anim="fade-up" style="--delay:0.4s">
+                    <div class="ds-dl-icon" style="background:#d1fae5; color:#059669"><i class="ph ph-file-text"></i></div>
+                    <div class="ds-dl-info">
+                        <strong>Domicile Certificate Form</strong>
+                        <span>PDF • 95 KB • Updated Jan 2026</span>
+                    </div>
+                    <i class="ph ph-download-simple ds-dl-arrow"></i>
+                </a>
+                <a href="NotFound.html" class="ds-download-item ds-anim" data-anim="fade-up" style="--delay:0.5s">
+                    <div class="ds-dl-icon" style="background:#fee2e2; color:#dc2626"><i class="ph ph-read-cv-logo"></i></div>
+                    <div class="ds-dl-info">
+                        <strong>Home Dept. Annual Report 2025</strong>
+                        <span>PDF • 4.2 MB • March 2026</span>
+                    </div>
+                    <i class="ph ph-download-simple ds-dl-arrow"></i>
+                </a>
+                <a href="NotFound.html" class="ds-download-item ds-anim" data-anim="fade-up" style="--delay:0.6s">
+                    <div class="ds-dl-icon" style="background:#ffe4e6; color:#be185d"><i class="ph ph-note-pencil"></i></div>
+                    <div class="ds-dl-info">
+                        <strong>GR: Police Act Amendment 2025</strong>
+                        <span>PDF • 310 KB • Dec 2025</span>
+                    </div>
+                    <i class="ph ph-download-simple ds-dl-arrow"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 6: Helpline Directory ========== -->
+    <section class="ds-section ds-helpline-section">
+        <div class="container">
+            <div class="ds-section-head ds-anim" data-anim="fade-up">
+                <span class="ds-pill ds-pill-white">Emergency & Support</span>
+                <h2>Helpline Directory</h2>
+                <p>Reach the right department instantly. All helplines are toll-free and available 24×7.</p>
+            </div>
+            <div class="ds-helpline-grid">
+                <div class="ds-helpline-card ds-anim" data-anim="zoom-in" style="--delay:0.1s">
+                    <div class="ds-hl-icon" style="background:#fee2e2"><i class="ph ph-phone-call" style="color:#dc2626"></i></div>
+                    <h4>Police Control Room</h4>
+                    <a href="tel:100" class="ds-hl-number">100</a>
+                    <span class="ds-hl-badge">24×7 Emergency</span>
+                </div>
+                <div class="ds-helpline-card ds-anim" data-anim="zoom-in" style="--delay:0.2s">
+                    <div class="ds-hl-icon" style="background:#fef3c7"><i class="ph ph-first-aid-kit" style="color:#d97706"></i></div>
+                    <h4>Ambulance Services</h4>
+                    <a href="tel:108" class="ds-hl-number">108</a>
+                    <span class="ds-hl-badge">24×7 Emergency</span>
+                </div>
+                <div class="ds-helpline-card ds-anim" data-anim="zoom-in" style="--delay:0.3s">
+                    <div class="ds-hl-icon" style="background:#dbeafe"><i class="ph ph-shield-warning" style="color:#2563eb"></i></div>
+                    <h4>Women Helpline</h4>
+                    <a href="tel:1091" class="ds-hl-number">1091</a>
+                    <span class="ds-hl-badge" style="background:#dbeafe; color:#2563eb">24×7 Toll-Free</span>
+                </div>
+                <div class="ds-helpline-card ds-anim" data-anim="zoom-in" style="--delay:0.4s">
+                    <div class="ds-hl-icon" style="background:#d1fae5"><i class="ph ph-headset" style="color:#059669"></i></div>
+                    <h4>Citizen Services Helpdesk</h4>
+                    <a href="tel:1800111555" class="ds-hl-number">1800-111-555</a>
+                    <span class="ds-hl-badge" style="background:#d1fae5; color:#059669">Mon–Sat, 9AM–6PM</span>
+                </div>
+                <div class="ds-helpline-card ds-anim" data-anim="zoom-in" style="--delay:0.5s">
+                    <div class="ds-hl-icon" style="background:#ede9fe"><i class="ph ph-fire-truck" style="color:#7c3aed"></i></div>
+                    <h4>Fire & Rescue</h4>
+                    <a href="tel:101" class="ds-hl-number">101</a>
+                    <span class="ds-hl-badge" style="background:#ede9fe; color:#7c3aed">24×7 Emergency</span>
+                </div>
+                <div class="ds-helpline-card ds-anim" data-anim="zoom-in" style="--delay:0.6s">
+                    <div class="ds-hl-icon" style="background:#fce7f3"><i class="ph ph-chat-centered-dots" style="color:#9d174d"></i></div>
+                    <h4>Anti-Corruption Hotline</h4>
+                    <a href="tel:1064" class="ds-hl-number">1064</a>
+                    <span class="ds-hl-badge" style="background:#fce7f3; color:#9d174d">Toll-Free</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+    <footer class="footer-dark anim-el anim-up" style="transition-delay: 0.1s;">
+        <div class="container">
+            <!-- Main Footer Links -->
+            <div class="footer-grid-main">
+                <!-- Col 1: Brand & Socials -->
+                <div class="footer-brand anim-el anim-left" style="transition-delay: 0.2s;">
+                    <div class="brand-logo">THE STACKLY</div>
+                    <p>Government Portal connects citizens with essential public services. Find policies, apply for schemes, and participate in digital governance with us.</p>
+                    <div class="footer-socials">
+                        <a href="NotFound.html" class="footer-social-icon"><i class="ph ph-facebook-logo"></i></a>
+                        <a href="NotFound.html" class="footer-social-icon"><i class="ph ph-twitter-logo"></i></a>
+                        <a href="NotFound.html" class="footer-social-icon"><i class="ph ph-linkedin-logo"></i></a>
+                        <a href="NotFound.html" class="footer-social-icon"><i class="ph ph-instagram-logo"></i></a>
+                        <a href="NotFound.html" class="footer-social-icon"><i class="ph ph-youtube-logo"></i></a>
+                    </div>
+                </div>
                 
-                <div class="footer-links">
-                    <h4 class="footer-heading skeleton-text">Quick Links</h4>
+                <!-- Col 2: Quick Links -->
+                <div class="footer-links anim-el anim-up" style="transition-delay: 0.3s;">
+                    <h4 class="footer-heading">Quick Links</h4>
                     <ul>
-                        <li class="skeleton-text"><a href="NotFound.html">Government Resolutions</a></li>
-                        <li class="skeleton-text"><a href="NotFound.html">Acts & Rules</a></li>
-                        <li class="skeleton-text"><a href="NotFound.html">Aaple Sarkar</a></li>
-                        <li class="skeleton-text"><a href="NotFound.html">e-Prosecution</a></li>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="Directory.html">Departments</a></li>
+                        <li><a href="Documents.html">Resolutions</a></li>
+                        <li><a href="Dashboard.html">Services Portal</a></li>
+                        <li><a href="About.html">About Us</a></li>
+                        <li><a href="Login.html">Citizen Login</a></li>
                     </ul>
                 </div>
                 
-                <div class="footer-links">
-                    <h4 class="footer-heading skeleton-text">Help & Support</h4>
+                <!-- Col 3: Resource Center -->
+                <div class="footer-links anim-el anim-up" style="transition-delay: 0.4s;">
+                    <h4 class="footer-heading">Resources</h4>
                     <ul>
-                        <li class="skeleton-text"><a href="NotFound.html">Contact Us</a></li>
-                        <li class="skeleton-text"><a href="NotFound.html">Feedback</a></li>
-                        <li class="skeleton-text"><a href="NotFound.html">Website Policies</a></li>
-                        <li class="skeleton-text"><a href="NotFound.html">Web Information Manager</a></li>
+                        <li><a href="Media.html">Press Releases</a></li>
+                        <li><a href="NotFound.html">Acts & Rules</a></li>
+                        <li><a href="NotFound.html">Tenders</a></li>
+                        <li><a href="NotFound.html">RTI Guidelines</a></li>
+                        <li><a href="NotFound.html">Help Center</a></li>
+                        <li><a href="NotFound.html">FAQs</a></li>
                     </ul>
+                </div>
+                
+                <!-- Col 4: Contact & Stats Box -->
+                <div class="footer-contact anim-el anim-right" style="transition-delay: 0.5s;">
+                    <ul>
+                        <li>
+                            <i class="ph ph-map-pin"></i>
+                            <span>Secretariat Building, Fort St. George,<br>Tamil Nadu - 600009</span>
+                        </li>
+                        <li>
+                            <i class="ph ph-phone"></i>
+                            <span>1800-425-1333</span>
+                        </li>
+                        <li>
+                            <i class="ph ph-envelope-simple"></i>
+                            <span>support@tn.gov.in</span>
+                        </li>
+                        <li>
+                            <i class="ph ph-clock"></i>
+                            <span>Mon - Sat: 10:00 AM - 6:00 PM<br>Sun: Closed</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="footer-stats-box">
+                        <h5>250+ Services Online</h5>
+                        <p class="stats-highlight">Get instant certificates</p>
+                        <p class="stats-sub">New services added monthly</p>
+                    </div>
                 </div>
             </div>
             
+            <!-- Newsletter Bar -->
+            <div class="footer-newsletter anim-el anim-up" style="transition-delay: 0.6s;">
+                <div class="newsletter-text">
+                    <h4>Get Government Updates</h4>
+                    <p>Subscribe to receive daily news and service alerts</p>
+                </div>
+                <form class="newsletter-form" onsubmit="event.preventDefault();">
+                    <i class="ph ph-envelope-simple" style="padding-left: 1rem; color: #64748b; font-size: 1.25rem;"></i>
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit">
+                        Subscribe <i class="ph ph-arrow-right"></i>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Footer Bottom -->
             <div class="footer-bottom">
-                <p class="skeleton-text">&copy; 2026 The Stackly Services. All Rights Reserved.</p>
+                <p>&copy; 2026 The Stackly e-Governance Prototype. All rights reserved.</p>
             </div>
         </div>
     </footer>

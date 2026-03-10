@@ -183,3 +183,502 @@ body.media-page {
         grid-template-columns: 1fr;
     }
 }
+
+/* =============================================
+   MS (Media Sections) New Section Styles
+   ============================================= */
+
+/* ── Shared ── */
+.ms-section {
+    padding: 5rem 0;
+}
+
+.ms-section-head {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.ms-section-head h2 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: #0f172a;
+    margin: 0.75rem 0 0.5rem;
+}
+
+.ms-section-head p {
+    color: #64748b;
+    font-size: 1.05rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.ms-badge {
+    display: inline-block;
+    padding: 0.3rem 1rem;
+    background: #4a3600;
+    color: #fde047;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-radius: 999px;
+    margin-bottom: 0.25rem;
+}
+
+.ms-badge-alt { background: #ede9fe; color: #5b21b6; }
+.ms-badge-white { background: rgba(255,255,255,0.15); color: #fff; border: 1px solid rgba(255,255,255,0.3); }
+
+/* ── Animations ── */
+.ms-anim {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1);
+    transition-delay: var(--delay, 0s);
+}
+
+.ms-anim[data-anim="zoom-in"] { transform: scale(0.93); }
+.ms-anim[data-anim="slide-left"] { transform: translateX(-36px); }
+
+.ms-anim.ms-visible {
+    opacity: 1;
+    transform: translate(0) scale(1);
+}
+
+/* ── Tag Pills ── */
+.ms-press-tag, .ms-video-tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 0.2rem 0.7rem;
+    border-radius: 999px;
+    background: #fee2e2;
+    color: #b91c1c;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+}
+
+.ms-tag-blue { background: #dbeafe; color: #1d4ed8; }
+.ms-tag-green { background: #d1fae5; color: #065f46; }
+.ms-tag-orange { background: #fef3c7; color: #92400e; }
+
+/* ── Section 1: Ticker ── */
+.ms-ticker-bar {
+    background: #0f172a;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    height: 44px;
+    border-top: 2px solid #fde047;
+}
+
+.ms-ticker-label {
+    background: #fde047;
+    color: #0f172a;
+    font-size: 0.75rem;
+    font-weight: 800;
+    padding: 0 1.25rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+    letter-spacing: 0.06em;
+}
+
+.ms-ticker-track {
+    flex: 1;
+    overflow: hidden;
+}
+
+.ms-ticker-inner {
+    display: inline-flex;
+    white-space: nowrap;
+    animation: msTicker 35s linear infinite;
+    color: #cbd5e1;
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 0 1rem;
+}
+
+@keyframes msTicker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* ── Section 2: Press Releases ── */
+.ms-press-section { background: #fff; }
+
+.ms-press-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 1.5rem;
+}
+
+.ms-press-card {
+    background: #f8fafc;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 1rem;
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: all 0.3s ease;
+}
+
+.ms-press-card:hover {
+    border-color: #5d4037;
+    background: #fff;
+    box-shadow: 0 10px 30px -8px rgba(0,0,0,0.12);
+    transform: translateY(-4px);
+}
+
+.ms-press-featured {
+    grid-column: span 2;
+    background: linear-gradient(135deg, #4a3600 0%, #7c5c2e 100%);
+    border-color: transparent;
+    color: #fff;
+}
+
+.ms-press-featured h3 { color: #fff; font-size: 1.4rem; }
+.ms-press-featured p { color: #fde9b0; line-height: 1.6; }
+.ms-press-featured .ms-press-tag { background: rgba(253,224,71,0.2); color: #fde047; }
+.ms-press-featured .ms-press-date { color: #fde9b0; }
+
+.ms-press-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.ms-press-date {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.ms-press-card h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1.4;
+}
+
+.ms-press-card p {
+    color: #64748b;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    flex: 1;
+}
+
+.ms-press-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: #5d4037;
+    text-decoration: none;
+    transition: gap 0.2s;
+    margin-top: auto;
+}
+
+.ms-press-featured .ms-press-link { color: #fde047; }
+.ms-press-link:hover { gap: 0.6rem; }
+
+/* ── Section 3: Video Gallery ── */
+.ms-video-section { background: #0f172a; }
+.ms-video-section .ms-section-head h2 { color: #fff; }
+.ms-video-section .ms-section-head p { color: #94a3b8; }
+
+.ms-video-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 1.5rem;
+}
+
+.ms-video-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.ms-video-card:hover {
+    border-color: rgba(255,255,255,0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 16px 40px -10px rgba(0,0,0,0.5);
+}
+
+.ms-video-main { grid-column: span 2; }
+
+.ms-video-main .ms-video-thumb { aspect-ratio: 16/6; }
+
+.ms-video-thumb {
+    position: relative;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    background: #1e293b;
+}
+
+.ms-video-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.ms-video-card:hover .ms-video-thumb img { transform: scale(1.05); }
+
+.ms-play-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.ms-video-card:hover .ms-play-overlay { opacity: 1; }
+
+.ms-play-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 3.5rem;
+    color: #fff;
+    transition: transform 0.2s, color 0.2s;
+    line-height: 1;
+}
+
+.ms-play-btn:hover { transform: scale(1.15); color: #fde047; }
+
+.ms-video-duration {
+    position: absolute;
+    bottom: 0.6rem;
+    right: 0.75rem;
+    background: rgba(0,0,0,0.75);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+}
+
+.ms-video-info {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.ms-video-info h4 { color: #f1f5f9; font-size: 0.95rem; font-weight: 600; line-height: 1.4; }
+.ms-video-meta { color: #64748b; font-size: 0.8rem; display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap; }
+
+/* ── Section 4: Media Coverage ── */
+.ms-coverage-section { background: #f8fafc; }
+
+.ms-coverage-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+}
+
+.ms-coverage-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    background: #fff;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.25s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.ms-coverage-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, #4a3600, #fde047);
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.3s ease;
+}
+
+.ms-coverage-item:hover::before { transform: scaleY(1); }
+
+.ms-coverage-item:hover {
+    border-color: #5d4037;
+    box-shadow: 0 8px 24px -6px rgba(0,0,0,0.1);
+    transform: translateY(-3px);
+}
+
+.ms-coverage-source {
+    font-size: 0.78rem;
+    font-weight: 800;
+    color: #5d4037;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.ms-coverage-item h4 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #1e293b;
+    line-height: 1.45;
+    flex: 1;
+}
+
+.ms-coverage-date {
+    font-size: 0.78rem;
+    color: #94a3b8;
+}
+
+/* ── Section 5: Press Contact ── */
+.ms-contact-section {
+    background: linear-gradient(135deg, #1a1e2d 0%, #2d241e 100%);
+}
+
+.ms-contact-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.ms-contact-info .ms-badge-white { margin-bottom: 1rem; }
+
+.ms-contact-info h2 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: #fff;
+    margin: 0.5rem 0 1rem;
+}
+
+.ms-contact-info > p {
+    color: #94a3b8;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.ms-contact-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.ms-contact-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    color: #cbd5e1;
+    font-size: 0.95rem;
+}
+
+.ms-contact-list i {
+    color: #fde047;
+    font-size: 1.25rem;
+    margin-top: 1px;
+    flex-shrink: 0;
+}
+
+.ms-contact-form-box {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 1.25rem;
+    padding: 2.5rem;
+    backdrop-filter: blur(10px);
+}
+
+.ms-contact-form-box h4 {
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+}
+
+.ms-input {
+    display: block;
+    width: 100%;
+    padding: 0.85rem 1.1rem;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 0.6rem;
+    background: rgba(0,0,0,0.3);
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.2s;
+    margin-bottom: 0.75rem;
+}
+
+.ms-input::placeholder { color: #475569; }
+.ms-input option { color: #0f172a; background: #fff; }
+.ms-input:focus { border-color: #fde047; }
+.ms-textarea { resize: vertical; min-height: 80px; }
+
+.ms-submit-btn {
+    width: 100%;
+    padding: 0.9rem;
+    border: none;
+    border-radius: 0.6rem;
+    background: #fde047;
+    color: #1a1e2d;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-family: 'Inter', sans-serif;
+    transition: background 0.2s, transform 0.2s;
+    margin-top: 0.25rem;
+}
+
+.ms-submit-btn:hover { background: #f9c600; transform: translateY(-2px); }
+
+/* =============================================
+   MS Sections Responsive
+   ============================================= */
+@media (max-width: 1024px) {
+    .ms-coverage-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .ms-section { padding: 3rem 0; }
+    .ms-section-head h2 { font-size: 1.65rem; }
+    .ms-press-grid { grid-template-columns: 1fr; }
+    .ms-press-featured { grid-column: span 1; }
+    .ms-video-grid { grid-template-columns: 1fr; }
+    .ms-video-main { grid-column: span 1; }
+    .ms-video-main .ms-video-thumb { aspect-ratio: 16/9; }
+    .ms-coverage-grid { grid-template-columns: 1fr; }
+    .ms-contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .ms-contact-info h2 { font-size: 1.65rem; }
+    .ms-contact-form-box { padding: 1.5rem; }
+}
+
+@media (max-width: 480px) {
+    .ms-ticker-label { padding: 0 0.75rem; font-size: 0.7rem; }
+    .ms-contact-form-box { padding: 1.25rem; }
+    .ms-video-info h4 { font-size: 0.88rem; }
+}

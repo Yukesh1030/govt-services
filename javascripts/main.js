@@ -16,63 +16,65 @@ document.addEventListener('DOMContentLoaded', () => {
     const backdrop = document.querySelector('.mobile-menu-backdrop');
 
     if (mobileMenuBtn && navLinks && backdrop) {
-        const toggleMenu = () => {
-            navLinks.classList.toggle('active');
-            backdrop.classList.toggle('active');
+        const toggleMenu = (show) => {
+            const shouldShow = typeof show === 'boolean' ? show : !navLinks.classList.contains('active');
             
-            // Change icon based on state
+            navLinks.classList.toggle('active', shouldShow);
+            backdrop.classList.toggle('active', shouldShow);
+            
             const icon = mobileMenuBtn.querySelector('i');
-            if (navLinks.classList.contains('active')) {
-                icon.classList.remove('ph-list');
-                icon.classList.add('ph-x');
-                document.body.style.overflow = 'hidden'; // Prevent scroll
+            if (shouldShow) {
+                icon.classList.replace('ph-list', 'ph-x');
+                document.body.style.overflow = 'hidden';
             } else {
-                icon.classList.remove('ph-x');
-                icon.classList.add('ph-list');
-                document.body.style.overflow = ''; // Restore scroll
+                icon.classList.replace('ph-x', 'ph-list');
+                document.body.style.overflow = '';
+                // Close all dropdowns when menu closes
+                document.querySelectorAll('.nav-item.open').forEach(item => item.classList.remove('open'));
             }
         };
 
-        mobileMenuBtn.addEventListener('click', toggleMenu);
-        backdrop.addEventListener('click', toggleMenu);
-
-        // Close menu when clicking a link
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', (e) => {
-                const item = link.closest('.nav-item');
-                const hasDropdown = item && item.querySelector('.dropdown-menu');
-                
-                if (window.innerWidth <= 992 && hasDropdown) {
-                    // If it's a mobile dropdown link, don't close the menu yet
-                    // the toggle logic below handles this
-                } else {
-                    navLinks.classList.remove('active');
-                    backdrop.classList.remove('active');
-                    const icon = mobileMenuBtn.querySelector('i');
-                    icon.classList.remove('ph-x');
-                    icon.classList.add('ph-list');
-                    document.body.style.overflow = '';
-                }
-            });
+        mobileMenuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleMenu();
         });
 
-        // Mobile dropdown accordion
-        document.querySelectorAll('.nav-item').forEach(item => {
-            const link = item.querySelector('.nav-link');
-            const dropdown = item.querySelector('.dropdown-menu');
-            if (link && dropdown) {
-                link.addEventListener('click', (e) => {
-                    if (window.innerWidth <= 992) {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        item.classList.toggle('open');
-                        
-                        // Close other open accordions
-                        document.querySelectorAll('.nav-item').forEach(otherItem => {
-                            if (otherItem !== item) otherItem.classList.remove('open');
-                        });
-                    }
+        backdrop.addEventListener('click', () => toggleMenu(false));
+
+        // Toggle dropdowns on mobile
+        navLinks.addEventListener('click', (e) => {
+            const navLink = e.target.closest('.nav-link');
+            if (!navLink) return;
+
+            const navItem = navLink.parentElement;
+            const hasDropdown = navItem && navItem.querySelector('.dropdown-menu');
+            
+            const isMobile = getComputedStyle(mobileMenuBtn).display !== 'none';
+            
+            if (isMobile && hasDropdown) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const isOpen = navItem.classList.contains('open');
+                
+                // Close other open dropdowns
+                document.querySelectorAll('.nav-item.open').forEach(item => {
+                    if (item !== navItem) item.classList.remove('open');
                 });
+                
+                // Flip the current one
+                if (isOpen) {
+                    navItem.classList.remove('open');
+                } else {
+                    navItem.classList.add('open');
+                }
+                return;
+            }
+
+            // For links without dropdowns or sub-links
+            const dropdownLink = e.target.closest('.dropdown-link');
+            if (dropdownLink || (navLink && !hasDropdown)) {
+                toggleMenu(false);
             }
         });
     }
@@ -165,16 +167,232 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // -------------------------------------------------------
-    // Smooth Scroll for anchor links
+    // Scroll Animations (IntersectionObserver)
     // -------------------------------------------------------
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            const href = this.getAttribute('href');
-            if (href !== '#') {
-                e.preventDefault();
-                const target = document.querySelector(href);
-                if (target) target.scrollIntoView({ behavior: 'smooth' });
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.15 // Trigger when 15% is visible
+    };
+
+    const scrollObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                // Optional: Stop observing once animated in
+                // observer.unobserve(entry.target); 
             }
         });
+    }, observerOptions);
+
+    document.querySelectorAll('.anim-el').forEach(el => {
+        scrollObserver.observe(el);
     });
+
+    // -------------------------------------------------------
+    // DS Section: Scroll Animations (ds-anim)
+    // -------------------------------------------------------
+    const dsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('ds-visible');
+                dsObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.ds-anim').forEach(el => dsObserver.observe(el));
+
+    // -------------------------------------------------------
+    // DS Section: Animated Counters
+    // -------------------------------------------------------
+    function animateCounter(el) {
+        const target = parseInt(el.dataset.target, 10);
+        const duration = 2000;
+        const start = performance.now();
+
+        function step(now) {
+            const elapsed = now - start;
+            const progress = Math.min(elapsed / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            const value = Math.floor(eased * target);
+            el.textContent = value.toLocaleString('en-IN');
+            if (progress < 1) requestAnimationFrame(step);
+            else el.textContent = target.toLocaleString('en-IN');
+        }
+        requestAnimationFrame(step);
+    }
+
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounter(entry.target);
+                counterObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('.ds-counter-num[data-target]').forEach(el => counterObserver.observe(el));
 });
+
+// -------------------------------------------------------
+// DS Section: Tab switcher (Apply Online section)
+// -------------------------------------------------------
+function dsSetTab(btn, tabId) {
+    document.querySelectorAll('.ds-tab-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    // In a real system tabs would show different grids; here we just highlight
+}
+
+// -------------------------------------------------------
+// DS Section: Application Tracker show result
+// -------------------------------------------------------
+function dsTrackApp() {
+    const result = document.getElementById('ds-track-result');
+    if (result) {
+        result.style.display = 'block';
+        result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+}
+
+// -------------------------------------------------------
+// DS Section: Grievance form confirmation
+// -------------------------------------------------------
+function dsShowGrievanceAlert() {
+    const btn = document.querySelector('.ds-submit-btn');
+    if (!btn) return;
+    const original = btn.innerHTML;
+    btn.innerHTML = '<i class="ph ph-check-circle"></i> Submitted Successfully!';
+    btn.style.background = '#059669';
+    setTimeout(() => {
+        btn.innerHTML = original;
+        btn.style.background = '';
+    }, 3000);
+}
+
+// -------------------------------------------------------
+// MS Section: Scroll Animations (ms-anim)
+// -------------------------------------------------------
+(function() {
+    const msObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('ms-visible');
+                msObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.ms-anim').forEach(el => msObserver.observe(el));
+})();
+
+// -------------------------------------------------------
+// MS Section: Video play ripple effect
+// -------------------------------------------------------
+function msPlayVideo(btn, id) {
+    const icon = btn.querySelector('i');
+    if (!icon) return;
+    icon.className = 'ph ph-spinner';
+    icon.style.animation = 'spin 0.8s linear infinite';
+    setTimeout(() => {
+        icon.className = 'ph ph-check-circle';
+        icon.style.animation = '';
+        icon.style.color = '#10b981';
+    }, 1200);
+}
+
+// -------------------------------------------------------
+// MS Section: Press Contact form confirmation
+// -------------------------------------------------------
+function msFormSubmit(form) {
+    const btn = form.querySelector('.ms-submit-btn');
+    if (!btn) return;
+    const orig = btn.innerHTML;
+    btn.innerHTML = '<i class="ph ph-check-circle"></i> Request Sent!';
+    btn.style.background = '#10b981';
+    form.reset();
+    setTimeout(() => {
+        btn.innerHTML = orig;
+        btn.style.background = '';
+    }, 3000);
+}
+
+// Spinner keyframes via JS (avoids needing an extra CSS rule)
+(function() {
+    if (!document.getElementById('ms-spin-style')) {
+        const s = document.createElement('style');
+        s.id = 'ms-spin-style';
+        s.textContent = '@keyframes spin { to { transform: rotate(360deg); } }';
+        document.head.appendChild(s);
+    }
+})();
+
+// -------------------------------------------------------
+// HP Section: Scroll Animations (hp-anim)
+// -------------------------------------------------------
+(function() {
+    const hpObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('hp-visible');
+                hpObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.hp-anim').forEach(el => hpObserver.observe(el));
+})();
+
+// -------------------------------------------------------
+// HP Section: Animated Counters (hp-stat-big)
+// -------------------------------------------------------
+(function() {
+    function hpAnimCounter(el) {
+        const target = parseInt(el.dataset.target, 10);
+        const duration = 2000;
+        const start = performance.now();
+        (function step(now) {
+            const p = Math.min((now - start) / duration, 1);
+            const eased = 1 - Math.pow(1 - p, 3);
+            const val = Math.floor(eased * target);
+            // Format large numbers compactly
+            if (target >= 1000000) {
+                el.textContent = (val / 1000000).toFixed(val >= 100000000 ? 0 : 1) + 'Cr';
+            } else if (target >= 1000) {
+                el.textContent = (val / 1000).toFixed(val >= 10000 ? 1 : 1) + 'K';
+            } else {
+                el.textContent = val.toLocaleString('en-IN');
+            }
+            if (p < 1) requestAnimationFrame(step);
+            else {
+                if (target >= 1000000) el.textContent = (target/1000000).toFixed(0) + 'Cr';
+                else if (target >= 1000) el.textContent = (target/1000).toFixed(0) + 'K';
+                else el.textContent = target.toLocaleString('en-IN');
+            }
+        })(start);
+    }
+
+    const hpCounterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                hpAnimCounter(entry.target);
+                hpCounterObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('.hp-stat-big[data-target]').forEach(el => hpCounterObserver.observe(el));
+})();
+
+// -------------------------------------------------------
+// HP Section: FAQ Accordion
+// -------------------------------------------------------
+function hpToggleFaq(btn) {
+    const item = btn.closest('.hp-faq-item');
+    if (!item) return;
+    const isOpen = item.classList.contains('open');
+    // Close all
+    document.querySelectorAll('.hp-faq-item.open').forEach(i => i.classList.remove('open'));
+    // Toggle
+    if (!isOpen) item.classList.add('open');
+}

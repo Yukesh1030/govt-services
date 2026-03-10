@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Press Releases | HMDA Metropolitan Development Authority</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/HomePage2.css">
+    <link rel="stylesheet" href="../css/HP2Pages.css">
+</head>
+<body class="homepage2 hp2-page">
+
+    <nav class="hp2-navbar">
+        <div class="hp2-nav-inner">
+            <a href="HomePage2.html" class="hp2-brand">
+                <div class="hp2-brand-icon"><i class="ph ph-buildings"></i></div>
+                <div><span class="hp2-brand-name">HMDA</span><span class="hp2-brand-sub">Metro Development</span></div>
+            </a>
+            <div class="hp2-nav-links" id="hp2NavLinks">
+                <div class="hp2-nav-item hp2-has-drop">
+                    <a href="#" class="hp2-nav-link">Home <i class="ph ph-caret-down hp2-caret"></i></a>
+                    <div class="hp2-dropdown">
+                        <a href="../index.html" class="hp2-drop-link"><i class="ph ph-house"></i> Home 1 (Stackly)</a>
+                        <a href="HomePage2.html" class="hp2-drop-link"><i class="ph ph-buildings"></i> Home 2 (HMDA)</a>
+                    </div>
+                </div>
+                <a href="HP2Contact.html" class="hp2-nav-link">Contact</a>
+                <a href="HP2PressRelease.html" class="hp2-nav-link hp2-active">Press Release</a>
+                <a href="HP2Services.html" class="hp2-nav-link">Services</a>
+                <a href="Login.html" class="hp2-nav-link hp2-login-btn"><i class="ph ph-sign-in"></i> Login</a>
+            </div>
+            <button class="hp2-mobile-btn" onclick="hp2ToggleMenu()" id="hp2MobileBtn"><i class="ph ph-list"></i></button>
+        </div>
+    </nav>
+    <div class="hp2-nav-backdrop" id="hp2Backdrop" onclick="hp2ToggleMenu()"></div>
+
+    <!-- Hero -->
+    <section class="hp2p-hero anim-el anim-up">
+        <div class="hp2-container">
+            <div class="hp2p-hero-inner">
+                <span class="hp2-badge hp2-badge-teal">Official Communications</span>
+                <h1>Press <span class="hp2p-accent">Releases</span></h1>
+                <p>Official announcements, government orders, public notices and tenders from HMDA.</p>
+                <div class="hp2p-hero-chips">
+                    <span><i class="ph ph-newspaper"></i> Government Orders</span>
+                    <span><i class="ph ph-megaphone-simple"></i> Public Notices</span>
+                    <span><i class="ph ph-bell-ringing"></i> Live Alerts</span>
+                </div>
+            </div>
+        </div>
+        <div class="hp2p-hero-orbs"><div class="hp2p-orb hp2p-orb1"></div><div class="hp2p-orb hp2p-orb2"></div></div>
+    </section>
+
+    <!-- Filter -->
+    <section style="background:#f0fdfa;padding:2rem 0">
+        <div class="hp2-container">
+            <div class="hp2p-filter-bar anim-el anim-up">
+                <div class="hp2p-search-wrap">
+                    <i class="ph ph-magnifying-glass"></i>
+                    <input type="text" id="prSearch" placeholder="Search press releases…" oninput="prFilter()">
+                </div>
+                <div class="hp2p-filter-chips">
+                    <button class="hp2p-chip active" onclick="prSetCat(this,'all')">All</button>
+                    <button class="hp2p-chip" onclick="prSetCat(this,'go')">G.O.</button>
+                    <button class="hp2p-chip" onclick="prSetCat(this,'notice')">Notices</button>
+                    <button class="hp2p-chip" onclick="prSetCat(this,'tender')">Tenders</button>
+                    <button class="hp2p-chip" onclick="prSetCat(this,'scheme')">Schemes</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured -->
+    <section class="hp2-section" style="background:#fff;padding-top:2.5rem">
+        <div class="hp2-container">
+            <div class="hp2p-pr-featured anim-el anim-up" data-cat="go">
+                <div class="hp2p-prf-badge">Featured · Official G.O.</div>
+                <h2>Extension of HMR Boundaries to Regional Ring Road</h2>
+                <p>G.O. Ms. No. 68 MA &amp; UD dt.:12-03-2025 — HMR extended up to the RRR, covering 1355 Revenue Villages from 104 Mandals across 11 Districts covering 10,472 Sq.km.</p>
+                <div class="hp2p-prf-foot">
+                    <div class="hp2p-prf-meta">
+                        <span><i class="ph ph-calendar-blank"></i> March 12, 2025</span>
+                        <span><i class="ph ph-tag"></i> Government Order</span>
+                        <span><i class="ph ph-user"></i> MA &amp; UD Dept.</span>
+                    </div>
+                    <a href="NotFound.html" class="hp2-view-all-btn">Download PDF <i class="ph ph-download-simple"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Grid -->
+    <section class="hp2-section" style="background:#f8fafc;padding-top:1rem">
+        <div class="hp2-container">
+            <div class="hp2-sec-head anim-el anim-up" style="margin-bottom:2rem">
+                <span class="hp2-badge hp2-badge-teal">All Releases</span>
+                <h2 style="font-size:1.9rem;color:#0f172a;font-weight:800;margin:.5rem 0">Latest Announcements</h2>
+            </div>
+            <div class="hp2p-pr-grid" id="prGrid">
+                <article class="hp2p-pr-card anim-el anim-up" data-cat="go" data-title="TDR Platform Digitisation" style="transition-delay:.05s">
+                    <div class="hp2p-pr-head"><span class="hp2p-pr-tag" style="background:#d1fae5;color:#065f46">G.O.</span><span class="hp2p-pr-date"><i class="ph ph-calendar-blank"></i> Feb 28, 2025</span></div>
+                    <h3>TDR Platform Fully Digitised</h3>
+                    <p>All TDR certificates processed exclusively online. Manual applications discontinued from March 1, 2025.</p>
+                    <a href="NotFound.html" class="hp2p-pr-link">Read More <i class="ph ph-arrow-right"></i></a>
+                </article>
+                <article class="hp2p-pr-card anim-el anim-up" data-cat="notice" data-title="TG-bPASS Mandatory" style="transition-delay:.1s">
+                    <div class="hp2p-pr-head"><span class="hp2p-pr-tag" style="background:#dbeafe;color:#1e40af">Notice</span><span class="hp2p-pr-date"><i class="ph ph-calendar-blank"></i> Apr 20, 2024</span></div>
+                    <h3>TG-bPASS Mandatory for Building Permissions</h3>
+                    <p>All new building permit applications under HMDA must be submitted through TG-bPASS from April 24, 2024 onwards.</p>
+                    <a href="NotFound.html" class="hp2p-pr-link">Read More <i class="ph ph-arrow-right"></i></a>
+                </article>
+                <article class="hp2p-pr-card anim-el anim-up" data-cat="scheme" data-title="Venue Booking Live" style="transition-delay:.15s">
+                    <div class="hp2p-pr-head"><span class="hp2p-pr-tag" style="background:#fef3c7;color:#92400e">Scheme</span><span class="hp2p-pr-date"><i class="ph ph-calendar-blank"></i> Jan 10, 2025</span></div>
+                    <h3>Online Venue Booking for Necklace Road</h3>
+                    <p>Citizens can book Necklace Road, People's Plaza, and Party Zone for events via the HMDA Venue Booking Portal.</p>
+                    <a href="NotFound.html" class="hp2p-pr-link">Read More <i class="ph ph-arrow-right"></i></a>
+                </article>
+                <article class="hp2p-pr-card anim-el anim-up" data-cat="tender" data-title="RRR Tender" style="transition-delay:.2s">
+                    <div class="hp2p-pr-head"><span class="hp2p-pr-tag" style="background:#fce7f3;color:#9d174d">Tender</span><span class="hp2p-pr-date"><i class="ph ph-calendar-blank"></i> Dec 20, 2024</span></div>
+                    <h3>Tender: RRR Package 4 – Civil Works</h3>
+                    <p>HMDA invites tenders for civil construction for RRR Package 4 (62 km). EMD: ₹50 Crores. Deadline: Jan 31, 2025.</p>
+                    <a href="NotFound.html" class="hp2p-pr-link">Read More <i class="ph ph-arrow-right"></i></a>
+                </article>
+                <article class="hp2p-pr-card anim-el anim-up" data-cat="go" data-title="Heritage Conservation" style="transition-delay:.25s">
+                    <div class="hp2p-pr-head"><span class="hp2p-pr-tag" style="background:#d1fae5;color:#065f46">G.O.</span><span class="hp2p-pr-date"><i class="ph ph-calendar-blank"></i> Nov 15, 2024</span></div>
+                    <h3>Heritage Conservation Policy Notified</h3>
+                    <p>New heritage grading introduced for 112 listed structures within HMR. Owners must comply within 6 months.</p>
+                    <a href="NotFound.html" class="hp2p-pr-link">Read More <i class="ph ph-arrow-right"></i></a>
+                </article>
+                <article class="hp2p-pr-card anim-el anim-up" data-cat="scheme" data-title="Urban Forestry" style="transition-delay:.3s">
+                    <div class="hp2p-pr-head"><span class="hp2p-pr-tag" style="background:#fef3c7;color:#92400e">Scheme</span><span class="hp2p-pr-date"><i class="ph ph-calendar-blank"></i> Oct 5, 2024</span></div>
+                    <h3>Urban Forestry: 10 Lakh Trees Planted</h3>
+                    <p>HMDA completes Phase 1 of Urban Forestry with 10 lakh saplings across 104 mandals — 80% survival rate achieved.</p>
+                    <a href="NotFound.html" class="hp2p-pr-link">Read More <i class="ph ph-arrow-right"></i></a>
+                </article>
+            </div>
+            <div id="prNoResult" class="hp2p-no-result" style="display:none"><i class="ph ph-magnifying-glass"></i><p>No results found.</p></div>
+            <div style="text-align:center;margin-top:2.5rem"><a href="NotFound.html" class="hp2-view-all-btn anim-el anim-up">Load More <i class="ph ph-arrow-down"></i></a></div>
+        </div>
+    </section>
+
+    <!-- Subscribe -->
+    <section class="hp2p-subscribe-section anim-el anim-up">
+        <div class="hp2-container">
+            <div class="hp2p-subscribe-inner">
+                <div><h2>Never Miss an Announcement</h2><p>Subscribe to receive HMDA notifications directly to your inbox.</p></div>
+                <form class="hp2p-sub-form" onsubmit="prSubscribe(event)">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" id="prSubBtn">Subscribe <i class="ph ph-arrow-right"></i></button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-dark anim-el anim-up" style="transition-delay:0.1s">
+        <div class="container">
+            <div class="footer-grid-main">
+                <div class="footer-brand"><div class="brand-logo">THE STACKLY / HMDA</div><p>Hyderabad Metropolitan Development Authority.</p></div>
+                <div class="footer-links"><h4 class="footer-heading">Quick Links</h4><ul><li><a href="HomePage2.html">HMDA Home</a></li><li><a href="HP2Services.html">Services</a></li><li><a href="HP2Contact.html">Contact</a></li><li><a href="Login.html">Login</a></li></ul></div>
+                <div class="footer-links"><h4 class="footer-heading">Resources</h4><ul><li><a href="NotFound.html">HMDA Act</a></li><li><a href="NotFound.html">Master Plan</a></li><li><a href="NotFound.html">RTI</a></li></ul></div>
+                <div class="footer-contact"><ul><li><i class="ph ph-phone"></i><span>1800-599-4345</span></li><li><i class="ph ph-envelope-simple"></i><span>commissioner@hmda.gov.in</span></li></ul></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2026 HMDA. All rights reserved.</p></div>
+        </div>
+    </footer>
+
+    <script>
+        function hp2ToggleMenu() {
+            const links = document.getElementById('hp2NavLinks');
+            const backdrop = document.getElementById('hp2Backdrop');
+            const btn = document.getElementById('hp2MobileBtn');
+            const open = links.classList.toggle('open');
+            backdrop.classList.toggle('open', open);
+            btn.querySelector('i').className = open ? 'ph ph-x' : 'ph ph-list';
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            const obs = new IntersectionObserver(e => e.forEach(en => { if (en.isIntersecting) en.target.classList.add('is-visible'); }), { threshold: 0.12 });
+            document.querySelectorAll('.anim-el').forEach(el => obs.observe(el));
+        });
+        let currentCat = 'all';
+        function prSetCat(btn, cat) {
+            document.querySelectorAll('.hp2p-chip').forEach(c => c.classList.remove('active'));
+            btn.classList.add('active'); currentCat = cat; prFilter();
+        }
+        function prFilter() {
+            const q = document.getElementById('prSearch').value.toLowerCase();
+            const cards = document.querySelectorAll('.hp2p-pr-card');
+            let v = 0;
+            cards.forEach(card => {
+                const show = (currentCat === 'all' || card.dataset.cat === currentCat) && card.dataset.title.toLowerCase().includes(q);
+                card.style.display = show ? '' : 'none'; if (show) v++;
+            });
+            document.getElementById('prNoResult').style.display = v === 0 ? 'flex' : 'none';
+        }
+        function prSubscribe(e) {
+            e.preventDefault();
+            const btn = document.getElementById('prSubBtn');
+            btn.innerHTML = '<i class="ph ph-check-circle"></i> Subscribed!';
+            btn.style.background = '#059669';
+            setTimeout(() => { btn.innerHTML = 'Subscribe <i class="ph ph-arrow-right"></i>'; btn.style.background = ''; e.target.reset(); }, 3000);
+        }
+    </script>
+</body>
+</html>

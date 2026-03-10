@@ -3,197 +3,278 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | The Stackly Government Services</title>
-    <meta name="description" content="Secure portal login for government online services.">
+    <title>Citizen Login | The Stackly Government Services Portal</title>
+    <meta name="description" content="Secure citizen login to the Stackly e-Governance Portal.">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
-    <!-- Custom CSS -->
+    <!-- Styles -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/Login.css">
 </head>
-<body>
+<body class="login-page">
 
-    <nav class="navbar skeleton-bg">
+    <!-- ===== Animated Background ===== -->
+    <div class="lp-bg">
+        <div class="lp-orb lp-orb-1"></div>
+        <div class="lp-orb lp-orb-2"></div>
+        <div class="lp-orb lp-orb-3"></div>
+        <div class="lp-grid-dots"></div>
+    </div>
+
+    <!-- ===== Navbar (same as all pages) ===== -->
+    <nav class="navbar">
         <div class="container nav-container">
-            <div class="nav-links">
-                <a href="../index.html" class="nav-brand skeleton-text" style="font-weight: 800; font-size: 1.25rem; color: #ffffff; letter-spacing: 1px; margin-right: 1.5rem; margin-left: -1rem; text-shadow: 0 2px 4px rgba(0,0,0,0.2); text-decoration: none;">
-                    <span style="color: var(--clr-gold);">Stackly</span>
-                </a>
+            <a href="../index.html"><span class="nav-brand-span">Stackly</span></a>
 
+            <div class="nav-links">
                 <div class="nav-item">
-                    <a href="../index.html" class="nav-link skeleton-text">HOME</a>
+                    <a href="../index.html" class="nav-link">Home</a>
                     <div class="dropdown-menu">
                         <a href="HomePage2.html" class="dropdown-link">Home page 2</a>
                     </div>
                 </div>
-
-                <a href="About.html" class="nav-link skeleton-text">ABOUT US</a>
-                <a href="Media.html" class="nav-link skeleton-text">MEDIA</a>
-                <a href="Directory.html" class="nav-link skeleton-text">DIRECTORY</a>
-
-                <div class="nav-item">
-                    <a href="Documents.html" class="nav-link skeleton-text">DOCUMENTS <i class="ph ph-caret-down"></i></a>
-                </div>
-
-                <div class="nav-item">
-                    <a href="NotFound.html" class="nav-link skeleton-text">NOTICES <i class="ph ph-caret-down"></i></a>
-                </div>
-
-                <div class="nav-item">
-                    <a href="NotFound.html" class="nav-link skeleton-text">SCHEMES/PROGRAMMES <i class="ph ph-caret-down"></i></a>
-                </div>
-
-                <div style="flex-grow: 1;"></div>
-
-                <a href="Dashboard.html" class="nav-link skeleton-text" style="padding: 0 1rem; border-right: 1px solid rgba(255,255,255,0.1);">DASHBOARD</a>
-                <a href="Login.html" class="nav-link active skeleton-text" style="padding: 0 1rem;">LOGIN</a>
+                <a href="About.html" class="nav-link">About</a>
+                <a href="Directory.html" class="nav-link">Online Service</a>
+                <a href="Media.html" class="nav-link">Media</a>
+                <a href="Dashboard.html" class="nav-link">Dashboard</a>
+                <a href="Login.html" class="nav-link active">Login</a>
             </div>
 
-            <button class="mobile-menu-btn skeleton-btn">
+            <button class="mobile-menu-btn">
                 <i class="ph ph-list" style="color:var(--clr-gold)"></i>
             </button>
         </div>
     </nav>
 
+    <!-- ===== Login Wrapper ===== -->
+    <div class="lp-wrapper">
 
-    <!-- CSS Animated Background Shapes -->
-    <div class="bg-shapes">
-        <div class="shape shape-1"></div>
-        <div class="shape shape-2"></div>
-        <div class="shape shape-3"></div>
-    </div>
-
-    <div class="login-wrapper">
-        <div class="login-card animate-scale-up">
-            <!-- Optional Back button -->
-            <a href="../index.html" class="back-btn" title="Back to Home"><i class="ph ph-arrow-left"></i></a>
-
-            <h1 class="login-title">Login</h1>
-
-            <form id="loginForm" class="login-form">
-                <!-- Username Field -->
-                <div class="input-group">
-                    <label for="username">Username</label>
-                    <div class="input-wrapper">
-                        <i class="ph ph-user input-icon"></i>
-                        <input type="text" id="username" placeholder="Type your username" autocomplete="username">
-                    </div>
-                    <div class="error-msg" id="usernameError">Please enter your username</div>
+        <!-- Left Branding Panel -->
+        <div class="lp-left lp-anim lp-anim-left">
+            <div class="lp-left-inner">
+                <div class="lp-govt-badge">
+                    <i class="ph ph-shield-check"></i>
+                    <span>Secured &amp; Encrypted Portal</span>
                 </div>
-
-                <!-- Password Field -->
-                <div class="input-group">
-                    <label for="password">Password</label>
-                    <div class="input-wrapper">
-                        <i class="ph ph-lock-key input-icon"></i>
-                        <input type="password" id="password" placeholder="Type your password" autocomplete="current-password">
-                    </div>
-                    <div class="error-msg" id="passwordError">Please enter your password</div>
-                </div>
-
-                <div class="forgot-pwd">
-                    <a href="#">Forgot password?</a>
-                </div>
-
-                <!-- Submit Button -->
-                <button type="submit" class="btn-login">LOGIN</button>
-
-                <!-- Social Login -->
-                <div class="social-login-section">
-                    <span class="social-text">Or Sign Up Using</span>
-                    <div class="social-icons">
-                        <a href="#" class="social-btn btn-fb"><i class="ph-fill ph-facebook-logo"></i></a>
-                        <a href="#" class="social-btn btn-tw"><i class="ph-fill ph-twitter-logo"></i></a>
-                        <a href="#" class="social-btn btn-go"><i class="ph-fill ph-google-logo"></i></a>
+                <div class="lp-brand-logo">
+                    <div class="lp-logo-icon"><i class="ph ph-buildings"></i></div>
+                    <div>
+                        <h1 class="lp-brand-name">Stackly</h1>
+                        <p class="lp-brand-sub">e-Governance Portal</p>
                     </div>
                 </div>
-
-                <!-- Bottom links -->
-                <div class="signup-section">
-                    <span class="social-text" style="margin-bottom: 0.5rem; display: block;">Or Sign Up Using</span>
-                    <a href="#" class="signup-link">SIGN UP</a>
+                <p class="lp-brand-tagline">One portal. 250+ government services.<br>Serving citizens across Maharashtra.</p>
+                <div class="lp-features">
+                    <div class="lp-feat">
+                        <div class="lp-feat-icon"><i class="ph ph-certificate"></i></div>
+                        <div><strong>Instant Certificates</strong><span>Birth, Income, Caste — digitally</span></div>
+                    </div>
+                    <div class="lp-feat">
+                        <div class="lp-feat-icon"><i class="ph ph-chart-line-up"></i></div>
+                        <div><strong>Track Applications</strong><span>Real-time status of every request</span></div>
+                    </div>
+                    <div class="lp-feat">
+                        <div class="lp-feat-icon"><i class="ph ph-hand-heart"></i></div>
+                        <div><strong>Welfare Schemes</strong><span>CM Ladki Bahin, PM Awas &amp; more</span></div>
+                    </div>
                 </div>
-            </form>
+                <div class="lp-trust">
+                    <span class="lp-trust-num">12.6 Cr</span>
+                    <span class="lp-trust-label">citizens served across Maharashtra</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Login Card -->
+        <div class="lp-right">
+            <div class="lp-card lp-anim lp-anim-up">
+
+                <div class="lp-card-header">
+                    <h2>Welcome Back</h2>
+                    <p>Sign in to your government services account</p>
+                </div>
+
+                <!-- Login Form -->
+                <form class="lp-form" id="loginForm" onsubmit="lpLogin(event)">
+
+                    <!-- Username -->
+                    <div class="lp-field">
+                        <label for="username">Username / Citizen ID</label>
+                        <div class="lp-input-wrap" id="wrap-username">
+                            <i class="ph ph-user-circle lp-input-icon"></i>
+                            <input type="text" id="username" placeholder="Enter your citizen ID" autocomplete="username">
+                        </div>
+                        <span class="lp-error" id="usernameError">Please enter your username</span>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="lp-field">
+                        <div class="lp-label-row">
+                            <label for="password">Password</label>
+                            <a href="NotFound.html" class="lp-forgot">Forgot password?</a>
+                        </div>
+                        <div class="lp-input-wrap" id="wrap-password">
+                            <i class="ph ph-lock-key lp-input-icon"></i>
+                            <input type="password" id="password" placeholder="Enter your password" autocomplete="current-password">
+                            <button class="lp-eye-btn" type="button" onclick="lpTogglePwd(this)" tabindex="-1">
+                                <i class="ph ph-eye"></i>
+                            </button>
+                        </div>
+                        <span class="lp-error" id="passwordError">Please enter your password</span>
+                    </div>
+
+                    <!-- Submit -->
+                    <button class="lp-btn-submit" type="submit" id="btn-login">
+                        <span>Sign In to Portal</span>
+                        <i class="ph ph-sign-in"></i>
+                    </button>
+
+                </form>
+
+                <!-- Divider -->
+                <div class="lp-divider"><span>or continue with</span></div>
+
+                <!-- Social -->
+                <div class="lp-social-row">
+                    <a href="NotFound.html" class="lp-social-btn">
+                        <i class="ph ph-google-logo"></i> Google
+                    </a>
+                    <a href="NotFound.html" class="lp-social-btn">
+                        <i class="ph-fill ph-facebook-logo"></i> Facebook
+                    </a>
+                    <a href="NotFound.html" class="lp-social-btn">
+                        <i class="ph-fill ph-twitter-logo"></i> Twitter
+                    </a>
+                </div>
+
+                <!-- Register -->
+                <p class="lp-register-link">
+                    New citizen? <a href="NotFound.html">Create an account <i class="ph ph-arrow-up-right"></i></a>
+                </p>
+
+                <!-- Security -->
+                <div class="lp-security-strip">
+                    <i class="ph ph-lock"></i>
+                    <span>256-bit SSL encrypted &amp; CERT-In compliant</span>
+                </div>
+
+            </div>
         </div>
     </div>
 
-    <!-- Validations and Alert Script -->
+    <!-- ===== Footer ===== -->
+    <footer class="footer-dark anim-el anim-up" style="transition-delay:0.1s;">
+        <div class="container">
+            <div class="footer-grid-main">
+                <div class="footer-brand anim-el anim-left" style="transition-delay:0.2s;">
+                    <div class="brand-logo">THE STACKLY</div>
+                    <p>Government Portal connects citizens with essential public services. Find policies, apply for schemes, and participate in digital governance.</p>
+                    <div class="footer-socials">
+                        <a href="NotFound.html" class="footer-social-icon"><i class="ph ph-facebook-logo"></i></a>
+                        <a href="NotFound.html" class="footer-social-icon"><i class="ph ph-twitter-logo"></i></a>
+                        <a href="NotFound.html" class="footer-social-icon"><i class="ph ph-linkedin-logo"></i></a>
+                        <a href="NotFound.html" class="footer-social-icon"><i class="ph ph-instagram-logo"></i></a>
+                        <a href="NotFound.html" class="footer-social-icon"><i class="ph ph-youtube-logo"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links anim-el anim-up" style="transition-delay:0.3s;">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="Directory.html">Departments</a></li>
+                        <li><a href="Dashboard.html">Services Portal</a></li>
+                        <li><a href="About.html">About Us</a></li>
+                        <li><a href="Login.html">Citizen Login</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links anim-el anim-up" style="transition-delay:0.4s;">
+                    <h4 class="footer-heading">Resources</h4>
+                    <ul>
+                        <li><a href="Media.html">Press Releases</a></li>
+                        <li><a href="NotFound.html">Acts &amp; Rules</a></li>
+                        <li><a href="NotFound.html">RTI Guidelines</a></li>
+                        <li><a href="NotFound.html">Help Center</a></li>
+                        <li><a href="NotFound.html">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact anim-el anim-right" style="transition-delay:0.5s;">
+                    <ul>
+                        <li><i class="ph ph-map-pin"></i><span>Secretariat Building, Fort St. George,<br>Tamil Nadu – 600009</span></li>
+                        <li><i class="ph ph-phone"></i><span>1800-425-1333</span></li>
+                        <li><i class="ph ph-envelope-simple"></i><span>support@tn.gov.in</span></li>
+                        <li><i class="ph ph-clock"></i><span>Mon – Sat: 10:00 AM – 6:00 PM</span></li>
+                    </ul>
+                    <div class="footer-stats-box">
+                        <h5>250+ Services Online</h5>
+                        <p class="stats-highlight">Get instant certificates</p>
+                        <p class="stats-sub">New services added monthly</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-newsletter anim-el anim-up" style="transition-delay:0.6s;">
+                <div class="newsletter-text">
+                    <h4>Get Government Updates</h4>
+                    <p>Subscribe to receive daily news and service alerts</p>
+                </div>
+                <form class="newsletter-form" onsubmit="event.preventDefault();">
+                    <i class="ph ph-envelope-simple" style="padding-left:1rem;color:#64748b;font-size:1.25rem;"></i>
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit">Subscribe <i class="ph ph-arrow-right"></i></button>
+                </form>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 The Stackly e-Governance Prototype. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../javascripts/main.js"></script>
     <script>
-        // Simulate loading end
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                document.querySelectorAll('.skeleton-text, .skeleton-bg, .skeleton-btn, .skeleton-badge').forEach(el => {
-                    el.classList.remove('skeleton-text', 'skeleton-bg', 'skeleton-btn', 'skeleton-badge');
-                });
-            }, 600);
-        });
+        function lpTogglePwd(btn) {
+            const input = btn.previousElementSibling;
+            const hidden = input.type === 'password';
+            input.type = hidden ? 'text' : 'password';
+            btn.querySelector('i').className = hidden ? 'ph ph-eye-slash' : 'ph ph-eye';
+        }
 
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
+        function lpLogin(e) {
             e.preventDefault();
-            
-            const usernameInput = document.getElementById('username');
-            const passwordInput = document.getElementById('password');
-            const usernameError = document.getElementById('usernameError');
-            const passwordError = document.getElementById('passwordError');
-            
-            let isValid = true;
+            const u = document.getElementById('username');
+            const p = document.getElementById('password');
+            const ue = document.getElementById('usernameError');
+            const pe = document.getElementById('passwordError');
+            const wu = document.getElementById('wrap-username');
+            const wp = document.getElementById('wrap-password');
+            let valid = true;
 
-            // Reset errors
-            usernameError.style.display = 'none';
-            passwordError.style.display = 'none';
-            usernameInput.classList.remove('has-error');
-            passwordInput.classList.remove('has-error');
+            ue.style.display = 'none'; pe.style.display = 'none';
+            wu.classList.remove('lp-error-field'); wp.classList.remove('lp-error-field');
 
-            // Username validation
-            if (usernameInput.value.trim() === '') {
-                usernameError.style.display = 'block';
-                usernameInput.classList.add('has-error');
-                isValid = false;
-            }
+            if (!u.value.trim()) { ue.style.display = 'block'; wu.classList.add('lp-error-field'); valid = false; }
+            if (!p.value.trim()) { pe.style.display = 'block'; wp.classList.add('lp-error-field'); valid = false; }
+            if (!valid) return;
 
-            // Password validation
-            if (passwordInput.value.trim() === '') {
-                passwordError.style.display = 'block';
-                passwordInput.classList.add('has-error');
-                isValid = false;
-            }
+            const btn = document.getElementById('btn-login');
+            btn.innerHTML = '<i class="ph ph-circle-notch lp-spin"></i> Signing in...';
+            btn.disabled = true;
 
-            // Final check
-            if (isValid) {
-                // Remove button focus/active state styling briefly
-                const btn = document.querySelector('.btn-login');
-                btn.classList.add('loading');
-                btn.innerHTML = 'LOGGING IN...';
-                
-                setTimeout(() => {
-                    alert('Login'); // Simple alert required by user
-                    
-                    // Reset styling
-                    btn.classList.remove('loading');
-                    btn.innerHTML = 'LOGIN';
-                    // Optional: redirect to dashboard
-                    window.location.href = 'Dashboard.html';
-                }, 400); // Simulate network delay
-            }
-        });
+            setTimeout(() => { window.location.href = 'Dashboard.html'; }, 1200);
+        }
 
-        // Clear error styling on input
-        document.getElementById('username').addEventListener('input', function() {
-            this.classList.remove('has-error');
-            document.getElementById('usernameError').style.display = 'none';
-        });
-        document.getElementById('password').addEventListener('input', function() {
-            this.classList.remove('has-error');
-            document.getElementById('passwordError').style.display = 'none';
+        // Clear errors on input
+        ['username','password'].forEach(id => {
+            document.getElementById(id).addEventListener('input', function() {
+                document.getElementById(id + 'Error').style.display = 'none';
+                document.getElementById('wrap-' + id).classList.remove('lp-error-field');
+            });
         });
     </script>
-    <script src="../javascripts/main.js"></script>
 </body>
 </html>
