@@ -28,11 +28,10 @@
         <div class="lp-grid-dots"></div>
     </div>
 
-    <!-- ===== Navbar (same as all pages) ===== -->
-    <nav class="navbar">
+    <!-- ===== Stackly Navbar (HomePage1) ===== -->
+    <nav class="navbar" style="position:relative;z-index:200">
         <div class="container nav-container">
             <a href="../index.html"><span class="nav-brand-span">Stackly</span></a>
-
             <div class="nav-links">
                 <div class="nav-item">
                     <a href="../index.html" class="nav-link">Home</a>
@@ -46,7 +45,6 @@
                 <a href="Dashboard.html" class="nav-link">Dashboard</a>
                 <a href="Login.html" class="nav-link active">Login</a>
             </div>
-
             <button class="mobile-menu-btn">
                 <i class="ph ph-list" style="color:var(--clr-gold)"></i>
             </button>
@@ -275,6 +273,16 @@
                 document.getElementById('wrap-' + id).classList.remove('lp-error-field');
             });
         });
+
+        // HP2 Mobile Menu
+        function hp2ToggleMenu() {
+            const links = document.getElementById('hp2NavLinks');
+            const backdrop = document.getElementById('hp2Backdrop');
+            const btn = document.getElementById('hp2MobileBtn');
+            const open = links.classList.toggle('open');
+            backdrop.classList.toggle('open', open);
+            btn.querySelector('i').className = open ? 'ph ph-x' : 'ph ph-list';
+        }
     </script>
 </body>
 </html>

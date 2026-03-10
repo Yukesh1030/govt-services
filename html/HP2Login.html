@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citizen Login | HMDA Metropolitan Development Authority</title>
+    <meta name="description" content="Secure citizen login to the HMDA e-Governance Portal.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/HomePage2.css">
+    <link rel="stylesheet" href="../css/Login.css">
+</head>
+<body class="login-page">
+
+    <!-- Animated Background -->
+    <div class="lp-bg">
+        <div class="lp-orb lp-orb-1"></div>
+        <div class="lp-orb lp-orb-2"></div>
+        <div class="lp-orb lp-orb-3"></div>
+        <div class="lp-grid-dots"></div>
+    </div>
+
+    <!-- HP2 Teal Navbar -->
+    <nav class="hp2-navbar" style="position:relative;z-index:200">
+        <div class="hp2-nav-inner">
+            <a href="HomePage2.html" class="hp2-brand">
+                <div class="hp2-brand-icon"><i class="ph ph-buildings"></i></div>
+                <div>
+                    <span class="hp2-brand-name">HMDA</span>
+                    <span class="hp2-brand-sub">Metro Development</span>
+                </div>
+            </a>
+            <div class="hp2-nav-links" id="hp2NavLinks">
+                <div class="hp2-nav-item hp2-has-drop">
+                    <a href="../index.html" class="hp2-nav-link">Home <i class="ph ph-caret-down hp2-caret"></i></a>
+                    <div class="hp2-dropdown">
+                        <a href="../index.html" class="hp2-drop-link"><i class="ph ph-house"></i> Home 1 (Stackly)</a>
+                        <a href="HomePage2.html" class="hp2-drop-link"><i class="ph ph-buildings"></i> Home 2 (HMDA)</a>
+                    </div>
+                </div>
+                <a href="HP2Contact.html" class="hp2-nav-link">Contact</a>
+                <a href="HP2PressRelease.html" class="hp2-nav-link">Press Release</a>
+                <a href="HP2Services.html" class="hp2-nav-link">Services</a>
+                <a href="HP2Login.html" class="hp2-nav-link hp2-login-btn hp2-active"><i class="ph ph-sign-in"></i> Login</a>
+            </div>
+            <button class="hp2-mobile-btn" onclick="hp2ToggleMenu()" id="hp2MobileBtn"><i class="ph ph-list"></i></button>
+        </div>
+    </nav>
+    <div class="hp2-nav-backdrop" id="hp2Backdrop" onclick="hp2ToggleMenu()"></div>
+
+    <!-- Login Wrapper -->
+    <div class="lp-wrapper">
+
+        <!-- Left Branding Panel -->
+        <div class="lp-left lp-anim lp-anim-left">
+            <div class="lp-left-inner">
+                <div class="lp-govt-badge">
+                    <i class="ph ph-shield-check"></i>
+                    <span>Secured &amp; Encrypted Portal</span>
+                </div>
+                <div class="lp-brand-logo">
+                    <div class="lp-logo-icon" style="background:linear-gradient(135deg,#0d9488,#0f766e)"><i class="ph ph-buildings"></i></div>
+                    <div>
+                        <h1 class="lp-brand-name">HMDA</h1>
+                        <p class="lp-brand-sub">Metropolitan Development Authority</p>
+                    </div>
+                </div>
+                <p class="lp-brand-tagline">Hyderabad's premier urban development authority — 10,472 Sq.km, 104 mandals, one unified portal.</p>
+                <div class="lp-features">
+                    <div class="lp-feat">
+                        <div class="lp-feat-icon" style="background:rgba(13,148,136,0.15);color:#2dd4bf"><i class="ph ph-buildings"></i></div>
+                        <div><strong>Building Permissions</strong><span>Apply online via TG-bPASS</span></div>
+                    </div>
+                    <div class="lp-feat">
+                        <div class="lp-feat-icon" style="background:rgba(13,148,136,0.15);color:#2dd4bf"><i class="ph ph-chart-line-up"></i></div>
+                        <div><strong>Track Applications</strong><span>Real-time status updates</span></div>
+                    </div>
+                    <div class="lp-feat">
+                        <div class="lp-feat-icon" style="background:rgba(13,148,136,0.15);color:#2dd4bf"><i class="ph ph-gavel"></i></div>
+                        <div><strong>e-Auctions &amp; TDR</strong><span>All estate services online</span></div>
+                    </div>
+                </div>
+                <div class="lp-trust">
+                    <span class="lp-trust-num" style="color:#2dd4bf">10,472</span>
+                    <span class="lp-trust-label">Sq.km metropolitan region under HMDA</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Login Card -->
+        <div class="lp-right">
+            <div class="lp-card lp-anim lp-anim-up">
+
+                <div class="lp-card-header">
+                    <h2>Welcome Back</h2>
+                    <p>Sign in to your HMDA citizen account</p>
+                </div>
+
+                <form class="lp-form" id="loginForm" onsubmit="lpLogin(event)">
+                    <!-- Username -->
+                    <div class="lp-field">
+                        <label for="hp2username">Username / Citizen ID</label>
+                        <div class="lp-input-wrap" id="wrap-hp2username">
+                            <i class="ph ph-user-circle lp-input-icon"></i>
+                            <input type="text" id="hp2username" placeholder="Enter your citizen ID" autocomplete="username">
+                        </div>
+                        <span class="lp-error" id="hp2usernameError">Please enter your username</span>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="lp-field">
+                        <div class="lp-label-row">
+                            <label for="hp2password">Password</label>
+                            <a href="NotFound.html" class="lp-forgot">Forgot password?</a>
+                        </div>
+                        <div class="lp-input-wrap" id="wrap-hp2password">
+                            <i class="ph ph-lock-key lp-input-icon"></i>
+                            <input type="password" id="hp2password" placeholder="Enter your password" autocomplete="current-password">
+                            <button class="lp-eye-btn" type="button" onclick="lpTogglePwd(this)" tabindex="-1">
+                                <i class="ph ph-eye"></i>
+                            </button>
+                        </div>
+                        <span class="lp-error" id="hp2passwordError">Please enter your password</span>
+                    </div>
+
+                    <button class="lp-btn-submit" type="submit" id="hp2-btn-login" style="background:linear-gradient(135deg,#0d9488,#0f766e);box-shadow:0 4px 20px rgba(13,148,136,0.4)">
+                        <span>Sign In to HMDA Portal</span>
+                        <i class="ph ph-sign-in"></i>
+                    </button>
+                </form>
+
+                <!-- Divider -->
+                <div class="lp-divider"><span>or continue with</span></div>
+
+                <!-- Social -->
+                <div class="lp-social-row">
+                    <a href="NotFound.html" class="lp-social-btn"><i class="ph ph-google-logo"></i> Google</a>
+                    <a href="NotFound.html" class="lp-social-btn"><i class="ph-fill ph-facebook-logo"></i> Facebook</a>
+                    <a href="NotFound.html" class="lp-social-btn"><i class="ph-fill ph-twitter-logo"></i> Twitter</a>
+                </div>
+
+                <p class="lp-register-link">
+                    New citizen? <a href="NotFound.html">Create an account <i class="ph ph-arrow-up-right"></i></a>
+                </p>
+
+                <div class="lp-security-strip">
+                    <i class="ph ph-lock"></i>
+                    <span>256-bit SSL encrypted &amp; CERT-In compliant</span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-dark anim-el anim-up" style="transition-delay:0.1s">
+        <div class="container">
+            <div class="footer-grid-main">
+                <div class="footer-brand"><div class="brand-logo">THE STACKLY / HMDA</div><p>Hyderabad Metropolitan Development Authority — serving citizens across 10,472 Sq.km.</p></div>
+                <div class="footer-links"><h4 class="footer-heading">Quick Links</h4><ul><li><a href="HomePage2.html">HMDA Home</a></li><li><a href="HP2Services.html">Services</a></li><li><a href="HP2PressRelease.html">Press Releases</a></li><li><a href="HP2Contact.html">Contact</a></li></ul></div>
+                <div class="footer-links"><h4 class="footer-heading">Resources</h4><ul><li><a href="NotFound.html">HMDA Act</a></li><li><a href="NotFound.html">Master Plan</a></li><li><a href="NotFound.html">RTI</a></li></ul></div>
+                <div class="footer-contact"><ul><li><i class="ph ph-phone"></i><span>1800-599-4345</span></li><li><i class="ph ph-envelope-simple"></i><span>commissioner@hmda.gov.in</span></li></ul></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2026 HMDA — Hyderabad Metropolitan Development Authority. All rights reserved.</p></div>
+        </div>
+    </footer>
+
+    <script>
+        // HP2 Mobile Menu
+        function hp2ToggleMenu() {
+            const links = document.getElementById('hp2NavLinks');
+            const backdrop = document.getElementById('hp2Backdrop');
+            const btn = document.getElementById('hp2MobileBtn');
+            const open = links.classList.toggle('open');
+            backdrop.classList.toggle('open', open);
+            btn.querySelector('i').className = open ? 'ph ph-x' : 'ph ph-list';
+        }
+
+        function lpTogglePwd(btn) {
+            const input = btn.previousElementSibling;
+            const hidden = input.type === 'password';
+            input.type = hidden ? 'text' : 'password';
+            btn.querySelector('i').className = hidden ? 'ph ph-eye-slash' : 'ph ph-eye';
+        }
+
+        function lpLogin(e) {
+            e.preventDefault();
+            const u = document.getElementById('hp2username');
+            const p = document.getElementById('hp2password');
+            const ue = document.getElementById('hp2usernameError');
+            const pe = document.getElementById('hp2passwordError');
+            const wu = document.getElementById('wrap-hp2username');
+            const wp = document.getElementById('wrap-hp2password');
+            let valid = true;
+
+            ue.style.display = 'none'; pe.style.display = 'none';
+            wu.classList.remove('lp-error-field'); wp.classList.remove('lp-error-field');
+
+            if (!u.value.trim()) { ue.style.display = 'block'; wu.classList.add('lp-error-field'); valid = false; }
+            if (!p.value.trim()) { pe.style.display = 'block'; wp.classList.add('lp-error-field'); valid = false; }
+            if (!valid) return;
+
+            const btn = document.getElementById('hp2-btn-login');
+            btn.innerHTML = '<i class="ph ph-circle-notch lp-spin"></i> Signing in...';
+            btn.disabled = true;
+            setTimeout(() => { window.location.href = 'Dashboard.html'; }, 1200);
+        }
+
+        ['hp2username','hp2password'].forEach(id => {
+            document.getElementById(id).addEventListener('input', function() {
+                document.getElementById(id + 'Error').style.display = 'none';
+                document.getElementById('wrap-' + id).classList.remove('lp-error-field');
+            });
+        });
+    </script>
+</body>
+</html>

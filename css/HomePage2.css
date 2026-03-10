@@ -644,7 +644,7 @@ body.homepage2 {
 /* Dropdown */
 .hp2-dropdown {
     position: absolute;
-    top: calc(100% + 0.5rem);
+    top: 100%;          /* flush — no gap so hover isn't lost */
     left: 0;
     background: #1e293b;
     border: 1px solid rgba(45,212,191,0.15);
@@ -654,15 +654,23 @@ body.homepage2 {
     opacity: 0;
     transform: translateY(-8px);
     pointer-events: none;
-    transition: all 0.2s ease;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    transition-delay: 0s, 0s;   /* show immediately */
     box-shadow: 0 12px 30px rgba(0,0,0,0.3);
     z-index: 100;
+    padding-top: 0.5rem;        /* visual gap lives inside the dropdown */
 }
 
 .hp2-nav-item:hover .hp2-dropdown {
     opacity: 1;
     transform: translateY(0);
     pointer-events: all;
+    transition-delay: 0s;   /* show with no delay */
+}
+
+/* Add a tiny delay when HIDING so fast mouse moves don't collapse the menu */
+.hp2-nav-item .hp2-dropdown {
+    transition-delay: 120ms;  /* hide after 120ms of hover loss */
 }
 
 .hp2-drop-link {
