@@ -419,7 +419,7 @@ h1, h2, h3, h4 {
     }
 
     .nav-links {
-        display: none;
+        display: flex; /* Fixes animation breaking */
         position: fixed;
         top: 0;
         left: -100%;
@@ -435,7 +435,6 @@ h1, h2, h3, h4 {
     }
 
     .nav-links.active {
-        display: flex;
         left: 0;
     }
 
@@ -472,6 +471,8 @@ h1, h2, h3, h4 {
 
     .mobile-menu-btn {
         display: block;
+        position: relative;
+        z-index: 1002;
     }
 }
 

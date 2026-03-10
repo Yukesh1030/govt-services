@@ -22,237 +22,332 @@ body.homepage2 {
 
 /* Base Top Navigation Reset (Stackly Navbar overridden if needed, but assuming standard Stackly navbar runs above) */
 
-/* ── Hero Section ── */
-.hmda-hero-section {
+/* ── Premium Glassmorphic Hero ── */
+.hp2-modern-hero {
     position: relative;
     width: 100%;
-    margin-top: 2rem;
-    padding: 0 5%;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    max-width: 1600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.hmda-hero-left {
-    flex: 1 1 400px;
-    display: flex;
-    flex-direction: column;
-}
-
-.hmda-logo-container {
-    margin-bottom: 2rem;
-}
-
-.hmda-logo {
-    max-width: 250px;
-    height: auto;
-}
-
-.hmda-ticker {
+    min-height: 85vh;
     display: flex;
     align-items: center;
-    font-size: 0.85rem;
-    margin-bottom: 2rem;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 10px;
-}
-
-.hmda-badge-new {
-    background-color: #e53935;
-    color: white;
-    font-weight: 700;
-    font-size: 0.65rem;
-    padding: 2px 6px;
-    border-radius: 12px;
-    margin-right: 10px;
-    white-space: nowrap;
-}
-
-.hmda-ticker-text {
+    background: #0f172a;
     overflow: hidden;
-    white-space: nowrap;
 }
 
-.hmda-ticker-inner {
-    display: inline-block;
-    padding-left: 100%;
-    animation: ticker 20s linear infinite;
+.hp2-hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
 }
 
-@keyframes ticker {
-    0% { transform: translate3d(0, 0, 0); }
-    100% { transform: translate3d(-100%, 0, 0); }
-}
-
-.hmda-welcome-section {
-    display: flex;
-    gap: 1.5rem;
-    align-items: flex-start;
-}
-
-.hmda-welcome-text {
-    flex: 1;
-}
-
-.hmda-welcome-text h1 {
-    font-family: var(--font-heading);
-    color: var(--clr-hmda-dark-blue);
-    font-size: 2.2rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-}
-
-.hmda-welcome-text p {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: 1rem;
-    color: #555;
-}
-
-.hmda-tower-poster {
-    width: 180px;
-    flex-shrink: 0;
-    text-align: center;
-}
-
-.hmda-tower-poster img {
-    width: 100%;
-    height: auto;
-    border-radius: 4px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-.hmda-hero-right {
-    flex: 1.5 1 500px;
-    position: relative;
-    border-radius: 8px;
-    overflow: hidden;
-    min-height: 400px;
-}
-
-.hmda-hero-banner {
+.hp2-hero-bg img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
+    object-position: center;
 }
 
-.hmda-services-menu {
+.hp2-hero-overlay {
     position: absolute;
-    bottom: -20px; /* Overlap down */
-    right: 5%;
-    width: 320px;
-    background-color: var(--clr-hmda-green);
-    color: white;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    inset: 0;
+    background: linear-gradient(135deg, rgba(15,23,42,0.92) 0%, rgba(15,23,42,0.7) 50%, rgba(15,23,42,0.85) 100%);
+    backdrop-filter: blur(4px);
+}
+
+.hp2-hero-content {
+    position: relative;
     z-index: 10;
+    width: 100%;
+    padding: 6rem 2rem;
 }
 
-.hmda-services-menu h3 {
-    font-family: var(--font-heading);
-    font-size: 1.5rem;
+.hp2-hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+/* Glass Card Foundation */
+.hp2-glass-card {
+    background: rgba(30, 41, 59, 0.45);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1.5rem;
+    padding: 3rem;
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+}
+
+.hp2-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 1rem;
+    background: rgba(45, 212, 191, 0.1);
+    border: 1px solid rgba(45, 212, 191, 0.2);
+    border-radius: 999px;
+    color: #2dd4bf;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+
+.hp2-pulse-dot {
+    width: 6px;
+    height: 6px;
+    background: #2dd4bf;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #2dd4bf;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(45, 212, 191, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(45, 212, 191, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(45, 212, 191, 0); }
+}
+
+.hp2-hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #f8fafc;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+}
+
+.hp2-text-gradient {
+    background: linear-gradient(135deg, #2dd4bf, #38bdf8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hp2-hero-subtitle {
+    color: #94a3b8;
+    font-size: 1rem;
     font-weight: 600;
-    padding: 1.5rem 1.5rem 1rem;
+    letter-spacing: 0.2em;
+    margin-bottom: 1.5rem;
 }
 
-.hmda-services-list {
-    list-style: none;
-    padding: 0;
+.hp2-hero-desc {
+    color: #cbd5e1;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+}
+
+/* Glass Ticker */
+.hp2-ticker-glass {
+    display: flex;
+    align-items: center;
+    background: rgba(0,0,0,0.2);
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    margin-bottom: 2.5rem;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+/* Buttons */
+.hp2-hero-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.hp2-btn-glow {
+    background: linear-gradient(135deg, #0d9488, #0f766e);
+    color: #fff;
+    padding: 0.9rem 1.8rem;
+    border-radius: 999px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 15px rgba(13,148,136,0.4);
+    transition: all 0.3s ease;
+}
+
+.hp2-btn-glow:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(13,148,136,0.6);
+    color: #fff;
+}
+
+.hp2-btn-outline {
+    background: transparent;
+    color: #f8fafc;
+    padding: 0.9rem 1.8rem;
+    border-radius: 999px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: all 0.3s ease;
+}
+
+.hp2-btn-outline:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.4);
+}
+
+/* Services Menu Glass */
+.hp2-glass-menu {
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+}
+
+.hp2-glass-menu-header {
+    background: rgba(0,0,0,0.2);
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.hp2-glass-menu-header h3 {
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: 700;
     margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
-.hmda-services-list li a {
+.hp2-glass-menu-header h3 i { color: #2dd4bf; }
+
+.hp2-glass-list { list-style: none; padding: 0; margin: 0; }
+.hp2-glass-list li a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 1.5rem;
-    color: white;
+    padding: 1rem 1.5rem;
+    color: #cbd5e1;
     text-decoration: none;
-    font-size: 0.95rem;
-    border-top: 1px solid rgba(255,255,255,0.2);
-    transition: background-color 0.3s;
-}
-
-.hmda-services-list li a:hover {
-    background-color: rgba(0,0,0,0.1);
-}
-
-/* ── Info Blocks Section ── */
-.hmda-info-section {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 4rem;
-    background-color: var(--clr-bg-grey);
-}
-
-.hmda-notifications {
-    flex: 1 1 400px;
-    background-color: var(--clr-hmda-blue);
-    color: white;
-    padding: 4rem 5% 4rem 10%;
-}
-
-.hmda-notifications h2 {
-    font-family: var(--font-heading);
-    font-size: 2rem;
     font-weight: 500;
-    margin-bottom: 2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    transition: all 0.2s ease;
 }
 
-.hmda-notif-item {
-    margin-bottom: 2rem;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
-    padding-bottom: 1.5rem;
+.hp2-glass-list li:last-child a { border-bottom: none; }
+.hp2-glass-list li a:hover {
+    background: rgba(45,212,191,0.08);
+    color: #2dd4bf;
+    padding-left: 2rem;
 }
 
-.hmda-notif-item p {
-    font-size: 0.95rem;
-    line-height: 1.5;
-    margin: 0;
+/* ── Info Grid (Notifications & Quick Links) ── */
+.hp2-info-grid-section {
+    background: #0f172a;
+    padding: 4rem 0 6rem;
+    position: relative;
 }
 
-.hmda-notif-item .hmda-badge-new {
-    display: inline-block;
-    vertical-align: middle;
-    margin-bottom: 4px;
-}
-
-.hmda-sublink {
-    display: block;
-    margin-top: 0.5rem;
-    color: rgba(255,255,255,0.8);
-    font-size: 0.85rem;
-}
-
-.hmda-quick-links {
-    flex: 1.5 1 500px;
-    padding: 4rem 10% 4rem 5%;
+.hp2-info-grid-section .hp2-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
 }
 
-.hmda-qk-card {
-    background: white;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+.hp2-notif-glass-card {
+    background: rgba(30, 41, 59, 0.4);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+}
+
+.hp2-notif-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.hp2-notif-header h2 {
+    color: #f8fafc;
+    font-size: 1.5rem;
     display: flex;
     align-items: center;
+    gap: 0.5rem;
+    margin: 0;
+}
+.hp2-notif-header h2 i { color: #38bdf8; }
+
+.hp2-view-all {
+    color: #2dd4bf;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid rgba(45,212,191,0.3);
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;
+    transition: all 0.2s;
+}
+.hp2-view-all:hover { background: rgba(45,212,191,0.1); border-color: #2dd4bf; }
+
+.hp2-notif-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.hp2-notif-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+.hp2-notif-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(56,189,248,0.1);
+    color: #38bdf8;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+.hp2-notif-item-alert .hp2-notif-icon { background: rgba(244,63,94,0.1); color: #f43f5e; }
+
+.hp2-notif-content h4 { color: #f8fafc; font-size: 1.05rem; margin: 0 0 0.5rem; display: flex; align-items: center; gap: 0.5rem;}
+.hp2-notif-content p { color: #94a3b8; font-size: 0.9rem; margin: 0; line-height: 1.5;}
+
+.hp2-sublink {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    color: #38bdf8;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 0.8rem;
+}
+
+/* Quick Links Cards */
+.hp2-quick-links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
-    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.hmda-qk-card:hover {
+.hp2-qk-card {
+    background: rgba(30, 41, 59, 0.4);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.hp2-qk-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-}
-
-.hmda-qk-icon {
-    width: 80px;
     height: 80px;
     border-radius: 50%;
     overflow: hidden;
@@ -727,6 +822,93 @@ body.homepage2 {
     inset: 0;
     background: rgba(0,0,0,0.5);
     z-index: 499;
+}
+
+/* ====================================================
+   Our Documents Section
+   ==================================================== */
+.hp2-documents-section {
+    background: #f8fafc;
+    padding: 6rem 0;
+}
+
+.hp2-doc-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.hp2-doc-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 1rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    min-height: 220px;
+}
+
+.hp2-doc-card:hover {
+    transform: translateY(-8px);
+    border-color: #2dd4bf;
+    box-shadow: 0 20px 40px rgba(13,148,136,0.1);
+}
+
+.hp2-doc-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 0.75rem;
+    background: rgba(45,212,191,0.1);
+    color: #0f766e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+}
+
+.hp2-doc-card:hover .hp2-doc-icon {
+    background: linear-gradient(135deg, #0d9488, #0f766e);
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.hp2-doc-content h3 {
+    color: #0f172a;
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin: 0 0 1rem;
+    line-height: 1.4;
+}
+
+.hp2-doc-action {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #64748b;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.hp2-doc-card:hover .hp2-doc-action {
+    color: #0d9488;
+}
+
+.hp2-doc-action i {
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hp2-doc-card:hover .hp2-doc-action i {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 /* ====================================================
@@ -1275,10 +1457,11 @@ body.homepage2 {
 @media (max-width: 1024px) {
     .hp2-stats-grid { grid-template-columns: repeat(3, 1fr); }
     .hp2-services-flex { grid-template-columns: repeat(2, 1fr); }
+    .hp2-doc-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 768px) {
-    .hp2-mobile-btn { display: flex; }
+    .hp2-mobile-btn { display: flex; position: relative; z-index: 9999; }
 
     .hp2-nav-links {
         position: fixed;
@@ -1312,6 +1495,7 @@ body.homepage2 {
     .hp2-contact-grid { grid-template-columns: 1fr; gap: 2rem; }
     .hp2-form-row { grid-template-columns: 1fr; }
     .hp2-sec-head h2 { font-size: 1.65rem; }
+    .hp2-doc-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 480px) {

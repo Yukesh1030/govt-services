@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | The Stackly2 Services</title>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <!-- Base Styles & Not Found Specific Styles -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/NotFound.css">
+    <link rel="stylesheet" href="../css/HomePage2.css">
+    
+    <style>
+        /* Override NotFound gold with Stackly2 Teal */
+        body { background-color: #0f172a; }
+        .not-found-wrapper { align-items: center; justify-content: center; min-height: 80vh; background: transparent; }
+        .error-title { color: #f8fafc; font-weight: 800; font-size: 3rem; }
+        .error-desc { color: #94a3b8; }
+        .number-4 { color: #1e293b; text-shadow: 2px 2px 10px rgba(45,212,191,0.2); }
+        .radar-container { background: rgba(13,148,136,0.1); border: 1px solid rgba(45,212,191,0.3); box-shadow: 0 0 30px rgba(45,212,191,0.15); }
+        .radar-icon { color: #2dd4bf; }
+        
+        .btn-teal {
+            background: linear-gradient(135deg, #0d9488, #0f766e);
+            color: #fff;
+            border: none;
+            box-shadow: 0 8px 25px rgba(13,148,136,0.3);
+        }
+        .btn-teal:hover { background: linear-gradient(135deg, #0f766e, #0d9488); color: #fff; transform: translateY(-2px); box-shadow: 0 12px 30px rgba(13,148,136,0.4); }
+        
+        .btn-outline-teal {
+            background: transparent;
+            color: #2dd4bf;
+            border: 1px solid rgba(45,212,191,0.4);
+        }
+        .btn-outline-teal:hover { background: rgba(45,212,191,0.1); color: #2dd4bf; transform: translateY(-2px); }
+    </style>
+</head>
+<body class="homepage2">
+
+    <!-- HP2 Custom Navbar -->
+    <nav class="hp2-navbar">
+        <div class="hp2-nav-inner">
+            <!-- Brand -->
+            <a href="HomePage2.html" class="hp2-brand">
+                <div class="hp2-brand-icon"><i class="ph ph-buildings"></i></div>
+                <div>
+                    <span class="hp2-brand-name">Stackly2</span>
+                    <span class="hp2-brand-sub">Government Services</span>
+                </div>
+            </a>
+
+            <!-- Links -->
+            <div class="hp2-nav-links" id="hp2NavLinks">
+                <!-- Home1 with hover dropdown -->
+                <div class="hp2-nav-item hp2-has-drop">
+                    <a href="../index.html" class="hp2-nav-link">
+                        Home <i class="ph ph-caret-down hp2-caret"></i>
+                    </a>
+                    <div class="hp2-dropdown">
+                        <a href="../index.html" class="hp2-drop-link">
+                            <i class="ph ph-house"></i> Home 1 (Stackly)
+                        </a>
+                        <a href="HomePage2.html" class="hp2-drop-link">
+                            <i class="ph ph-buildings"></i> Stackly2 Home Page
+                        </a>
+                    </div>
+                </div>
+
+                <a href="HP2Contact.html" class="hp2-nav-link">Contact</a>
+                <a href="HP2PressRelease.html" class="hp2-nav-link">Press Release</a>
+                <a href="HP2Services.html" class="hp2-nav-link">Services</a>
+                <a href="HP2Login.html" class="hp2-nav-link hp2-login-btn">
+                    <i class="ph ph-sign-in"></i> Login
+                </a>
+            </div>
+
+            <button class="hp2-mobile-btn" onclick="hp2ToggleMenu()" id="hp2MobileBtn">
+                <i class="ph ph-list"></i>
+            </button>
+        </div>
+    </nav>
+    <div class="hp2-nav-backdrop" id="hp2Backdrop" onclick="hp2ToggleMenu()"></div>
+
+    <!-- 404 Container -->
+    <main class="not-found-wrapper">
+        <div class="not-found-content anim-el anim-up" style="animation: fadeUp 0.8s ease forwards;">
+            
+            <!-- Animated 404 Graphic -->
+            <div class="error-graphic">
+                <div class="number-4">4</div>
+                <div class="radar-container">
+                    <i class="ph ph-radar radar-icon"></i>
+                </div>
+                <div class="number-4">4</div>
+            </div>
+
+            <!-- Text Content -->
+            <h1 class="error-title">Page Not Found</h1>
+            <p class="error-desc">We've searched everywhere, but this Stackly2 portal page has been moved, removed, or doesn't exist.</p>
+            
+            <!-- Actions -->
+            <div class="error-actions" style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem;">
+                <button onclick="history.back()" class="btn btn-outline-teal btn-lg pulse-hover">
+                    <i class="ph ph-arrow-left"></i>
+                    Go Back
+                </button>
+                <a href="HomePage2.html" class="btn btn-teal btn-lg pulse-hover">
+                    <i class="ph ph-house"></i>
+                    Back to Stackly2 Portal
+                </a>
+            </div>
+
+        </div>
+    </main>
+    
+    <script>
+        function hp2ToggleMenu() {
+            var links = document.getElementById('hp2NavLinks');
+            var backdrop = document.getElementById('hp2Backdrop');
+            if(links) links.classList.toggle('open');
+            if(backdrop) backdrop.classList.toggle('open');
+        }
+    </script>
+</body>
+</html>
