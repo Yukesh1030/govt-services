@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const navLink = e.target.closest('.nav-link');
             if (!navLink) return;
 
-            const navItem = navLink.parentElement;
+            const navItem = navLink.closest('.nav-item');
             const hasDropdown = navItem && navItem.querySelector('.dropdown-menu');
             
             const isMobile = getComputedStyle(mobileMenuBtn).display !== 'none';
@@ -71,9 +71,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            // For links without dropdowns or sub-links
-            const dropdownLink = e.target.closest('.dropdown-link');
-            if (dropdownLink || (navLink && !hasDropdown)) {
+            // For links without dropdowns, close the menu and let navigation happen
+            if (isMobile) {
                 toggleMenu(false);
             }
         });

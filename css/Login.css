@@ -60,8 +60,7 @@ body.login-page {
 
 /* ── Navbar z-index elevation on login page ── */
 body.login-page .navbar {
-    position: relative;
-    z-index: 200;
+    z-index: 1000; /* Keeping high z-index but allowing global sticky */
 }
 
 /* ── Main wrapper ── */
@@ -111,17 +110,17 @@ body.login-page .navbar {
 }
 
 .lp-logo-icon {
-    width: 60px; height: 60px;
-    border-radius: 1rem;
+    width: 50px; height: 50px; /* Reduced from 60px */
+    border-radius: 0.8rem;
     background: linear-gradient(135deg, #4a3600, #c47d00);
     display: flex; align-items: center; justify-content: center;
-    font-size: 1.9rem; color: #fde047;
+    font-size: 1.5rem; color: #fde047; /* Reduced font size */
     flex-shrink: 0;
     box-shadow: 0 8px 24px rgba(74,54,0,0.4);
 }
 
 .lp-brand-name {
-    font-size: 2.4rem;
+    font-size: 2rem; /* Reduced from 2.4rem */
     font-weight: 800;
     color: #fff;
     letter-spacing: -0.04em;
@@ -186,18 +185,18 @@ body.login-page .navbar {
 
 .lp-card {
     width: 100%;
-    max-width: 440px;
+    max-width: 400px; /* Reduced from 440px */
     background: rgba(255,255,255,0.04);
     border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 1.5rem;
-    padding: 2.5rem;
+    border-radius: 1.25rem; /* Reduced radius */
+    padding: 2rem; /* Reduced from 2.5rem */
     backdrop-filter: blur(20px);
     box-shadow: 0 30px 60px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.06);
 }
 
 .lp-card-header { margin-bottom: 2rem; }
 .lp-card-header h2 {
-    font-size: 1.75rem;
+    font-size: 1.5rem; /* Reduced from 1.75rem */
     font-weight: 800;
     color: #fff;
     letter-spacing: -0.03em;
@@ -267,7 +266,7 @@ body.login-page .navbar {
     background: none;
     border: none;
     outline: none;
-    padding: 0.9rem 1rem;
+    padding: 0.75rem 1rem; /* Reduced from 0.9rem */
     color: #f1f5f9;
     font-family: 'Inter', sans-serif;
     font-size: 0.9rem;
