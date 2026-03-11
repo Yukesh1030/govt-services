@@ -348,14 +348,7 @@ body.homepage2 {
 
 .hp2-qk-card:hover {
     transform: translateY(-5px);
-    height: 80px;
-    border-radius: 50%;
-    overflow: hidden;
-    flex-shrink: 0;
     background-color: var(--clr-bg-grey);
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .hmda-qk-icon img {
@@ -1458,10 +1451,33 @@ body.homepage2 {
     .hp2-stats-grid { grid-template-columns: repeat(3, 1fr); }
     .hp2-services-flex { grid-template-columns: repeat(2, 1fr); }
     .hp2-doc-grid { grid-template-columns: repeat(2, 1fr); }
+    .hp2-hero-grid { gap: 2rem; }
 }
 
 @media (max-width: 768px) {
     .hp2-mobile-btn { display: flex; position: relative; z-index: 9999; }
+    
+    .hp2-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .hp2-hero-title {
+        font-size: 2.25rem;
+    }
+
+    .hp2-hero-content {
+        padding: 4rem 1rem;
+    }
+
+    .hp2-glass-card {
+        padding: 1.5rem;
+    }
+
+    .hp2-info-grid-section .hp2-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
 
     .hp2-nav-links {
         position: fixed;
