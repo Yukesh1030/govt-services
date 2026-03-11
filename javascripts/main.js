@@ -105,10 +105,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const slides = document.querySelectorAll('.slide');
     const prevBtn = document.querySelector('.prev-btn');
     const nextBtn = document.querySelector('.next-btn');
-    const playPauseBtn = document.querySelector('.play-pause-btn');
+
 
     let currentSlide = 0;
-    let isPlaying = true;
     let slideInterval;
 
     function goToSlide(index) {
@@ -138,29 +137,14 @@ document.addEventListener('DOMContentLoaded', () => {
         if (nextBtn) {
             nextBtn.addEventListener('click', () => {
                 nextSlide();
-                if (isPlaying) { stopSlider(); startSlider(); }
+                stopSlider(); startSlider();
             });
         }
 
         if (prevBtn) {
             prevBtn.addEventListener('click', () => {
                 prevSlide();
-                if (isPlaying) { stopSlider(); startSlider(); }
-            });
-        }
-
-        if (playPauseBtn) {
-            playPauseBtn.addEventListener('click', () => {
-                const icon = playPauseBtn.querySelector('i');
-                if (isPlaying) {
-                    stopSlider();
-                    if (icon) { icon.classList.remove('ph-pause'); icon.classList.add('ph-play'); }
-                    isPlaying = false;
-                } else {
-                    startSlider();
-                    if (icon) { icon.classList.remove('ph-play'); icon.classList.add('ph-pause'); }
-                    isPlaying = true;
-                }
+                stopSlider(); startSlider();
             });
         }
     }

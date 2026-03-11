@@ -72,6 +72,11 @@
 }
 
 /* html { overflow-x: hidden; } — Removed to allow position: sticky to work */
+html, body {
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
+}
 
 body {
     font-family: var(--font-sans);
@@ -1598,9 +1603,9 @@ h1, h2, h3, h4 {
     .stat-item { text-align: center; flex: 1 1 45%; }
 
     .slider-btn { width: 34px; height: 34px; font-size: 0.95rem; }
-    .prev-btn { left: 0.5rem; }
-    .next-btn { right: 0.5rem; }
-    .play-pause-btn { right: 3rem; bottom: 1rem; top: auto; transform: none; }
+    .prev-btn { left: 1rem; }
+    .next-btn { right: 1rem; }
+    .play-pause-btn { right: 4rem; bottom: 1rem; top: auto; transform: none; }
 
     /* == Officials == */
     .officials-section { padding: var(--space-6) 0 !important; }
