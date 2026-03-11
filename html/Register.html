@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Citizen Login | The Stackly Government Services Portal</title>
-    <meta name="description" content="Secure citizen login to the Stackly e-Governance Portal.">
+    <title>Citizen Registration | The Stackly Government</title>
+    <meta name="description" content="Register for a new citizen account on the Stackly e-Governance Portal.">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,19 +17,41 @@
     <!-- Styles -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/Login.css">
+    <style>
+        /* Additional Register specific styles based on Login theme */
+        .register-page .lp-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            min-height: calc(100vh - 80px); /* Adjust based on navbar height */
+            padding: 2rem 1rem;
+        }
+        .register-page .lp-card {
+            max-width: 460px; /* Slightly wider than login (400) but not too wide */
+        }
+        .register-row {
+            display: flex;
+            gap: 1rem;
+        }
+        .register-row > .lp-field {
+            flex: 1;
+            min-width: 0;
+        }
+        @media (max-width: 600px) {
+            .register-row { flex-direction: column; }
+        }
+    </style>
 </head>
-<body class="login-page">
+<body class="login-page register-page">
 
     <!-- ===== Animated Background ===== -->
     <div class="lp-bg">
         <div class="lp-orb lp-orb-1"></div>
         <div class="lp-orb lp-orb-2"></div>
         <div class="lp-orb lp-orb-3"></div>
-        <div class="lp-grid-dots"></div>
     </div>
 
-    <!-- ===== Stackly Navbar (HomePage1) ===== -->
-    <nav class="navbar">
+    <!-- ===== Navbar ===== -->
+    <nav class="navbar scrolled">
         <div class="container nav-container">
             <a href="../index.html"><span class="nav-brand-span">Stackly</span></a>
             <div class="nav-links">
@@ -51,127 +73,144 @@
         </div>
     </nav>
 
-    <!-- ===== Login Wrapper ===== -->
+    <!-- ===== Registration Content ===== -->
     <div class="lp-wrapper">
 
         <!-- Left Branding Panel -->
         <div class="lp-left lp-anim lp-anim-left">
             <div class="lp-left-inner">
+                
                 <div class="lp-govt-badge">
                     <i class="ph ph-shield-check"></i>
-                    <span>Secured &amp; Encrypted Portal</span>
+                    <span>Official National Portal</span>
                 </div>
+
                 <div class="lp-brand-logo">
-                    <div class="lp-logo-icon"><i class="ph ph-buildings"></i></div>
+                    <div class="lp-logo-icon">
+                        <i class="ph ph-bank"></i>
+                    </div>
                     <div>
                         <h1 class="lp-brand-name">Stackly</h1>
-                        <p class="lp-brand-sub">e-Governance Portal</p>
+                        <p class="lp-brand-sub">e-Governance Services</p>
                     </div>
                 </div>
-                <p class="lp-brand-tagline">One portal. 250+ government services.<br>Serving citizens across Maharashtra.</p>
+
+                <p class="lp-brand-tagline">
+                    Join the digital governance platform. One account grants you access to hundreds of state and central services transparently.
+                </p>
+
                 <div class="lp-features">
                     <div class="lp-feat">
-                        <div class="lp-feat-icon"><i class="ph ph-certificate"></i></div>
-                        <div><strong>Instant Certificates</strong><span>Birth, Income, Caste — digitally</span></div>
+                        <div class="lp-feat-icon"><i class="ph ph-file-text"></i></div>
+                        <div>
+                            <strong>Unified Application</strong>
+                            <span>Apply for all certificates from one dashboard</span>
+                        </div>
                     </div>
                     <div class="lp-feat">
-                        <div class="lp-feat-icon"><i class="ph ph-chart-line-up"></i></div>
-                        <div><strong>Track Applications</strong><span>Real-time status of every request</span></div>
+                        <div class="lp-feat-icon"><i class="ph ph-bell-ringing"></i></div>
+                        <div>
+                            <strong>Real-time Alerts</strong>
+                            <span>Get notified on scheme approvals</span>
+                        </div>
                     </div>
                     <div class="lp-feat">
-                        <div class="lp-feat-icon"><i class="ph ph-hand-heart"></i></div>
-                        <div><strong>Welfare Schemes</strong><span>CM Ladki Bahin, PM Awas &amp; more</span></div>
+                        <div class="lp-feat-icon"><i class="ph ph-lock-key"></i></div>
+                        <div>
+                            <strong>Data Privacy Hub</strong>
+                            <span>Control what government shares</span>
+                        </div>
                     </div>
                 </div>
-                <div class="lp-trust">
-                    <span class="lp-trust-num">12.6 Cr</span>
-                    <span class="lp-trust-label">citizens served across Maharashtra</span>
-                </div>
+
             </div>
         </div>
 
-        <!-- Right Login Card -->
+        <!-- Right Registration Card -->
         <div class="lp-right">
             <div class="lp-card lp-anim lp-anim-up">
-
+                
+                <!-- Card Header -->
                 <div class="lp-card-header">
-                    <h2>Welcome Back</h2>
-                    <p>Sign in to your government services account</p>
+                    <h2>Create Account</h2>
+                    <p>Register to access government services</p>
                 </div>
 
-                <!-- Demo Credentials Block -->
-                <div style="background: rgba(234, 179, 8, 0.1); border-left: 4px solid var(--clr-gold); padding: 1rem; border-radius: 4px; margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center;">
-                    <div style="font-size: 0.9rem; color: #ffffff;">
-                        <div><strong>Demo ID:</strong> admin</div>
-                        <div><strong>Pwd:</strong> password123</div>
-                    </div>
-                    <button type="button" onclick="fillDemoCredentials()" style="background: var(--clr-gold); color: #fff; border: none; padding: 0.4rem 0.8rem; border-radius: 4px; font-size: 0.85rem; cursor: pointer; transition: background 0.2s;">
-                        <i class="ph ph-magic-wand"></i> Fill
-                    </button>
-                </div>
-
-                <!-- Login Form -->
-                <form class="lp-form" id="loginForm" onsubmit="lpLogin(event)">
-
-                    <!-- Username -->
-                    <div class="lp-field">
-                        <label for="username">Username / Citizen ID</label>
-                        <div class="lp-input-wrap" id="wrap-username">
-                            <i class="ph ph-user-circle lp-input-icon"></i>
-                            <input type="text" id="username" placeholder="Enter your citizen ID" autocomplete="username">
+                <!-- Registration Form -->
+                <form class="lp-form" id="registerForm" onsubmit="lpRegister(event)">
+                    
+                    <div class="register-row">
+                        <!-- First Name -->
+                        <div class="lp-field">
+                            <label for="firstName">First Name</label>
+                            <div class="lp-input-wrap" id="wrap-firstName">
+                                <i class="ph ph-user lp-input-icon"></i>
+                                <input type="text" id="firstName" placeholder="First name">
+                            </div>
+                            <span class="lp-error" id="firstNameError">Required field</span>
                         </div>
-                        <span class="lp-error" id="usernameError">Please enter your username</span>
+
+                        <!-- Last Name -->
+                        <div class="lp-field">
+                            <label for="lastName">Last Name</label>
+                            <div class="lp-input-wrap" id="wrap-lastName">
+                                <i class="ph ph-user lp-input-icon"></i>
+                                <input type="text" id="lastName" placeholder="Last name">
+                            </div>
+                            <span class="lp-error" id="lastNameError">Required field</span>
+                        </div>
+                    </div>
+
+                    <!-- Email / Citizen ID -->
+                    <div class="lp-field">
+                        <label for="email">Email Address</label>
+                        <div class="lp-input-wrap" id="wrap-email">
+                            <i class="ph ph-envelope-simple lp-input-icon"></i>
+                            <input type="email" id="email" placeholder="Enter your email">
+                        </div>
+                        <span class="lp-error" id="emailError">Please enter a valid email</span>
                     </div>
 
                     <!-- Password -->
                     <div class="lp-field">
-                        <div class="lp-label-row">
-                            <label for="password">Password</label>
-                            <a href="NotFound.html" class="lp-forgot">Forgot password?</a>
-                        </div>
+                        <label for="password">Create Password</label>
                         <div class="lp-input-wrap" id="wrap-password">
                             <i class="ph ph-lock-key lp-input-icon"></i>
-                            <input type="password" id="password" placeholder="Enter your password" autocomplete="current-password">
+                            <input type="password" id="password" placeholder="Create a strong password">
                             <button class="lp-eye-btn" type="button" onclick="lpTogglePwd(this)" tabindex="-1">
                                 <i class="ph ph-eye"></i>
                             </button>
                         </div>
-                        <span class="lp-error" id="passwordError">Please enter your password</span>
+                        <span class="lp-error" id="passwordError">Password must be at least 8 characters</span>
                     </div>
 
                     <!-- Submit -->
-                    <button class="lp-btn-submit" type="submit" id="btn-login">
-                        <span>Sign In to Portal</span>
-                        <i class="ph ph-sign-in"></i>
+                    <button class="lp-btn-submit" type="submit" id="btn-register" style="margin-top: 1.5rem;">
+                        <span>Complete Registration</span>
+                        <i class="ph ph-user-plus"></i>
                     </button>
 
                 </form>
 
                 <!-- Divider -->
-                <div class="lp-divider"><span>or continue with</span></div>
+                <div class="lp-divider"><span>or setup via</span></div>
 
-                <!-- Social -->
+                <!-- Social (e.g. National ID portal linkage) -->
                 <div class="lp-social-row">
-                    <a href="NotFound.html" class="lp-social-btn">
-                        <i class="ph ph-google-logo"></i> Google
-                    </a>
-                    <a href="NotFound.html" class="lp-social-btn">
-                        <i class="ph-fill ph-facebook-logo"></i> Facebook
-                    </a>
-                    <a href="NotFound.html" class="lp-social-btn">
-                        <i class="ph-fill ph-twitter-logo"></i> Twitter
+                    <a href="NotFound.html" class="lp-social-btn" style="flex: 1; justify-content: center;">
+                        <i class="ph ph-fingerprint"></i> Aadhaar / National ID
                     </a>
                 </div>
 
-                <!-- Register -->
+                <!-- Login Link -->
                 <p class="lp-register-link">
-                    New citizen? <a href="Register.html">Create an account <i class="ph ph-arrow-up-right"></i></a>
+                    Already registered? <a href="Login.html">Sign in here <i class="ph ph-arrow-right"></i></a>
                 </p>
 
                 <!-- Security -->
                 <div class="lp-security-strip">
                     <i class="ph ph-lock"></i>
-                    <span>256-bit SSL encrypted &amp; CERT-In compliant</span>
+                    <span>256-bit SSL encrypted & CERT-In compliant</span>
                 </div>
 
             </div>
@@ -255,62 +294,48 @@
             btn.querySelector('i').className = hidden ? 'ph ph-eye-slash' : 'ph ph-eye';
         }
 
-        function lpLogin(e) {
+        function lpRegister(e) {
             e.preventDefault();
-            const u = document.getElementById('username');
+            const fn = document.getElementById('firstName');
+            const ln = document.getElementById('lastName');
+            const em = document.getElementById('email');
             const p = document.getElementById('password');
-            const ue = document.getElementById('usernameError');
-            const pe = document.getElementById('passwordError');
-            const wu = document.getElementById('wrap-username');
-            const wp = document.getElementById('wrap-password');
+            
             let valid = true;
+            
+            // Simple validation simulation
+            ['firstName', 'lastName', 'email', 'password'].forEach(id => {
+                const el = document.getElementById(id);
+                const wrap = document.getElementById('wrap-' + id);
+                const err = document.getElementById(id + 'Error');
+                
+                if(!el.value.trim()) {
+                    err.style.display = 'block';
+                    wrap.classList.add('lp-error-field');
+                    valid = false;
+                } else {
+                    err.style.display = 'none';
+                    wrap.classList.remove('lp-error-field');
+                }
+            });
 
-            ue.style.display = 'none'; pe.style.display = 'none';
-            wu.classList.remove('lp-error-field'); wp.classList.remove('lp-error-field');
-
-            if (!u.value.trim()) { ue.style.display = 'block'; wu.classList.add('lp-error-field'); valid = false; }
-            if (!p.value.trim()) { pe.style.display = 'block'; wp.classList.add('lp-error-field'); valid = false; }
             if (!valid) return;
 
-            const btn = document.getElementById('btn-login');
-            btn.innerHTML = '<i class="ph ph-circle-notch lp-spin"></i> Signing in...';
+            const btn = document.getElementById('btn-register');
+            btn.innerHTML = '<i class="ph ph-circle-notch lp-spin"></i> Creating Account...';
             btn.disabled = true;
 
-            setTimeout(() => { window.location.href = 'NotFound.html'; }, 1200);
-        }
-
-        // Fill Demo Credentials
-        function fillDemoCredentials() {
-            const u = document.getElementById('username');
-            const p = document.getElementById('password');
-            u.value = 'admin';
-            p.value = 'password123';
-            
-            // Clear errors
-            document.getElementById('usernameError').style.display = 'none';
-            document.getElementById('passwordError').style.display = 'none';
-            document.getElementById('wrap-username').classList.remove('lp-error-field');
-            document.getElementById('wrap-password').classList.remove('lp-error-field');
+            // Redirect to Login page upon successful registration simulation
+            setTimeout(() => { window.location.href = 'Login.html'; }, 1500);
         }
 
         // Clear errors on input
-        ['username','password'].forEach(id => {
+        ['firstName', 'lastName', 'email', 'password'].forEach(id => {
             document.getElementById(id).addEventListener('input', function() {
                 document.getElementById(id + 'Error').style.display = 'none';
                 document.getElementById('wrap-' + id).classList.remove('lp-error-field');
             });
         });
-
-        // HP2 Mobile Menu
-        function hp2ToggleMenu() {
-            const links = document.getElementById('hp2NavLinks');
-            const backdrop = document.getElementById('hp2Backdrop');
-            const btn = document.getElementById('hp2MobileBtn');
-            const open = links.classList.toggle('open');
-            backdrop.classList.toggle('open', open);
-            btn.querySelector('i').className = open ? 'ph ph-x' : 'ph ph-list';
-        }
     </script>
 </body>
 </html>
-
