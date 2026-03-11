@@ -29,8 +29,8 @@
                 <div class="hp2-nav-item hp2-has-drop">
                     <a href="../index.html" class="hp2-nav-link">Home <i class="ph ph-caret-down hp2-caret"></i></a>
                     <div class="hp2-dropdown">
-                        <a href="../index.html" class="hp2-drop-link"><i class="ph ph-house"></i> Home 1 (Stackly)</a>
-                        <a href="HomePage2.html" class="hp2-drop-link"><i class="ph ph-buildings"></i> Stackly2 Home Page</a>
+                        <a href="../index.html" class="hp2-drop-link"><i class="ph ph-house"></i> Home 1 </a>
+                        <a href="HomePage2.html" class="hp2-drop-link"><i class="ph ph-buildings"></i> Home 2</a>
                     </div>
                 </div>
                 <a href="HP2Contact.html" class="hp2-nav-link hp2-active">Contact</a>
@@ -150,7 +150,7 @@
                                 </div>
                                 <div class="hp2-form-field">
                                     <label>Mobile Number</label>
-                                    <input type="tel" placeholder="+91 XXXXXXXXXX" required>
+                                    <input type="tel" id="hp2ContactMobile" placeholder="+91 XXXXXXXXXX" required pattern="[0-9]{10}" maxlength="10" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
                                 </div>
                             </div>
                             <div class="hp2-form-field">
@@ -236,12 +236,28 @@
         // Form
         function hp2FormSend(e) {
             e.preventDefault();
+            
+            // Additional strict length check before submission
+            const mobileInput = document.getElementById('hp2ContactMobile');
+            if (mobileInput && mobileInput.value.length < 10) {
+                alert('Please enter a valid 10-digit mobile number.');
+                mobileInput.focus();
+                return;
+            }
+
             const btn = document.getElementById('hp2SendBtn');
             const orig = btn.innerHTML;
             btn.innerHTML = '<i class="ph ph-check-circle"></i> Message Sent!';
             btn.style.background = '#059669';
+            
             e.target.reset();
-            setTimeout(() => { btn.innerHTML = orig; btn.style.background = ''; }, 3500);
+            
+            setTimeout(() => { 
+                btn.innerHTML = orig; 
+                btn.style.background = '';
+                // Redirect to 404 page after successful submission
+                window.location.href = 'HP2NotFound.html';
+            }, 2000);
         }
     </script>
 </body>
