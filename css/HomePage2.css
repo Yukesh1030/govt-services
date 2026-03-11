@@ -17,7 +17,7 @@ body.homepage2 {
     font-family: var(--font-body);
     color: var(--clr-text-main);
     background-color: #ffffff;
-    overflow-x: hidden;
+    overflow-x: clip;
 }
 
 /* Base Top Navigation Reset (Stackly Navbar overridden if needed, but assuming standard Stackly navbar runs above) */
@@ -644,7 +644,7 @@ body.homepage2 {
 .hp2-navbar {
     position: sticky;
     top: 0;
-    z-index: 500;
+    z-index: 1000;
     background: #0f172a;
     border-bottom: 1px solid rgba(45,212,191,0.15);
     box-shadow: 0 2px 20px rgba(0,0,0,0.3);

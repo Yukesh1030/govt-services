@@ -19,6 +19,13 @@
     <link rel="stylesheet" href="../css/Login.css">
 </head>
 <body class="login-page">
+    <!-- Global Preloader -->
+    <div class="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo">Stackly</div>
+            <div class="preloader-spinner"></div>
+        </div>
+    </div>
 
     <!-- ===== Animated Background ===== -->
     <div class="lp-bg">
@@ -57,19 +64,19 @@
         <!-- Left Branding Panel -->
         <div class="lp-left lp-anim lp-anim-left">
             <div class="lp-left-inner">
-                <div class="lp-govt-badge">
+                <div class="lp-govt-badge anim-el anim-left" style="transition-delay: 0.1s;">
                     <i class="ph ph-shield-check"></i>
                     <span>Secured &amp; Encrypted Portal</span>
                 </div>
-                <div class="lp-brand-logo">
+                <div class="lp-brand-logo anim-el anim-left" style="transition-delay: 0.3s;">
                     <div class="lp-logo-icon"><i class="ph ph-buildings"></i></div>
                     <div>
                         <h1 class="lp-brand-name">Stackly</h1>
                         <p class="lp-brand-sub">e-Governance Portal</p>
                     </div>
                 </div>
-                <p class="lp-brand-tagline">One portal. 250+ government services.<br>Serving citizens across Maharashtra.</p>
-                <div class="lp-features">
+                <p class="lp-brand-tagline anim-el anim-left" style="transition-delay: 0.5s;">One portal. 250+ government services.<br>Serving citizens across Maharashtra.</p>
+                <div class="lp-features anim-el anim-left" style="transition-delay: 0.7s;">
                     <div class="lp-feat">
                         <div class="lp-feat-icon"><i class="ph ph-certificate"></i></div>
                         <div><strong>Instant Certificates</strong><span>Birth, Income, Caste — digitally</span></div>
@@ -91,8 +98,8 @@
         </div>
 
         <!-- Right Login Card -->
-        <div class="lp-right">
-            <div class="lp-card lp-anim lp-anim-up">
+        <div class="lp-right anim-el anim-up" style="transition-delay: 0.9s;">
+            <div class="lp-card">
 
                 <div class="lp-card-header">
                     <h2>Welcome Back</h2>
@@ -273,8 +280,11 @@
             if (!valid) return;
 
             const btn = document.getElementById('btn-login');
-            btn.innerHTML = '<i class="ph ph-circle-notch lp-spin"></i> Signing in...';
-            btn.disabled = true;
+            if (window.setButtonLoading) window.setButtonLoading(btn, true);
+            else {
+                btn.innerHTML = '<i class="ph ph-circle-notch lp-spin"></i> Signing in...';
+                btn.disabled = true;
+            }
 
             setTimeout(() => { window.location.href = 'NotFound.html'; }, 1200);
         }

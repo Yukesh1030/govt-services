@@ -91,13 +91,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Remove remaining skeleton classes after delay
-    setTimeout(() => {
-        document.querySelectorAll('.skeleton-bg').forEach(el => el.classList.remove('skeleton-bg'));
-        document.querySelectorAll('.skeleton-text').forEach(el => el.classList.remove('skeleton-text'));
-        document.querySelectorAll('.skeleton-btn').forEach(el => el.classList.remove('skeleton-btn'));
-        document.querySelectorAll('.skeleton-badge').forEach(el => el.classList.remove('skeleton-badge'));
-    }, 600);
+    // Remove remaining skeleton classes - moved to coordinate with preloader for smoother transitions
+    window.cleanSkeletons = function() {
+        document.querySelectorAll('.skeleton-bg, .skeleton-text, .skeleton-img, .skeleton-btn, .skeleton-badge').forEach(el => {
+            el.classList.remove('skeleton-bg', 'skeleton-text', 'skeleton-img', 'skeleton-btn', 'skeleton-badge');
+        });
+    };
 
     // -------------------------------------------------------
     // Slider Logic
@@ -413,8 +412,76 @@ function msFormSubmit(form) {
 })();
 
 // -------------------------------------------------------
-// HP Section: FAQ Accordion
+// Global Loading Animations
 // -------------------------------------------------------
+(function() {
+    // Top Progress Bar Logic
+    const progressBar = document.createElement('div');
+    progressBar.id = 'top-progress';
+    document.body.appendChild(progressBar);
+
+    function setProgress(percent) {
+        progressBar.style.width = percent + '%';
+        if (percent >= 100) {
+            setTimeout(() => {
+                progressBar.style.opacity = '0';
+                setTimeout(() => {
+                    progressBar.style.width = '0';
+                    progressBar.style.opacity = '1';
+                }, 300);
+            }, 500);
+        } else {
+            progressBar.style.opacity = '1';
+        }
+    }
+
+    // Simulate progress on load
+    let progress = 0;
+    const interval = setInterval(() => {
+        progress += Math.random() * 30;
+        if (progress >= 100) {
+            progress = 100;
+            clearInterval(interval);
+        }
+        setProgress(progress);
+    }, 200);
+
+    // Global utility to handle button loading states
+    window.setButtonLoading = function(btn, isLoading) {
+        if (!btn) return;
+        if (isLoading) {
+            btn.classList.add('btn-loading');
+            btn.setAttribute('disabled', 'true');
+        } else {
+            btn.classList.remove('btn-loading');
+            btn.removeAttribute('disabled');
+        }
+    };
+
+    // Preloader fade out when window is fully loaded
+    window.addEventListener('load', () => {
+        const preloader = document.querySelector('.preloader');
+        if (preloader) {
+            setTimeout(() => {
+                // Ensure all skeletons are cleaned just as we start fading out the preloader
+                if (window.cleanSkeletons) window.cleanSkeletons();
+                
+                preloader.classList.add('fade-out');
+                setProgress(100);
+                
+                // Wait for the preloader's CSS transition (0.6s) to finish before starting entrance animations
+                setTimeout(() => {
+                    window.dispatchEvent(new Event('scroll'));
+                }, 600);
+            }, 800);
+        } else {
+            if (window.cleanSkeletons) window.cleanSkeletons();
+            setProgress(100);
+        }
+    });
+})();
+
+// FAQ Accordion
 function hpToggleFaq(btn) {
     const item = btn.closest('.hp-faq-item');
     if (!item) return;
@@ -424,3 +491,4 @@ function hpToggleFaq(btn) {
     // Toggle
     if (!isOpen) item.classList.add('open');
 }
+

@@ -42,6 +42,13 @@
     </style>
 </head>
 <body class="login-page register-page">
+    <!-- Global Preloader -->
+    <div class="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo">Stackly</div>
+            <div class="preloader-spinner"></div>
+        </div>
+    </div>
 
     <!-- ===== Animated Background ===== -->
     <div class="lp-bg">
@@ -80,12 +87,12 @@
         <div class="lp-left lp-anim lp-anim-left">
             <div class="lp-left-inner">
                 
-                <div class="lp-govt-badge">
+                <div class="lp-govt-badge anim-el anim-left" style="transition-delay: 0.1s;">
                     <i class="ph ph-shield-check"></i>
                     <span>Official National Portal</span>
                 </div>
 
-                <div class="lp-brand-logo">
+                <div class="lp-brand-logo anim-el anim-left" style="transition-delay: 0.3s;">
                     <div class="lp-logo-icon">
                         <i class="ph ph-bank"></i>
                     </div>
@@ -95,11 +102,11 @@
                     </div>
                 </div>
 
-                <p class="lp-brand-tagline">
+                <p class="lp-brand-tagline anim-el anim-left" style="transition-delay: 0.5s;">
                     Join the digital governance platform. One account grants you access to hundreds of state and central services transparently.
                 </p>
 
-                <div class="lp-features">
+                <div class="lp-features anim-el anim-left" style="transition-delay: 0.7s;">
                     <div class="lp-feat">
                         <div class="lp-feat-icon"><i class="ph ph-file-text"></i></div>
                         <div>
@@ -127,8 +134,8 @@
         </div>
 
         <!-- Right Registration Card -->
-        <div class="lp-right">
-            <div class="lp-card lp-anim lp-anim-up">
+        <div class="lp-right anim-el anim-up" style="transition-delay: 0.9s;">
+            <div class="lp-card">
                 
                 <!-- Card Header -->
                 <div class="lp-card-header">
@@ -322,8 +329,11 @@
             if (!valid) return;
 
             const btn = document.getElementById('btn-register');
-            btn.innerHTML = '<i class="ph ph-circle-notch lp-spin"></i> Creating Account...';
-            btn.disabled = true;
+            if (window.setButtonLoading) window.setButtonLoading(btn, true);
+            else {
+                btn.innerHTML = '<i class="ph ph-circle-notch lp-spin"></i> Creating Account...';
+                btn.disabled = true;
+            }
 
             // Redirect to Login page upon successful registration simulation
             setTimeout(() => { window.location.href = 'Login.html'; }, 1500);

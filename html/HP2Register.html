@@ -51,7 +51,14 @@
         .hp2-nav { position: static; } /* Makes it fit nicer on tall login pages */
     </style>
 </head>
-<body class="login-page hp2-register-page">
+<body class="login-page hp2-register-page theme-teal">
+    <!-- Global Preloader -->
+    <div class="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo">Stackly</div>
+            <div class="preloader-spinner"></div>
+        </div>
+    </div>
 
     <!-- Animated Background -->
     <div class="lp-bg">
@@ -95,19 +102,19 @@
         <!-- Left Branding Panel -->
         <div class="lp-left lp-anim lp-anim-left">
             <div class="lp-left-inner">
-                <div class="lp-govt-badge">
+                <div class="lp-govt-badge anim-el anim-left" style="transition-delay: 0.1s;">
                     <i class="ph ph-shield-check"></i>
                     <span>Secured &amp; Encrypted Portal</span>
                 </div>
-                <div class="lp-brand-logo">
+                <div class="lp-brand-logo anim-el anim-left" style="transition-delay: 0.3s;">
                     <div class="lp-logo-icon" style="background:linear-gradient(135deg,#0d9488,#0f766e)"><i class="ph ph-user-plus"></i></div>
                     <div>
                         <h1 class="lp-brand-name">Sign Up</h1>
                         <p class="lp-brand-sub">Metropolitan Development</p>
                     </div>
                 </div>
-                <p class="lp-brand-tagline">Create an account to access unified building permissions, estate services, and track your applications seamlessly.</p>
-                <div class="lp-features">
+                <p class="lp-brand-tagline anim-el anim-left" style="transition-delay: 0.5s;">Create an account to access unified building permissions, estate services, and track your applications seamlessly.</p>
+                <div class="lp-features anim-el anim-left" style="transition-delay: 0.7s;">
                     <div class="lp-feat">
                         <div class="lp-feat-icon" style="background:rgba(13,148,136,0.15);color:#2dd4bf"><i class="ph ph-buildings"></i></div>
                         <div><strong style="color:var(--hp2-light)">Building Permissions</strong><span style="color:var(--hp2-gray)">Apply online via TG-bPASS</span></div>
@@ -121,8 +128,8 @@
         </div>
 
         <!-- Right Registration Card -->
-        <div class="lp-right">
-            <div class="lp-card lp-anim lp-anim-up">
+        <div class="lp-right anim-el anim-up" style="transition-delay: 0.9s;">
+            <div class="lp-card">
 
                 <div class="lp-card-header">
                     <h2>Create Stackly2 Account</h2>
@@ -216,8 +223,7 @@
             </div>
             <div class="footer-bottom"><p>&copy; 2026 Stackly Development Authority. All rights reserved.</p></div>
         </div>
-    </footer>
-
+    <script src="../javascripts/main.js"></script>
     <script>
         // HP2 Mobile Menu
         function hp2ToggleMenu() {
@@ -262,8 +268,11 @@
             if (!valid) return;
 
             const btn = document.getElementById('hp2-btn-register');
-            btn.innerHTML = '<i class="ph ph-circle-notch lp-spin"></i> Creating Account...';
-            btn.disabled = true;
+            if (window.setButtonLoading) window.setButtonLoading(btn, true);
+            else {
+                btn.innerHTML = '<i class="ph ph-circle-notch lp-spin"></i> Creating Account...';
+                btn.disabled = true;
+            }
             
             setTimeout(() => { window.location.href = 'HP2Login.html'; }, 1500);
         }

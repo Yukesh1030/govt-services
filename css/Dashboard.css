@@ -54,8 +54,8 @@
     flex-direction: column;
     flex-shrink: 0;
     position: sticky;
-    top: 3.5rem;
-    height: calc(100vh - 3.5rem);
+    top: 4rem;
+    height: calc(100vh - 4rem);
     overflow-y: auto;
     transition: transform 0.3s cubic-bezier(.16,1,.3,1);
     z-index: 40;
@@ -124,7 +124,7 @@
     flex-wrap: wrap;
     gap: 1rem;
     position: sticky;
-    top: 3.5rem; /* Height of the global navbar */
+    top: 4rem; /* Height of the global navbar */
     background: var(--dash-bg);
     z-index: 30;
     transition: padding 0.3s, box-shadow 0.3s;
@@ -481,9 +481,9 @@
     /* Sidebar: fixed full-height overlay, slides in from left */
     .dash-sidebar {
         position: fixed;
-        top: 3.5rem;
+        top: 4rem;
         left: 0;
-        height: calc(100vh - 3.5rem);
+        height: calc(100vh - 4rem);
         transform: translateX(-100%);
         z-index: 999;
         box-shadow: 6px 0 32px rgba(0,0,0,.25);

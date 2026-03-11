@@ -18,6 +18,13 @@
     <link rel="stylesheet" href="../css/About.css">
 </head>
 <body>
+    <!-- Global Preloader -->
+    <div class="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo">Stackly</div>
+            <div class="preloader-spinner"></div>
+        </div>
+    </div>
     <!-- Main Brown Navbar -->
     <nav class="navbar">
         <div class="container nav-container">
@@ -47,8 +54,8 @@
     <!-- About Hero Banner -->
     <header class="about-hero skeleton-bg">
         <div class="container about-hero-container">
-            <h1 class="about-title animate-fade-up skeleton-text">About The Stackly</h1>
-            <div class="breadcrumb animate-fade-up skeleton-text" style="animation-delay: 0.1s;">
+            <h1 class="about-title anim-el anim-up skeleton-text" style="transition-delay: 0.1s;">About The Stackly</h1>
+            <div class="breadcrumb anim-el anim-up skeleton-text" style="transition-delay: 0.4s;">
                 <a href="../index.html">Home</a> <i class="ph ph-caret-right"></i> <span>About The Stackly</span>
             </div>
         </div>
@@ -61,13 +68,13 @@
         <!-- Introduction Section -->
         <section class="about-section">
             <ul class="custom-list">
-                <li class="custom-list-item animate-fade-up skeleton-text" style="animation-delay: 0.2s;">
+                <li class="custom-list-item anim-el anim-up skeleton-text" style="transition-delay: 0.6s;">
                     The Stackly Metropolitan Region (SMR) was declared by the Government in 2008 vide G.O.Ms.No.570 MA, dt: 25.08.2008 which included 849 villages under the Stackly Metropolitan Development Act 2008.
                 </li>
-                <li class="custom-list-item animate-fade-up skeleton-text" style="animation-delay: 0.3s;">
+                <li class="custom-list-item anim-el anim-up skeleton-text" style="transition-delay: 0.7s;">
                     The Stackly Metropolitan Development Authority (SMDA) was constituted in 2008 vide G.O.Ms.No.571 MA, dt: 25.08.2008 for the SMR.
                 </li>
-                <li class="custom-list-item animate-fade-up skeleton-text" style="animation-delay: 0.4s;">
+                <li class="custom-list-item anim-el anim-up skeleton-text" style="transition-delay: 0.8s;">
                     The Stackly Urban Development Authority (SUDA), Regional Development Authority (RDA), Airport Development Authority (ADA) & Central Project Authority (CPA) were dissolved and merged into SMDA.
                 </li>
                 <li class="custom-list-item animate-fade-up skeleton-text" style="animation-delay: 0.5s;">
@@ -471,16 +478,7 @@
     </footer>
 
     <script src="../javascripts/main.js"></script>
-    <script>
-        // Simple skeleton cleaning script
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                document.querySelectorAll('.skeleton-bg, .skeleton-text, .skeleton-img, .skeleton-btn, .skeleton-badge').forEach(el => {
-                    el.classList.remove('skeleton-bg', 'skeleton-text', 'skeleton-img', 'skeleton-btn', 'skeleton-badge');
-                });
-            }, 500);
-        });
-    </script>
+</body>
 </body>
 </html>
 

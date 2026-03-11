@@ -9,7 +9,7 @@ body.login-page {
     background: #050d1a;
     display: flex;
     flex-direction: column;
-    overflow-x: hidden;
+    overflow-x: clip; 
 }
 
 /* ── Animated Orb Background ── */

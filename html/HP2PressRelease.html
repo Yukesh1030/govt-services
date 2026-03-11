@@ -11,7 +11,14 @@
     <link rel="stylesheet" href="../css/HomePage2.css">
     <link rel="stylesheet" href="../css/HP2Pages.css">
 </head>
-<body class="homepage2 hp2-page">
+<body class="homepage2 hp2-page theme-teal">
+    <!-- Global Preloader -->
+    <div class="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo">Stackly</div>
+            <div class="preloader-spinner"></div>
+        </div>
+    </div>
 
     <nav class="hp2-navbar">
         <div class="hp2-nav-inner">
@@ -41,10 +48,10 @@
     <section class="hp2p-hero anim-el anim-up">
         <div class="hp2-container">
             <div class="hp2p-hero-inner">
-                <span class="hp2-badge hp2-badge-teal">Official Communications</span>
-                <h1>Press <span class="hp2p-accent">Releases</span></h1>
-                <p>Official announcements, government orders, public notices and tenders from Stackly2.</p>
-                <div class="hp2p-hero-chips">
+                <span class="hp2-badge hp2-badge-teal anim-el anim-up" style="transition-delay: 0.1s;">Official Communications</span>
+                <h1 class="anim-el anim-up" style="transition-delay: 0.4s;">Press <span class="hp2p-accent">Releases</span></h1>
+                <p class="anim-el anim-up" style="transition-delay: 0.7s;">Official announcements, government orders, public notices and tenders from Stackly2.</p>
+                <div class="hp2p-hero-chips anim-el anim-up" style="transition-delay: 1s;">
                     <span><i class="ph ph-newspaper"></i> Government Orders</span>
                     <span><i class="ph ph-megaphone-simple"></i> Public Notices</span>
                     <span><i class="ph ph-bell-ringing"></i> Live Alerts</span>
@@ -167,6 +174,7 @@
         </div>
     </footer>
 
+    <script src="../javascripts/main.js"></script>
     <script>
         function hp2ToggleMenu() {
             const links = document.getElementById('hp2NavLinks');
@@ -198,9 +206,19 @@
         function prSubscribe(e) {
             e.preventDefault();
             const btn = document.getElementById('prSubBtn');
-            btn.innerHTML = '<i class="ph ph-check-circle"></i> Subscribed!';
-            btn.style.background = '#059669';
-            setTimeout(() => { btn.innerHTML = 'Subscribe <i class="ph ph-arrow-right"></i>'; btn.style.background = ''; e.target.reset(); }, 3000);
+            if (window.setButtonLoading) window.setButtonLoading(btn, true);
+            else {
+                btn.innerHTML = '<i class="ph ph-check-circle"></i> Subscribed!';
+                btn.style.background = '#059669';
+            }
+            setTimeout(() => { 
+                if (window.setButtonLoading) window.setButtonLoading(btn, false);
+                else {
+                    btn.innerHTML = 'Subscribe <i class="ph ph-arrow-right"></i>'; 
+                    btn.style.background = ''; 
+                }
+                e.target.reset(); 
+            }, 3000);
         }
     </script>
 </body>

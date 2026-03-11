@@ -18,6 +18,13 @@
     <link rel="stylesheet" href="../css/NotFound.css">
 </head>
 <body>
+    <!-- Global Preloader -->
+    <div class="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo">Stackly</div>
+            <div class="preloader-spinner"></div>
+        </div>
+    </div>
 
     <!-- Main Brown Navbar -->
     <nav class="navbar">
@@ -46,11 +53,11 @@
     </nav>
 
     <!-- 404 Container -->
-    <main class="not-found-wrapper">
+    <main class="not-found-wrapper anim-el anim-up">
         <div class="not-found-content">
             
             <!-- Animated 404 Graphic -->
-            <div class="error-graphic">
+            <div class="error-graphic anim-el anim-up" style="transition-delay: 0.2s;">
                 <div class="number-4">4</div>
                 <div class="radar-container">
                     <i class="ph ph-radar radar-icon"></i>
@@ -59,8 +66,8 @@
             </div>
 
             <!-- Text Content -->
-            <h1 class="error-title">Page Not Found</h1>
-            <p class="error-desc">We've searched everywhere, but the page you are looking for has been moved, removed, or doesn't exist.</p>
+            <h1 class="error-title anim-el anim-up" style="transition-delay: 0.5s;">Page Not Found</h1>
+            <p class="error-desc anim-el anim-up" style="transition-delay: 0.7s;">We've searched everywhere, but the page you are looking for has been moved, removed, or doesn't exist.</p>
             
             <!-- Actions -->
             <div class="error-actions" style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem;">

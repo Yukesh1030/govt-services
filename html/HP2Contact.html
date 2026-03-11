@@ -13,7 +13,14 @@
     <link rel="stylesheet" href="../css/HomePage2.css">
     <link rel="stylesheet" href="../css/HP2Pages.css">
 </head>
-<body class="homepage2 hp2-page">
+<body class="homepage2 hp2-page theme-teal">
+    <!-- Global Preloader -->
+    <div class="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo">Stackly</div>
+            <div class="preloader-spinner"></div>
+        </div>
+    </div>
 
     <!-- HP2 Navbar -->
     <nav class="hp2-navbar">
@@ -47,10 +54,10 @@
     <section class="hp2p-hero anim-el anim-up">
         <div class="hp2-container">
             <div class="hp2p-hero-inner">
-                <span class="hp2-badge hp2-badge-teal">Get in Touch</span>
-                <h1>Contact <span class="hp2p-accent">Stackly2</span></h1>
-                <p>Have a query, want to track an application, or need help with a service? Reach out to us — we're here to help every step of the way.</p>
-                <div class="hp2p-hero-chips">
+                <span class="hp2-badge hp2-badge-teal anim-el anim-up" style="transition-delay: 0.1s;">Get in Touch</span>
+                <h1 class="anim-el anim-up" style="transition-delay: 0.4s;">Contact <span class="hp2p-accent">Stackly2</span></h1>
+                <p class="anim-el anim-up" style="transition-delay: 0.7s;">Have a query, want to track an application, or need help with a service? Reach out to us — we're here to help every step of the way.</p>
+                <div class="hp2p-hero-chips anim-el anim-up" style="transition-delay: 1s;">
                     <span><i class="ph ph-clock"></i> Mon–Sat · 10 AM–5:30 PM</span>
                     <span><i class="ph ph-phone"></i> 1800-599-4345 Toll-free</span>
                     <span><i class="ph ph-envelope-simple"></i> commissioner@Stackly2.gov.in</span>
@@ -216,6 +223,7 @@
         </div>
     </footer>
 
+    <script src="../javascripts/main.js"></script>
     <script>
         // Navbar
         function hp2ToggleMenu() {
@@ -226,14 +234,6 @@
             backdrop.classList.toggle('open', open);
             btn.querySelector('i').className = open ? 'ph ph-x' : 'ph ph-list';
         }
-        // Animations
-        document.addEventListener('DOMContentLoaded', () => {
-            const obs = new IntersectionObserver((entries) => {
-                entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('is-visible'); });
-            }, { threshold: 0.12 });
-            document.querySelectorAll('.anim-el').forEach(el => obs.observe(el));
-        });
-        // Form
         function hp2FormSend(e) {
             e.preventDefault();
             
@@ -246,15 +246,20 @@
             }
 
             const btn = document.getElementById('hp2SendBtn');
-            const orig = btn.innerHTML;
-            btn.innerHTML = '<i class="ph ph-check-circle"></i> Message Sent!';
-            btn.style.background = '#059669';
+            if (window.setButtonLoading) window.setButtonLoading(btn, true);
+            else {
+                btn.innerHTML = '<i class="ph ph-check-circle"></i> Message Sent!';
+                btn.style.background = '#059669';
+            }
             
             e.target.reset();
             
             setTimeout(() => { 
-                btn.innerHTML = orig; 
-                btn.style.background = '';
+                if (window.setButtonLoading) window.setButtonLoading(btn, false);
+                else {
+                    btn.innerHTML = 'Send Message'; 
+                    btn.style.background = '';
+                }
                 // Redirect to 404 page after successful submission
                 window.location.href = 'HP2NotFound.html';
             }, 2000);

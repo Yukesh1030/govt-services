@@ -11,7 +11,14 @@
     <link rel="stylesheet" href="../css/HomePage2.css">
     <link rel="stylesheet" href="../css/HP2Pages.css">
 </head>
-<body class="homepage2 hp2-page">
+<body class="homepage2 hp2-page theme-teal">
+    <!-- Global Preloader -->
+    <div class="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo">Stackly</div>
+            <div class="preloader-spinner"></div>
+        </div>
+    </div>
 
     <nav class="hp2-navbar">
         <div class="hp2-nav-inner">
@@ -41,10 +48,10 @@
     <section class="hp2p-hero anim-el anim-up">
         <div class="hp2-container">
             <div class="hp2p-hero-inner">
-                <span class="hp2-badge hp2-badge-teal">e-Governance</span>
-                <h1>Stackly2 <span class="hp2p-accent">Services</span></h1>
-                <p>Apply, track, and manage 30+ urban development services online — from building permissions to venue bookings, all available 24/7.</p>
-                <div class="hp2p-hero-chips">
+                <span class="hp2-badge hp2-badge-teal anim-el anim-up" style="transition-delay: 0.1s;">e-Governance</span>
+                <h1 class="anim-el anim-up" style="transition-delay: 0.4s;">Stackly2 <span class="hp2p-accent">Services</span></h1>
+                <p class="anim-el anim-up" style="transition-delay: 0.7s;">Apply, track, and manage 30+ urban development services online — from building permissions to venue bookings, all available 24/7.</p>
+                <div class="hp2p-hero-chips anim-el anim-up" style="transition-delay: 1s;">
                     <span><i class="ph ph-clock"></i> 24/7 Online Access</span>
                     <span><i class="ph ph-shield-check"></i> Secure &amp; Encrypted</span>
                     <span><i class="ph ph-lightning"></i> Instant Processing</span>
@@ -248,6 +255,7 @@
         </div>
     </footer>
 
+    <script src="../javascripts/main.js"></script>
     <script>
         function hp2ToggleMenu() {
             const links = document.getElementById('hp2NavLinks');

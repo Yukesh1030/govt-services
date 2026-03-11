@@ -19,6 +19,13 @@
     <link rel="stylesheet" href="../css/Documents.css">
 </head>
 <body class="docs-page">
+    <!-- Global Preloader -->
+    <div class="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo">Stackly</div>
+            <div class="preloader-spinner"></div>
+        </div>
+    </div>
 
     <!-- ── Main Navbar ── -->
     <nav class="navbar">
@@ -49,17 +56,17 @@
     <!-- ── Main Content Area ── -->
     <main class="container docs-main">
         
-        <header class="docs-header">
-            <nav class="breadcrumb">
+        <header class="docs-header anim-el anim-up">
+            <nav class="breadcrumb anim-el anim-up" style="transition-delay: 0.1s;">
                 <a href="../index.html">Home</a>
                 <i class="ph ph-caret-right"></i>
                 <span>Documents</span>
             </nav>
-            <h1 class="docs-title animate-fade-up">Documents</h1>
+            <h1 class="docs-title anim-el anim-up" style="transition-delay: 0.4s;">Documents</h1>
         </header>
 
         <!-- Filter Bar -->
-        <section class="filter-section animate-fade-up" style="animation-delay: 0.1s;">
+        <section class="filter-section anim-el anim-up" style="transition-delay: 0.7s;">
             <div class="filter-label">Filter Document category wise</div>
             <form class="filter-form">
                 <select class="filter-select">
@@ -77,7 +84,7 @@
         </section>
 
         <!-- Document List -->
-        <div class="docs-list-card animate-fade-up" style="animation-delay: 0.2s;">
+        <div class="docs-list-card anim-el anim-up" style="transition-delay: 1s;">
             <div class="docs-list-header">All Documents</div>
             <div class="docs-table-wrapper">
                 <table class="docs-table">
@@ -228,16 +235,7 @@
 
     <!-- Scripts -->
     <script src="../javascripts/main.js"></script>
-    <script>
-        // Simple skeleton cleaning script
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                document.querySelectorAll('.skeleton-bg, .skeleton-text, .skeleton-img, .skeleton-btn, .skeleton-badge').forEach(el => {
-                    el.classList.remove('skeleton-bg', 'skeleton-text', 'skeleton-img', 'skeleton-btn', 'skeleton-badge');
-                });
-            }, 500);
-        });
-    </script>
+</body>
 </body>
 </html>
 

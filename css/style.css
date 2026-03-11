@@ -73,9 +73,10 @@
 
 /* html { overflow-x: hidden; } — Removed to allow position: sticky to work */
 html, body {
-    overflow-x: hidden;
+    overflow-x: clip;
     position: relative;
     width: 100%;
+    /* Allow sticky elements to function by using overflow-x: clip instead of hidden */
 }
 
 body {
@@ -84,7 +85,7 @@ body {
     color: var(--clr-text);
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
+    overflow-x: clip;
     max-width: 100vw;
 }
 
@@ -190,8 +191,17 @@ h1, h2, h3, h4 {
 
 /* --- Skeleton Loading Core --- */
 @keyframes skeleton-loading {
-    0% { background-position: 200% 0; }
-    100% { background-position: -200% 0; }
+    0% { background-position: 100% 0; }
+    100% { background-position: -100% 0; }
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.7; }
 }
 
 .skeleton {
@@ -224,6 +234,104 @@ h1, h2, h3, h4 {
 
 .skeleton-btn {
     border-radius: var(--radius-full);
+}
+
+/* --- Loading Components --- */
+
+/* Global Preloader & Loading Variables */
+:root {
+    --preloader-bg: var(--clr-brand-dark, #4a3600);
+    --preloader-accent: var(--clr-gold, #fde047);
+    --progress-accent: var(--clr-gold, #fde047);
+}
+
+.theme-teal {
+    --preloader-bg: #0f172a;
+    --preloader-accent: #2dd4bf;
+    --progress-accent: #2dd4bf;
+}
+
+.preloader {
+    position: fixed;
+    inset: 0;
+    background: var(--preloader-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.6s ease, visibility 0.6s;
+}
+
+.preloader.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.preloader-content {
+    text-align: center;
+}
+
+.preloader-logo {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    background: linear-gradient(135deg, var(--preloader-accent), #fff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: pulse 2s infinite ease-in-out;
+}
+
+.preloader-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    border-top-color: var(--preloader-accent);
+    border-radius: 50%;
+    margin: 0 auto;
+    animation: spin 1s linear infinite;
+}
+
+/* Top Progress Bar */
+#top-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(to right, var(--progress-accent), #fff);
+    z-index: 10001;
+    width: 0;
+    transition: width 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Button Loading State */
+.btn-loading {
+    position: relative;
+    color: transparent !important;
+    pointer-events: none;
+}
+
+.btn-loading::after {
+    content: "";
+    position: absolute;
+    width: 1.2rem;
+    height: 1.2rem;
+    top: calc(50% - 0.6rem);
+    left: calc(50% - 0.6rem);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: currentColor;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+}
+
+.btn-primary.btn-loading::after {
+    border-top-color: #fff;
+}
+
+.btn-outline.btn-loading::after {
+    border-top-color: var(--clr-primary);
 }
 
 /* --- Components --- */
@@ -2265,4 +2373,25 @@ h1, h2, h3, h4 {
     .hp-cta-features { grid-template-columns: 1fr; }
     .hp-cta-btns { flex-direction: column; }
     .hp-store-btn { justify-content: center; }
+}
+
+/* ====================================================
+   GLOBAL ENTRANCE ANIMATIONS (Scroll Reveal)
+   ==================================================== */
+.anim-el {
+    opacity: 0;
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.anim-up { transform: translateY(50px); }
+.anim-down { transform: translateY(-50px); }
+.anim-left { transform: translateX(-50px); }
+.anim-right { transform: translateX(50px); }
+.anim-zoom { transform: scale(0.95); }
+
+/* When element is in viewport, reset transform and opacity */
+.anim-el.is-visible {
+    opacity: 1 !important;
+    transform: translate(0, 0) scale(1) !important;
 }

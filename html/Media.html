@@ -18,6 +18,13 @@
     <link rel="stylesheet" href="../css/Media.css">
 </head>
 <body class="media-page">
+    <!-- Global Preloader -->
+    <div class="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo">Stackly</div>
+            <div class="preloader-spinner"></div>
+        </div>
+    </div>
     <nav class="navbar">
         <div class="container nav-container">
             <a href="../index.html"><span class="nav-brand-span">Stackly</span></a>
@@ -46,9 +53,9 @@
     <!-- Main Content Area -->
     <main class="container media-main">
         
-        <div class="gallery-header animate-fade-up">
-            <h1 class="page-title skeleton-text">Photo Gallery</h1>
-            <div class="gallery-controls skeleton-text">
+        <div class="gallery-header anim-el anim-up">
+            <h1 class="page-title skeleton-text anim-el anim-up" style="transition-delay: 0.1s;">Photo Gallery</h1>
+            <div class="gallery-controls skeleton-text anim-el anim-up" style="transition-delay: 0.4s;">
                 <button class="view-btn active"><i class="ph ph-grid-four"></i></button>
                 <button class="view-btn"><i class="ph ph-list-dashes"></i></button>
             </div>
@@ -57,7 +64,7 @@
         <div class="gallery-grid">
             
             <!-- Gallery Item 1 -->
-            <div class="gallery-card animate-fade-up skeleton-bg" style="animation-delay: 0.1s;">
+            <div class="gallery-card anim-el anim-up skeleton-bg" style="transition-delay: 0.6s;">
                 <div class="card-img-wrapper">
                     <img src="../assets/gallery-1.webp" alt="Three New Laws" class="gallery-img skeleton-img">
                 </div>
@@ -74,7 +81,7 @@
             </div>
 
             <!-- Gallery Item 2 -->
-            <div class="gallery-card animate-fade-up skeleton-bg" style="animation-delay: 0.2s;">
+            <div class="gallery-card anim-el anim-up skeleton-bg" style="transition-delay: 0.7s;">
                 <div class="card-img-wrapper">
                     <img src="../assets/gallery-2.webp" alt="Forensic Van" class="gallery-img skeleton-img">
                 </div>
@@ -455,16 +462,7 @@
     </footer>
 
     <script src="../javascripts/main.js"></script>
-    <script>
-        // Simple skeleton cleaning script
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                document.querySelectorAll('.skeleton-bg, .skeleton-text, .skeleton-img, .skeleton-btn, .skeleton-badge').forEach(el => {
-                    el.classList.remove('skeleton-bg', 'skeleton-text', 'skeleton-img', 'skeleton-btn', 'skeleton-badge');
-                });
-            }, 500);
-        });
-    </script>
+</body>
 </body>
 </html>
 

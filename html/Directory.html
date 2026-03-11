@@ -19,6 +19,13 @@
     <link rel="stylesheet" href="../css/Directory.css">
 </head>
 <body class="dir-page">
+    <!-- Global Preloader -->
+    <div class="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo">Stackly</div>
+            <div class="preloader-spinner"></div>
+        </div>
+    </div>
 
     <!-- ── Main Navbar ── -->
     <nav class="navbar">
@@ -49,17 +56,17 @@
     <!-- ── Main Content Area ── -->
     <main class="container dir-main">
         
-        <header class="dir-header">
-            <nav class="breadcrumb">
+        <header class="dir-header anim-el anim-up">
+            <nav class="breadcrumb anim-el anim-up" style="transition-delay: 0.1s;">
                 <a href="../index.html">Home</a>
                 <i class="ph ph-caret-right"></i>
                 <span>Directory</span>
             </nav>
-            <h1 class="dir-title animate-fade-up">Directory</h1>
+            <h1 class="dir-title anim-el anim-up" style="transition-delay: 0.4s;">Directory</h1>
         </header>
 
         <!-- Filter Bar -->
-        <section class="filter-section animate-fade-up" style="animation-delay: 0.1s;">
+        <section class="filter-section anim-el anim-up" style="transition-delay: 0.7s;">
             <div class="filter-label">Filter Who's Who divisions wise</div>
             <form class="filter-form">
                 <select class="filter-select">
@@ -76,7 +83,7 @@
         </section>
 
         <!-- Directory List -->
-        <div class="dir-table-card animate-fade-up" style="animation-delay: 0.2s;">
+        <div class="dir-table-card anim-el anim-up" style="transition-delay: 1s;">
             <div class="dir-table-header">Additional Chief Secretary / Principal Secretary</div>
             <div class="dir-table-wrapper">
                 <table class="dir-table">
@@ -218,7 +225,7 @@
                         <input class="ds-form-input" id="ds-arn-input" type="text" placeholder="e.g. MH2026-XXXX-XXXX" required pattern="^[A-Z]{2}[0-9]{4}-[0-9A-Z]{4}-[0-9A-Z]{4}$" title="Format: MH2026-XXXX-XXXX">
                         <label class="ds-form-label" style="margin-top:1rem;">Mobile Number</label>
                         <input class="ds-form-input" id="ds-arn-mobile" type="tel" placeholder="+91 00000 00000" required pattern="[0-9]{10}" maxlength="10" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                        <button class="ds-track-btn" type="submit">
+                        <button class="ds-track-btn" type="submit" id="trackBtn">
                             <i class="ph ph-magnifying-glass"></i> Track Now
                         </button>
                     </form>
@@ -474,10 +481,10 @@
                     <h4>Get Government Updates</h4>
                     <p>Subscribe to receive daily news and service alerts</p>
                 </div>
-                <form class="newsletter-form" onsubmit="event.preventDefault();">
+                <form class="newsletter-form" onsubmit="handleNewsletter(event)">
                     <i class="ph ph-envelope-simple" style="padding-left: 1rem; color: #64748b; font-size: 1.25rem;"></i>
                     <input type="email" placeholder="Enter your email address" required>
-                    <button type="submit">
+                    <button type="submit" id="newsletterBtn">
                         Subscribe <i class="ph ph-arrow-right"></i>
                     </button>
                 </form>
@@ -493,14 +500,23 @@
     <!-- Scripts -->
     <script src="../javascripts/main.js"></script>
     <script>
-        // Simple skeleton cleaning script
-        window.addEventListener('load', () => {
+
+        function handleNewsletter(e) {
+            e.preventDefault();
+            const btn = document.getElementById('newsletterBtn');
+            if (window.setButtonLoading) window.setButtonLoading(btn, true);
             setTimeout(() => {
-                document.querySelectorAll('.skeleton-bg, .skeleton-text, .skeleton-img, .skeleton-btn, .skeleton-badge').forEach(el => {
-                    el.classList.remove('skeleton-bg', 'skeleton-text', 'skeleton-img', 'skeleton-btn', 'skeleton-badge');
-                });
-            }, 500);
-        });
+                if (window.setButtonLoading) window.setButtonLoading(btn, false);
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '<i class="ph ph-check-circle"></i> Subscribed!';
+                btn.style.background = '#059669';
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.style.background = '';
+                    e.target.reset();
+                }, 2000);
+            }, 1000);
+        }
     </script>
 </body>
 </html>
