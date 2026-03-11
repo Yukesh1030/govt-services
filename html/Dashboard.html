@@ -190,9 +190,9 @@
                 <div class="chart-card">
                     <div class="chart-card-header">
                         <span class="chart-title">Applications by Service</span>
-                        <div class="chart-tabs">
-                            <button class="chart-tab active" data-target="bar">Week</button>
-                            <button class="chart-tab" data-target="bar">Month</button>
+                        <div class="chart-tabs" id="barTabs">
+                            <button class="chart-tab active" data-view="week">Week</button>
+                            <button class="chart-tab" data-view="month">Month</button>
                         </div>
                     </div>
                     <canvas id="barChart" height="200"></canvas>
@@ -202,9 +202,9 @@
                 <div class="chart-card">
                     <div class="chart-card-header">
                         <span class="chart-title">Processing Trends</span>
-                        <div class="chart-tabs">
-                            <button class="chart-tab active">Applied</button>
-                            <button class="chart-tab">Approved</button>
+                        <div class="chart-tabs" id="lineTabs">
+                            <button class="chart-tab active" data-view="applied">Applied</button>
+                            <button class="chart-tab active" data-view="approved">Approved</button>
                         </div>
                     </div>
                     <canvas id="lineChart" height="200"></canvas>
@@ -218,13 +218,14 @@
                 <div class="chart-card">
                     <div class="chart-card-header">
                         <span class="chart-title">Services by District</span>
-                        <p class="footer-desc">
-                    Providing transparent, efficient, and accessible services to every citizen. Join THE STACKLY community today.
-                </p>        <div class="chart-tabs">
-                            <button class="chart-tab active">City</button>
-                            <button class="chart-tab">Zone</button>
+                        <div class="chart-tabs" id="donutTabs">
+                            <button class="chart-tab active" data-view="city">City</button>
+                            <button class="chart-tab" data-view="zone">Zone</button>
                         </div>
                     </div>
+                    <p style="font-size: 0.8rem; color: var(--dash-muted); margin-bottom: 1rem; line-height: 1.5;">
+                        Providing transparent, efficient, and accessible services to every citizen. Join THE STACKLY community today.
+                    </p>
                     <div class="donut-wrapper">
                         <canvas id="donutChart"></canvas>
                     </div>

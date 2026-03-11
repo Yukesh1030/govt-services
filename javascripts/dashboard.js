@@ -23,10 +23,14 @@ document.addEventListener('DOMContentLoaded', () => {
     Chart.defaults.font.family = "'Inter', sans-serif";
     Chart.defaults.color       = '#64748b';
 
+    let barChart = null;
+    let lineChart = null;
+    let donutChart = null;
+
     // ── Bar Chart — Applications by Service ──
     const barCtx = document.getElementById('barChart');
     if (barCtx) {
-        new Chart(barCtx, {
+        barChart = new Chart(barCtx, {
             type: 'bar',
             data: {
                 labels: ['Birth Cert.', 'Land Rec.', 'Tax Pay', 'Vehicle', 'Scholarship', 'Health'],
@@ -64,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ── Line Chart — Processing Trends ───────
     const lineCtx = document.getElementById('lineChart');
     if (lineCtx) {
-        new Chart(lineCtx, {
+        lineChart = new Chart(lineCtx, {
             type: 'line',
             data: {
                 labels: ['W1', 'W2', 'W3', 'W4', 'W5'],
@@ -122,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const donutColors = ['#3b82f6', '#10b981', '#f59e0b', '#8b5cf6', '#ef4444'];
 
     if (donutCtx) {
-        new Chart(donutCtx, {
+        donutChart = new Chart(donutCtx, {
             type: 'doughnut',
             data: {
                 labels: districts,
@@ -154,12 +158,64 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // ── Chart Tab Switching (visual only) ────
+    // ── Chart Tab Switching (Functional Update) ────
+    const barData = {
+        week: [820, 650, 540, 480, 310, 290],
+        month: [3400, 2800, 2100, 1900, 1200, 950]
+    };
+    
+    const donutDataMap = {
+        city: { labels: ['Pune', 'Mumbai', 'Nagpur', 'Nashik', 'Aurangabad'], data: [35, 28, 17, 12, 8] },
+        zone: { labels: ['North Zone', 'South Zone', 'East Zone', 'West Zone', 'Central'], data: [42, 24, 15, 12, 7] }
+    };
+
     document.querySelectorAll('.chart-tabs').forEach(group => {
         group.querySelectorAll('.chart-tab').forEach(btn => {
             btn.addEventListener('click', () => {
-                group.querySelectorAll('.chart-tab').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
+                const groupId = group.id;
+                
+                // Line Chart: Act as toggle/custom legend
+                if (groupId === 'lineTabs') {
+                    btn.classList.toggle('active');
+                    const view = btn.getAttribute('data-view');
+                    const datasetIndex = view === 'applied' ? 0 : 1;
+                    if (lineChart) {
+                        const isVisible = lineChart.isDatasetVisible(datasetIndex);
+                        lineChart.setDatasetVisibility(datasetIndex, !isVisible);
+                        lineChart.update();
+                    }
+                } 
+                // Bar & Donut: Act as radio data swappers
+                else {
+                    group.querySelectorAll('.chart-tab').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    
+                    const view = btn.getAttribute('data-view');
+                    
+                    if (groupId === 'barTabs' && barChart) {
+                        barChart.data.datasets[0].data = barData[view];
+                        barChart.update();
+                    }
+                    
+                    if (groupId === 'donutTabs' && donutChart) {
+                        donutChart.data.labels = donutDataMap[view].labels;
+                        donutChart.data.datasets[0].data = donutDataMap[view].data;
+                        donutChart.update();
+                        
+                        // Update Donut Legend
+                        const legendEl = document.getElementById('donutLegend');
+                        if (legendEl) {
+                            legendEl.innerHTML = '';
+                            donutDataMap[view].labels.forEach((d, i) => {
+                                legendEl.innerHTML += `
+                                    <div class="legend-item">
+                                        <span class="legend-dot" style="background:${donutColors[i]}"></span>
+                                        ${d}
+                                    </div>`;
+                            });
+                        }
+                    }
+                }
             });
         });
     });
