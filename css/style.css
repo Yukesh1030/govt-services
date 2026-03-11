@@ -1651,6 +1651,41 @@ h1, h2, h3, h4 {
     .newsletter-form button { padding: 0.75rem 1rem; font-size: 0.9rem; }
 }
 
+/* Enhancing Footer Newsletter for Small Screens */
+@media (max-width: 500px) {
+    .footer-newsletter {
+        padding: var(--space-4);
+        gap: var(--space-4);
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+        background: transparent;
+        border: none;
+        padding: 0;
+        gap: 0.75rem;
+        border-radius: 0;
+    }
+    
+    .newsletter-form input {
+        background: rgba(0,0,0,0.2);
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: var(--radius-full);
+        padding: 0.75rem 1.25rem;
+        width: 100%;
+    }
+    
+    .newsletter-form button {
+        width: 100%;
+        justify-content: center;
+        padding: 0.85rem 1.5rem;
+    }
+    
+    .newsletter-form i {
+        display: none; /* Hide the envelope icon when stacked for cleaner look */
+    }
+}
+
 /* =============================================
    HP (HomePage) New Section Styles
    ============================================= */
