@@ -224,13 +224,48 @@ document.addEventListener('DOMContentLoaded', () => {
 function dsSetTab(btn, tabId) {
     document.querySelectorAll('.ds-tab-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-    // In a real system tabs would show different grids; here we just highlight
+    
+    // Hide all grids
+    document.querySelectorAll('.ds-apply-grid').forEach(grid => {
+        grid.style.display = 'none';
+        // Reset animations so they replay on reveal
+        grid.querySelectorAll('.ds-apply-card').forEach(card => card.classList.remove('ds-visible'));
+    });
+    
+    // Show target grid
+    const targetGrid = document.getElementById(`ds-tab-${tabId}`);
+    if (targetGrid) {
+        targetGrid.style.display = 'grid';
+        
+        // Directly apply the visible class to trigger CSS animation
+        setTimeout(() => {
+            targetGrid.querySelectorAll('.ds-apply-card').forEach(el => el.classList.add('ds-visible'));
+        }, 50);
+    }
 }
 
 // -------------------------------------------------------
-// DS Section: Application Tracker show result
+// DS Section: Application Tracker show result & Validate
 // -------------------------------------------------------
-function dsTrackApp() {
+function validateAndTrackApp() {
+    const arnInput = document.getElementById('ds-arn-input');
+    const mobileInput = document.getElementById('ds-arn-mobile');
+    
+    // Custom validation logic beyond HTML5 patterns
+    const arnRegex = /^[A-Z]{2}[0-9]{4}-[0-9A-Z]{4}-[0-9A-Z]{4}$/;
+    
+    if (arnInput && !arnRegex.test(arnInput.value)) {
+        alert('Invalid ARN Format. Please use format: MH2026-XXXX-XXXX');
+        arnInput.focus();
+        return;
+    }
+    
+    if (mobileInput && mobileInput.value.length !== 10) {
+        alert('Please enter a valid 10-digit mobile number.');
+        mobileInput.focus();
+        return;
+    }
+
     const result = document.getElementById('ds-track-result');
     if (result) {
         result.style.display = 'block';
@@ -239,9 +274,18 @@ function dsTrackApp() {
 }
 
 // -------------------------------------------------------
-// DS Section: Grievance form confirmation
+// DS Section: Grievance form confirmation & Validate
 // -------------------------------------------------------
-function dsShowGrievanceAlert() {
+function validateGrievance() {
+    const textInput = document.getElementById('ds-grievance-text');
+    
+    // Ensure complaint has some body to it
+    if (textInput && textInput.value.trim().length < 10) {
+        alert('Please provide a more detailed description of your grievance (minimum 10 characters).');
+        textInput.focus();
+        return;
+    }
+
     const btn = document.querySelector('.ds-submit-btn');
     if (!btn) return;
     const original = btn.innerHTML;
@@ -250,6 +294,7 @@ function dsShowGrievanceAlert() {
     setTimeout(() => {
         btn.innerHTML = original;
         btn.style.background = '';
+        // Note: Could add redirect logic here if desired
     }, 3000);
 }
 

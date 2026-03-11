@@ -158,30 +158,42 @@
                 <p>Select a service category below and begin your digital application in under 5 minutes.</p>
             </div>
             <div class="ds-apply-tabs">
-                <button class="ds-tab-btn active" onclick="dsSetTab(this,'civil')">Civil Services</button>
-                <button class="ds-tab-btn" onclick="dsSetTab(this,'revenue')">Revenue</button>
-                <button class="ds-tab-btn" onclick="dsSetTab(this,'police')">Police</button>
-                <button class="ds-tab-btn" onclick="dsSetTab(this,'health')">Health</button>
+                <button class="ds-tab-btn active" onclick="dsSetTab(this, 'civil')">Civil Services</button>
+                <button class="ds-tab-btn" onclick="dsSetTab(this, 'revenue')">Revenue</button>
+                <button class="ds-tab-btn" onclick="dsSetTab(this, 'police')">Police</button>
+                <button class="ds-tab-btn" onclick="dsSetTab(this, 'health')">Health</button>
             </div>
+            
+            <!-- Civil Tab -->
             <div class="ds-apply-grid" id="ds-tab-civil">
-                <a href="NotFound.html" class="ds-apply-card ds-anim" data-anim="fade-up" style="--delay:0.1s">
-                    <i class="ph ph-baby"></i><span>Birth Certificate</span><small>Apply in 2 mins</small>
-                </a>
-                <a href="NotFound.html" class="ds-apply-card ds-anim" data-anim="fade-up" style="--delay:0.2s">
-                    <i class="ph ph-heart-break"></i><span>Death Certificate</span><small>Apply in 2 mins</small>
-                </a>
-                <a href="NotFound.html" class="ds-apply-card ds-anim" data-anim="fade-up" style="--delay:0.3s">
-                    <i class="ph ph-currency-inr"></i><span>Income Certificate</span><small>Apply in 3 mins</small>
-                </a>
-                <a href="NotFound.html" class="ds-apply-card ds-anim" data-anim="fade-up" style="--delay:0.4s">
-                    <i class="ph ph-user-check"></i><span>Caste Certificate</span><small>Apply in 3 mins</small>
-                </a>
-                <a href="NotFound.html" class="ds-apply-card ds-anim" data-anim="fade-up" style="--delay:0.5s">
-                    <i class="ph ph-house-line"></i><span>Domicile Certificate</span><small>Apply in 4 mins</small>
-                </a>
-                <a href="NotFound.html" class="ds-apply-card ds-anim" data-anim="fade-up" style="--delay:0.6s">
-                    <i class="ph ph-rings-two"></i><span>Marriage Certificate</span><small>Apply in 5 mins</small>
-                </a>
+                <a href="NotFound.html" class="ds-apply-card ds-anim" data-anim="fade-up" style="--delay:0.1s"><i class="ph ph-baby"></i><span>Birth Certificate</span><small>Apply in 2 mins</small></a>
+                <a href="NotFound.html" class="ds-apply-card ds-anim" data-anim="fade-up" style="--delay:0.2s"><i class="ph ph-heart-break"></i><span>Death Certificate</span><small>Apply in 2 mins</small></a>
+                <a href="NotFound.html" class="ds-apply-card ds-anim" data-anim="fade-up" style="--delay:0.3s"><i class="ph ph-currency-inr"></i><span>Income Certificate</span><small>Apply in 3 mins</small></a>
+                <a href="NotFound.html" class="ds-apply-card ds-anim" data-anim="fade-up" style="--delay:0.4s"><i class="ph ph-user-check"></i><span>Caste Certificate</span><small>Apply in 3 mins</small></a>
+                <a href="NotFound.html" class="ds-apply-card ds-anim" data-anim="fade-up" style="--delay:0.5s"><i class="ph ph-house-line"></i><span>Domicile Certificate</span><small>Apply in 4 mins</small></a>
+                <a href="NotFound.html" class="ds-apply-card ds-anim" data-anim="fade-up" style="--delay:0.6s"><i class="ph ph-rings-two"></i><span>Marriage Certificate</span><small>Apply in 5 mins</small></a>
+            </div>
+
+            <!-- Revenue Tab -->
+            <div class="ds-apply-grid" id="ds-tab-revenue" style="display:none;">
+                <a href="NotFound.html" class="ds-apply-card ds-anim" data-anim="fade-up" style="--delay:0.1s"><i class="ph ph-map-trifold"></i><span>Land Records (7/12)</span><small>Instant Download</small></a>
+                <a href="NotFound.html" class="ds-apply-card ds-anim" data-anim="fade-up" style="--delay:0.2s"><i class="ph ph-file-text"></i><span>Property Mutation</span><small>Apply in 10 mins</small></a>
+                <a href="NotFound.html" class="ds-apply-card ds-anim" data-anim="fade-up" style="--delay:0.3s"><i class="ph ph-money"></i><span>Non-Creamy Layer</span><small>Apply in 5 mins</small></a>
+                <a href="NotFound.html" class="ds-apply-card ds-anim" data-anim="fade-up" style="--delay:0.4s"><i class="ph ph-exam"></i><span>EWS Certificate</span><small>Apply in 5 mins</small></a>
+            </div>
+
+            <!-- Police Tab -->
+            <div class="ds-apply-grid" id="ds-tab-police" style="display:none;">
+                <a href="NotFound.html" class="ds-apply-card ds-anim" data-anim="fade-up" style="--delay:0.1s"><i class="ph ph-file-search"></i><span>Police Clearance</span><small>Apply in 5 mins</small></a>
+                <a href="NotFound.html" class="ds-apply-card ds-anim" data-anim="fade-up" style="--delay:0.2s"><i class="ph ph-shield-star"></i><span>Tenant Verification</span><small>Apply in 3 mins</small></a>
+                <a href="NotFound.html" class="ds-apply-card ds-anim" data-anim="fade-up" style="--delay:0.3s"><i class="ph ph-speaker-hifi"></i><span>Loudspeaker Permission</span><small>Apply in 5 mins</small></a>
+            </div>
+
+            <!-- Health Tab -->
+            <div class="ds-apply-grid" id="ds-tab-health" style="display:none;">
+                <a href="NotFound.html" class="ds-apply-card ds-anim" data-anim="fade-up" style="--delay:0.1s"><i class="ph ph-first-aid-kit"></i><span>MJPJAY Enrollment</span><small>Health Scheme</small></a>
+                <a href="NotFound.html" class="ds-apply-card ds-anim" data-anim="fade-up" style="--delay:0.2s"><i class="ph ph-wheelchair"></i><span>Disability Certificate</span><small>Apply in 5 mins</small></a>
+                <a href="NotFound.html" class="ds-apply-card ds-anim" data-anim="fade-up" style="--delay:0.3s"><i class="ph ph-prescription"></i><span>Drug License Check</span><small>Pharmacy</small></a>
             </div>
         </div>
     </section>
@@ -201,11 +213,11 @@
                     </ul>
                 </div>
                 <div class="ds-track-form-box">
-                    <form onsubmit="event.preventDefault(); dsTrackApp();">
+                    <form onsubmit="event.preventDefault(); validateAndTrackApp();">
                         <label class="ds-form-label">Application Reference Number (ARN)</label>
-                        <input class="ds-form-input" id="ds-arn-input" type="text" placeholder="e.g. MH2026-XXXX-XXXX" required>
+                        <input class="ds-form-input" id="ds-arn-input" type="text" placeholder="e.g. MH2026-XXXX-XXXX" required pattern="^[A-Z]{2}[0-9]{4}-[0-9A-Z]{4}-[0-9A-Z]{4}$" title="Format: MH2026-XXXX-XXXX">
                         <label class="ds-form-label" style="margin-top:1rem;">Mobile Number</label>
-                        <input class="ds-form-input" type="tel" placeholder="+91 00000 00000">
+                        <input class="ds-form-input" id="ds-arn-mobile" type="tel" placeholder="+91 00000 00000" required pattern="[0-9]{10}" maxlength="10" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
                         <button class="ds-track-btn" type="submit">
                             <i class="ph ph-magnifying-glass"></i> Track Now
                         </button>
@@ -255,15 +267,15 @@
                 </div>
                 <div class="ds-grievance-form ds-anim" data-anim="fade-up" style="--delay:0.2s">
                     <h4>Submit a Grievance</h4>
-                    <form onsubmit="event.preventDefault(); dsShowGrievanceAlert();">
-                        <select class="ds-form-input">
-                            <option>Select Department</option>
-                            <option>Home Department</option>
-                            <option>Revenue Department</option>
-                            <option>Health Department</option>
-                            <option>Transport Department</option>
+                    <form onsubmit="event.preventDefault(); validateGrievance();">
+                        <select class="ds-form-input" id="ds-grievance-dept" required>
+                            <option value="">Select Department</option>
+                            <option value="home">Home Department</option>
+                            <option value="revenue">Revenue Department</option>
+                            <option value="health">Health Department</option>
+                            <option value="transport">Transport Department</option>
                         </select>
-                        <textarea class="ds-form-input ds-form-textarea" placeholder="Describe your grievance briefly..." rows="4"></textarea>
+                        <textarea class="ds-form-input ds-form-textarea" id="ds-grievance-text" placeholder="Describe your grievance briefly..." rows="4" required minlength="10"></textarea>
                         <button class="ds-submit-btn" type="submit"><i class="ph ph-paper-plane-tilt"></i> Submit Grievance</button>
                     </form>
                 </div>
