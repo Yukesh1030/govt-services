@@ -485,3 +485,106 @@ body.hp2-page {
     .hp2p-steps-grid { grid-template-columns: 1fr; }
     .hp2p-hero-chips { flex-direction: column; align-items: flex-start; }
 }
+
+/* ══════════════════════════════
+   CONTACT FORM STYLES
+   ══════════════════════════════ */
+.hp2-contact-form-wrap {
+    background: #f8fafc;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+}
+
+.hp2-contact-form h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 2rem;
+    letter-spacing: -0.02em;
+}
+
+.hp2-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.hp2-form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.hp2-form-field label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #475569;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.hp2-form-field input,
+.hp2-form-field select,
+.hp2-form-field textarea {
+    background: #fff;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 0.75rem;
+    padding: 0.875rem 1.1rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    color: #0f172a;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.hp2-form-field input:focus,
+.hp2-form-field select:focus,
+.hp2-form-field textarea:focus {
+    border-color: #0d9488;
+    box-shadow: 0 0 0 4px rgba(13,148,136,0.1);
+}
+
+.hp2-form-field input:invalid:not(:placeholder-shown) {
+    border-color: #f43f5e;
+}
+
+.hp2-form-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 0.75rem;
+    background: linear-gradient(135deg, #0d9488, #0f766e);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(13,148,136,0.3);
+    margin-top: 0.5rem;
+}
+
+.hp2-form-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(13,148,136,0.45);
+}
+
+.hp2-form-btn:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 640px) {
+    .hp2-form-row {
+        grid-template-columns: 1fr;
+    }
+    .hp2-contact-form-wrap {
+        padding: 1.5rem;
+    }
+}

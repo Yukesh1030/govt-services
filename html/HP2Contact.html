@@ -152,11 +152,19 @@
                             <div class="hp2-form-row">
                                 <div class="hp2-form-field">
                                     <label>Full Name</label>
-                                    <input type="text" placeholder="Your full name" required pattern="^[A-Za-z\s]+$" title="Name should only contain letters and spaces" oninput="this.value = this.value.replace(/[0-9]/g, '')">
+                                    <input type="text" placeholder="Your full name" required 
+                                           pattern="^[A-Za-z\s]+$" 
+                                           title="Please enter only letters and spaces"
+                                           oninput="this.value = this.value.replace(/[^A-Za-z\s]/g, '')">
                                 </div>
                                 <div class="hp2-form-field">
                                     <label>Mobile Number</label>
-                                    <input type="tel" id="hp2ContactMobile" placeholder="+91 XXXXXXXXXX" required pattern="[0-9]{10}" maxlength="10" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                                    <input type="tel" id="hp2ContactMobile" placeholder="10-digit number" required 
+                                           pattern="[0-9]{10}" 
+                                           maxlength="10"
+                                           minlength="10"
+                                           title="Please enter exactly 10 digits"
+                                           oninput="this.value = this.value.replace(/[^0-9]/g, '')">
                                 </div>
                             </div>
                             <div class="hp2-form-field">
@@ -182,7 +190,7 @@
                             </div>
                             <div class="hp2-form-field">
                                 <label>Message</label>
-                                <textarea rows="5" placeholder="Describe your query in detail..." required></textarea>
+                                <textarea rows="5" placeholder="Describe your query in detail..." required minlength="4"></textarea>
                             </div>
                             <button type="submit" class="hp2-form-btn" id="hp2SendBtn">
                                 <i class="ph ph-paper-plane-tilt"></i> Send Message
@@ -299,32 +307,21 @@
         function hp2FormSend(e) {
             e.preventDefault();
             
-            // Additional strict length check before submission
-            const mobileInput = document.getElementById('hp2ContactMobile');
-            if (mobileInput && mobileInput.value.length < 10) {
-                alert('Please enter a valid 10-digit mobile number.');
-                mobileInput.focus();
-                return;
-            }
-
             const btn = document.getElementById('hp2SendBtn');
-            if (window.setButtonLoading) window.setButtonLoading(btn, true);
-            else {
+            const orig = btn.innerHTML;
+            
+            // Visual feedback
+            btn.innerHTML = '<i class="ph ph-spinner-gap anim-spin"></i> Sending...';
+            btn.disabled = true;
+            
+            setTimeout(() => {
                 btn.innerHTML = '<i class="ph ph-check-circle"></i> Message Sent!';
                 btn.style.background = '#059669';
-            }
-            
-            e.target.reset();
-            
-            setTimeout(() => { 
-                if (window.setButtonLoading) window.setButtonLoading(btn, false);
-                else {
-                    btn.innerHTML = 'Send Message'; 
-                    btn.style.background = '';
-                }
-                // Redirect to 404 page after successful submission
-                window.location.href = 'HP2NotFound.html';
-            }, 2000);
+                
+                setTimeout(() => {
+                    window.location.href = 'HP2NotFound.html';
+                }, 800);
+            }, 1000);
         }
     </script>
 </body>
