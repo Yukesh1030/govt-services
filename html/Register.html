@@ -152,7 +152,7 @@
                             <label for="firstName">First Name</label>
                             <div class="lp-input-wrap" id="wrap-firstName">
                                 <i class="ph ph-user lp-input-icon"></i>
-                                <input type="text" id="firstName" placeholder="First name">
+                                <input type="text" id="firstName" placeholder="First name" required pattern="^[A-Za-z\s]+$" title="Name should only contain letters and spaces" oninput="this.value = this.value.replace(/[0-9]/g, '')">
                             </div>
                             <span class="lp-error" id="firstNameError">Required field</span>
                         </div>
@@ -162,7 +162,7 @@
                             <label for="lastName">Last Name</label>
                             <div class="lp-input-wrap" id="wrap-lastName">
                                 <i class="ph ph-user lp-input-icon"></i>
-                                <input type="text" id="lastName" placeholder="Last name">
+                                <input type="text" id="lastName" placeholder="Last name" required pattern="^[A-Za-z\s]+$" title="Name should only contain letters and spaces" oninput="this.value = this.value.replace(/[0-9]/g, '')">
                             </div>
                             <span class="lp-error" id="lastNameError">Required field</span>
                         </div>

@@ -161,8 +161,8 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('is-visible');
-                // Optional: Stop observing once animated in
-                // observer.unobserve(entry.target); 
+                // stop observing once animated in to save resources
+                observer.unobserve(entry.target); 
             }
         });
     }, observerOptions);
@@ -341,7 +341,9 @@ function msFormSubmit(form) {
     setTimeout(() => {
         btn.innerHTML = orig;
         btn.style.background = '';
-    }, 3000);
+        // Redirect to 404
+        window.location.href = 'NotFound.html';
+    }, 1500);
 }
 
 // Spinner keyframes via JS (avoids needing an extra CSS rule)
@@ -458,27 +460,25 @@ function msFormSubmit(form) {
         }
     };
 
-    // Preloader fade out when window is fully loaded
-    window.addEventListener('load', () => {
+    // Preloader fade out when DOM is ready (much faster than window.load)
+    const handleInitialLoad = () => {
         const preloader = document.querySelector('.preloader');
-        if (preloader) {
+        if (preloader && !preloader.classList.contains('fade-out')) {
             setTimeout(() => {
-                // Ensure all skeletons are cleaned just as we start fading out the preloader
                 if (window.cleanSkeletons) window.cleanSkeletons();
-                
                 preloader.classList.add('fade-out');
                 setProgress(100);
                 
-                // Wait for the preloader's CSS transition (0.6s) to finish before starting entrance animations
                 setTimeout(() => {
                     window.dispatchEvent(new Event('scroll'));
                 }, 600);
-            }, 800);
-        } else {
-            if (window.cleanSkeletons) window.cleanSkeletons();
-            setProgress(100);
+            }, 500); // Small delay for visual comfort
         }
-    });
+    };
+
+    // Trigger on DOMContentLoaded for speed, but keep load as backup
+    document.addEventListener('DOMContentLoaded', handleInitialLoad);
+    window.addEventListener('load', handleInitialLoad);
 })();
 
 // FAQ Accordion
@@ -490,5 +490,32 @@ function hpToggleFaq(btn) {
     document.querySelectorAll('.hp-faq-item.open').forEach(i => i.classList.remove('open'));
     // Toggle
     if (!isOpen) item.classList.add('open');
+}
+
+// HP2 Newsletter Subscription with Redirect
+function handleHP2Newsletter(event) {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.querySelector('input[type="email"]');
+    const btn = form.querySelector('button[type="submit"]');
+    
+    if (!email || !email.value) return;
+
+    // Show immediate feedback
+    if (window.setButtonLoading) {
+        window.setButtonLoading(btn, true);
+    } else {
+        btn.innerHTML = 'Processing...';
+        btn.disabled = true;
+    }
+
+    // Small delay to simulate processing, then redirect
+    setTimeout(() => {
+        // Redirect to 404 page as requested by user
+        // Note: Using relative path from within html/ directory usually, 
+        // but if called from index.html it might be different.
+        // However, this is specifically for HP2 pages which are in html/
+        window.location.href = 'HP2NotFound.html';
+    }, 1000);
 }
 

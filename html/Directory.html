@@ -10,9 +10,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- Phosphor Icons -->
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <!-- Phosphor Icons for modern sleek iconography -->
+    <script src="https://unpkg.com/@phosphor-icons/web" defer></script>
 
     <!-- Styles -->
     <link rel="stylesheet" href="../css/style.css">
@@ -68,7 +68,7 @@
         <!-- Filter Bar -->
         <section class="filter-section anim-el anim-up" style="transition-delay: 0.7s;">
             <div class="filter-label">Filter Who's Who divisions wise</div>
-            <form class="filter-form">
+            <form class="filter-form" onsubmit="handleDirFilter(event)">
                 <select class="filter-select">
                     <option value="all">All</option>
                     <option value="acs">Additional Chief Secretary</option>
@@ -99,7 +99,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <tr data-division="acs">
                             <td data-label="Profile Picture"><img src="../assets/official-4.webp" alt="Manisha Patankar" class="profile-img skeleton-img"></td>
                             <td data-label="Name" class="official-name">Manisha Patankar - Mahaiskar, I. A. S.</td>
                             <td data-label="Designation" class="designation">Additional Chief Secretary (Home)</td>
@@ -108,7 +108,7 @@
                             <td data-label="Room No" class="contact-info">535/201</td>
                             <td data-label="Activity" class="activity-cell">EST-2 (From Under Secretary onwards), POL-1, POL-1A, POL-2, POL-4, BUD-1, BUD-2, SPL-9 (Sec.P-1), SPL-10, SPL-3B, IPS CELL</td>
                         </tr>
-                        <tr>
+                        <tr data-division="acs">
                             <td data-label="Profile Picture"><img src="../assets/official-2.webp" alt="Smt. Radhika Rastogi" class="profile-img skeleton-img"></td>
                             <td data-label="Name" class="official-name">Smt. Radhika Rastogi, I. A. S.</td>
                             <td data-label="Designation" class="designation">Additional Chief Secretary (Appeals and Security)</td>
@@ -116,6 +116,33 @@
                             <td data-label="Phone" class="contact-info">02222821743</td>
                             <td data-label="Room No" class="contact-info">539/209</td>
                             <td data-label="Activity" class="activity-cell">EST-1, EST-2 (Up To Section Officer), EST-3, CASH SECTION, POL-5 A, POL-5 B, POL-6, POL-10, SPL - 4 ( Sensor Security Systems), SPL - 4 (Security Appeals), SPL-5, SPL-7, PRISON - 1, 2, 3</td>
+                        </tr>
+                        <tr data-division="ps">
+                            <td data-label="Profile Picture"><img src="../assets/official-1.webp" alt="Smt. Sujata Saunik" class="profile-img skeleton-img"></td>
+                            <td data-label="Name" class="official-name">Smt. Sujata Saunik, I. A. S.</td>
+                            <td data-label="Designation" class="designation">Principal Secretary (Home)</td>
+                            <td data-label="Email" class="contact-info">psec.home@maharashtra.gov.in</td>
+                            <td data-label="Phone" class="contact-info">22023572</td>
+                            <td data-label="Room No" class="contact-info">Main-502</td>
+                            <td data-label="Activity" class="activity-cell">Vigilance, Anti-Corruption, Police-14</td>
+                        </tr>
+                        <tr data-division="ps">
+                            <td data-label="Profile Picture"><img src="../assets/official-3.webp" alt="Shri Abhijit Bangar" class="profile-img skeleton-img"></td>
+                            <td data-label="Name" class="official-name">Shri Abhijit Bangar, I. A. S.</td>
+                            <td data-label="Designation" class="designation">Principal Secretary (Special)</td>
+                            <td data-label="Email" class="contact-info">psec.special@maharashtra.gov.in</td>
+                            <td data-label="Phone" class="contact-info">22024530</td>
+                            <td data-label="Room No" class="contact-info">Main-508</td>
+                            <td data-label="Activity" class="activity-cell">Law & Order, Traffic, Cyber Security</td>
+                        </tr>
+                        <tr data-division="dig">
+                            <td data-label="Profile Picture"><img src="../assets/official-2.webp" alt="DIG Orders Official" class="profile-img skeleton-img"></td>
+                            <td data-label="Name" class="official-name">Shri Sanjay Kumar, I. P. S.</td>
+                            <td data-label="Designation" class="designation">DIG (Establishment / Training)</td>
+                            <td data-label="Email" class="contact-info">dig.est@mahapolice.gov.in</td>
+                            <td data-label="Phone" class="contact-info">22821212</td>
+                            <td data-label="Room No" class="contact-info">PHQ-214</td>
+                            <td data-label="Activity" class="activity-cell">Police Recruitment, In-service Training</td>
                         </tr>
                     </tbody>
                 </table>
@@ -425,11 +452,11 @@
                     <h4 class="footer-heading">Quick Links</h4>
                     <ul>
                         <li><a href="../index.html">Home</a></li>
-                        <li><a href="Directory.html">Departments</a></li>
-                        <li><a href="NotFound.html">Resolutions</a></li>
-                        <li><a href="Dashboard.html">Services Portal</a></li>
-                        <li><a href="About.html">About Us</a></li>
-                        <li><a href="Login.html">Citizen Login</a></li>
+                        <li><a href="About.html">About</a></li>
+                        <li><a href="Directory.html">Online Services</a></li>
+                        <li><a href="Media.html">Media</a></li>
+                        <li><a href="Dashboard.html">Dashboard</a></li>
+                        <li><a href="Login.html">Login</a></li>
                     </ul>
                 </div>
                 
@@ -437,7 +464,7 @@
                 <div class="footer-links anim-el anim-up" style="transition-delay: 0.4s;">
                     <h4 class="footer-heading">Resources</h4>
                     <ul>
-                        <li><a href="Media.html">Press Releases</a></li>
+                        <li><a href="NotFound.html">Press Releases</a></li>
                         <li><a href="NotFound.html">Acts & Rules</a></li>
                         <li><a href="NotFound.html">Tenders</a></li>
                         <li><a href="NotFound.html">RTI Guidelines</a></li>
@@ -481,12 +508,6 @@
                     <h4>Get Government Updates</h4>
                     <p>Subscribe to receive daily news and service alerts</p>
                 </div>
-                <form class="newsletter-form" onsubmit="handleNewsletter(event)">
-                    <i class="ph ph-envelope-simple" style="padding-left: 1rem; color: #64748b; font-size: 1.25rem;"></i>
-                    <input type="email" placeholder="Enter your email address" required>
-                    <button type="submit" id="newsletterBtn">
-                        Subscribe <i class="ph ph-arrow-right"></i>
-                    </button>
                 </form>
             </div>
 
@@ -500,6 +521,26 @@
     <!-- Scripts -->
     <script src="../javascripts/main.js"></script>
     <script>
+        function handleDirFilter(e) {
+            e.preventDefault();
+            const select = e.target.querySelector('.filter-select');
+            const val = select.value;
+            const rows = document.querySelectorAll('.dir-table tbody tr');
+            
+            rows.forEach(row => {
+                const division = row.getAttribute('data-division');
+                if (val === 'all' || division === val) {
+                    row.style.display = '';
+                    row.style.opacity = '0';
+                    setTimeout(() => {
+                        row.style.transition = 'opacity 0.4s ease';
+                        row.style.opacity = '1';
+                    }, 50);
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
 
         function handleNewsletter(e) {
             e.preventDefault();
