@@ -301,7 +301,7 @@
                 </div>
                 <div class="ds-grievance-form ds-anim" data-anim="fade-up" style="--delay:0.2s">
                     <h4>Submit a Grievance</h4>
-                    <form onsubmit="event.preventDefault(); validateGrievance();">
+                    <form onsubmit="validateGrievance(event);">
                         <select class="ds-form-input" id="ds-grievance-dept" required>
                             <option value="">Select Department</option>
                             <option value="home">Home Department</option>

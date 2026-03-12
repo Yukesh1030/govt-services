@@ -275,7 +275,8 @@ function validateAndTrackApp() {
 // -------------------------------------------------------
 // DS Section: Grievance form confirmation & Validate
 // -------------------------------------------------------
-function validateGrievance() {
+function validateGrievance(event) {
+    if (event) event.preventDefault();
     const textInput = document.getElementById('ds-grievance-text');
     
     // Ensure complaint has some body to it
@@ -287,15 +288,25 @@ function validateGrievance() {
 
     const btn = document.querySelector('.ds-submit-btn');
     if (!btn) return;
-    const original = btn.innerHTML;
-    btn.innerHTML = '<i class="ph ph-check-circle"></i> Submitted Successfully!';
-    btn.style.background = '#059669';
+
+    // Use global utility if available
+    if (window.setButtonLoading) {
+        window.setButtonLoading(btn, true);
+    } else {
+        btn.disabled = true;
+        btn.innerHTML = '<i class="ph ph-spinner"></i> Submitting...';
+    }
+
+    // Determine redirect path based on current location
+    let redirectUrl = 'html/NotFound.html';
+    if (window.location.pathname.includes('/html/')) {
+        redirectUrl = 'NotFound.html';
+    }
+
     setTimeout(() => {
-        btn.innerHTML = original;
-        btn.style.background = '';
         // Redirect to 404
-        window.location.href = 'NotFound.html';
-    }, 2000);
+        window.location.href = redirectUrl;
+    }, 1500);
 }
 
 // -------------------------------------------------------
