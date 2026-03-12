@@ -1316,135 +1316,81 @@ body.homepage2 {
 }
 
 /* ====================================================
-   Section 5: Contact
+   Section 5: FAQ
    ==================================================== */
-.hp2-contact-section { background: #fff; }
-
-.hp2-contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: start;
+.hp2-faq-section { 
+    background: #fff; 
+    padding: 6rem 0;
 }
 
-.hp2-contact-info h2 {
-    font-size: 2rem;
-    font-weight: 800;
-    color: #0f172a;
-    letter-spacing: -0.03em;
-    margin: 0.5rem 0 1rem;
-}
-
-.hp2-contact-info > p {
-    color: #64748b;
-    line-height: 1.7;
-    margin-bottom: 2rem;
-}
-
-.hp2-contact-items { display: flex; flex-direction: column; gap: 1.25rem; }
-
-.hp2-ci {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-}
-
-.hp2-ci-icon {
-    width: 44px;
-    height: 44px;
-    border-radius: 0.75rem;
-    background: rgba(13,148,136,0.1);
-    color: #0d9488;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.25rem;
-    flex-shrink: 0;
-}
-
-.hp2-ci strong { display: block; font-weight: 700; color: #0f172a; font-size: 0.9rem; margin-bottom: 0.2rem; }
-.hp2-ci span   { font-size: 0.82rem; color: #64748b; line-height: 1.5; }
-
-/* Contact Form */
-.hp2-contact-form-wrap {
-    background: #f8fafc;
-    border: 1.5px solid #e2e8f0;
-    border-radius: 1.5rem;
-    padding: 2.5rem;
-}
-
-.hp2-contact-form h3 {
-    font-size: 1.35rem;
-    font-weight: 700;
-    color: #0f172a;
-    margin-bottom: 1.5rem;
-}
-
-.hp2-form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-}
-
-.hp2-form-field {
+.hp2-faq-grid {
+    max-width: 800px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 0.4rem;
-    margin-bottom: 1rem;
+    gap: 1.25rem;
 }
 
-.hp2-form-field label {
-    font-size: 0.78rem;
-    font-weight: 600;
-    color: #475569;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-}
-
-.hp2-form-field input,
-.hp2-form-field select,
-.hp2-form-field textarea {
-    background: #fff;
+.hp2-faq-item {
+    background: #f8fafc;
     border: 1.5px solid #e2e8f0;
-    border-radius: 0.625rem;
-    padding: 0.8rem 1rem;
-    font-family: var(--font-body);
-    font-size: 0.875rem;
-    color: #0f172a;
-    outline: none;
-    transition: border-color 0.2s, box-shadow 0.2s;
-    resize: vertical;
+    border-radius: 1.25rem;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.hp2-form-field input:focus,
-.hp2-form-field select:focus,
-.hp2-form-field textarea:focus {
+.hp2-faq-item:hover {
     border-color: #0d9488;
-    box-shadow: 0 0 0 3px rgba(13,148,136,0.12);
-}
-
-.hp2-form-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    width: 100%;
-    padding: 0.95rem;
-    border: none;
-    border-radius: 0.7rem;
-    background: linear-gradient(135deg, #0d9488, #0f766e);
-    color: #fff;
-    font-family: var(--font-body);
-    font-size: 0.95rem;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.25s ease;
-    box-shadow: 0 4px 18px rgba(13,148,136,0.3);
-}
-
-.hp2-form-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(13,148,136,0.4);
+    box-shadow: 0 10px 25px rgba(13,148,136,0.1);
+}
+
+.hp2-faq-item.active {
+    border-color: #0d9488;
+    background: #fff;
+    box-shadow: 0 15px 35px rgba(13,148,136,0.12);
+}
+
+.hp2-faq-question {
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.hp2-faq-question span {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.hp2-faq-question i {
+    font-size: 1.25rem;
+    color: #0d9488;
+    transition: transform 0.3s;
+}
+
+.hp2-faq-item.active .hp2-faq-answer {
+    max-height: 200px;
+    padding: 0 2rem 1.5rem;
+    opacity: 1;
+}
+
+.hp2-faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 2rem;
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hp2-faq-answer p {
+    font-size: 0.95rem;
+    color: #64748b;
+    line-height: 1.7;
+    margin: 0;
 }
 
 /* ====================================================
