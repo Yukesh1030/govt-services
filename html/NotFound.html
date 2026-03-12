@@ -85,25 +85,96 @@
     </main>
     
     <!-- Simplified Footer for Error Page -->
-    <footer class="footer-dark">
+    <footer class="footer-dark anim-el anim-up" style="transition-delay: 0.1s;">
         <div class="container">
-            <div class="footer-grid-main" style="padding-bottom: 2rem;">
-                <div class="footer-brand">
+            <!-- Main Footer Links -->
+            <div class="footer-grid-main">
+                <!-- Col 1: Brand & Socials -->
+                <div class="footer-brand anim-el anim-left" style="transition-delay: 0.2s;">
                     <div class="brand-logo">Home 1</div>
-                    <p style="font-size: 0.85rem;">Official e-Governance Prototype. Connecting citizens to digital services.</p>
+                    <p>Government Portal connects citizens with essential public services. Find policies, apply for schemes, and participate in digital governance with us.</p>
+                    <div class="footer-socials">
+                        <a href="NotFound.html" class="footer-social-icon"><i class="ph ph-facebook-logo"></i></a>
+                        <a href="NotFound.html" class="footer-social-icon"><i class="ph ph-twitter-logo"></i></a>
+                        <a href="NotFound.html" class="footer-social-icon"><i class="ph ph-linkedin-logo"></i></a>
+                        <a href="NotFound.html" class="footer-social-icon"><i class="ph ph-instagram-logo"></i></a>
+                        <a href="NotFound.html" class="footer-social-icon"><i class="ph ph-youtube-logo"></i></a>
+                    </div>
                 </div>
-                <div class="footer-links">
-                    <h4 class="footer-heading">Navigate</h4>
-                    <ul style="font-size: 0.85rem;">
+                
+                <!-- Col 2: Quick Links -->
+                <div class="footer-links anim-el anim-up" style="transition-delay: 0.3s;">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul>
                         <li><a href="../index.html">Home</a></li>
                         <li><a href="About.html">About</a></li>
                         <li><a href="Directory.html">Online Services</a></li>
+                        <li><a href="Media.html">Media</a></li>
+                        <li><a href="Dashboard.html">Dashboard</a></li>
                         <li><a href="Login.html">Login</a></li>
                     </ul>
                 </div>
+                
+                <!-- Col 3: Resource Center -->
+                <div class="footer-links anim-el anim-up" style="transition-delay: 0.4s;">
+                    <h4 class="footer-heading">Resources</h4>
+                    <ul>
+                        <li><a href="Media.html">Press Releases</a></li>
+                        <li><a href="NotFound.html">Acts & Rules</a></li>
+                        <li><a href="NotFound.html">Tenders</a></li>
+                        <li><a href="NotFound.html">RTI Guidelines</a></li>
+                        <li><a href="NotFound.html">Help Center</a></li>
+                        <li><a href="NotFound.html">FAQs</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Col 4: Contact & Stats Box -->
+                <div class="footer-contact anim-el anim-right" style="transition-delay: 0.5s;">
+                    <ul>
+                        <li>
+                            <i class="ph ph-map-pin"></i>
+                            <span>Secretariat Building, Fort St. George,<br>Tamil Nadu - 600009</span>
+                        </li>
+                        <li>
+                            <i class="ph ph-phone"></i>
+                            <span>1800-425-1333</span>
+                        </li>
+                        <li>
+                            <i class="ph ph-envelope-simple"></i>
+                            <span>support@tn.gov.in</span>
+                        </li>
+                        <li>
+                            <i class="ph ph-clock"></i>
+                            <span>Mon - Sat: 10:00 AM - 6:00 PM<br>Sun: Closed</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="footer-stats-box">
+                        <h5>250+ Services Online</h5>
+                        <p class="stats-highlight">Get instant certificates</p>
+                        <p class="stats-sub">New services added monthly</p>
+                    </div>
+                </div>
             </div>
+            
+            <!-- Newsletter Bar -->
+            <div class="footer-newsletter anim-el anim-up" style="transition-delay: 0.6s;">
+                <div class="newsletter-text">
+                    <h4>Get Government Updates</h4>
+                    <p>Subscribe to receive daily news and service alerts</p>
+                </div>
+                <form class="newsletter-form" onsubmit="handleHP1Newsletter(event)">
+                    <i class="ph ph-envelope-simple" style="padding-left: 1rem; color: #64748b; font-size: 1.25rem;"></i>
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" id="newsletterBtn">
+                        Subscribe <i class="ph ph-arrow-right"></i>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Footer Bottom -->
             <div class="footer-bottom">
-                <p style="font-size: 0.75rem;">&copy; 2026 The Stackly e-Governance Prototype. All rights reserved.</p>
+                <p>&copy; 2026 The Stackly e-Governance Prototype. All rights reserved.</p>
             </div>
         </div>
     </footer>
