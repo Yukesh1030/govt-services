@@ -520,10 +520,10 @@ function handleHP2Newsletter(event) {
 
     // Small delay to simulate processing, then redirect
     setTimeout(() => {
+        // Clear form fields so they are empty when navigating back
+        form.reset();
+        
         // Redirect to 404 page as requested by user
-        // Note: Using relative path from within html/ directory usually, 
-        // but if called from index.html it might be different.
-        // However, this is specifically for HP2 pages which are in html/
         window.location.href = 'HP2NotFound.html';
     }, 1000);
 }
@@ -546,6 +546,8 @@ function handleHP1Newsletter(event) {
     }
 
     setTimeout(() => {
+        // Clear form fields so they are empty when navigating back
+        form.reset();
         window.location.href = redirectUrl;
     }, 500);
 }

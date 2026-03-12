@@ -325,6 +325,35 @@ body.hp2-page {
 }
 .hp2p-pr-link:hover { gap: 0.55rem; }
 
+.hp2p-pr-foot-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid #f1f5f9;
+}
+
+.hp2p-pdf-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #f43f5e;
+    background: rgba(244,63,94,0.08);
+    padding: 0.35rem 0.75rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.hp2p-pdf-btn:hover {
+    background: #f43f5e;
+    color: #fff;
+    transform: translateY(-1px);
+}
+
 /* No result */
 .hp2p-no-result {
     flex-direction: column; align-items: center; justify-content: center;

@@ -318,6 +318,9 @@
                 btn.innerHTML = '<i class="ph ph-check-circle"></i> Message Sent!';
                 btn.style.background = '#059669';
                 
+                // Reset form fields
+                e.target.reset();
+                
                 setTimeout(() => {
                     window.location.href = 'HP2NotFound.html';
                 }, 800);
