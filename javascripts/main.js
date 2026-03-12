@@ -251,10 +251,10 @@ function validateAndTrackApp() {
     const mobileInput = document.getElementById('ds-arn-mobile');
     
     // Custom validation logic beyond HTML5 patterns
-    const arnRegex = /^[A-Z]{2}[0-9]{4}-[0-9A-Z]{4}-[0-9A-Z]{4}$/;
+    const arnRegex = /^[A-Za-z0-9]{10}$/;
     
     if (arnInput && !arnRegex.test(arnInput.value)) {
-        alert('Invalid ARN Format. Please use format: MH2026-XXXX-XXXX');
+        alert('Invalid ARN Format. Please enter a 10-character alphanumeric code.');
         arnInput.focus();
         return;
     }
@@ -293,8 +293,9 @@ function validateGrievance() {
     setTimeout(() => {
         btn.innerHTML = original;
         btn.style.background = '';
-        // Note: Could add redirect logic here if desired
-    }, 3000);
+        // Redirect to 404
+        window.location.href = 'NotFound.html';
+    }, 2000);
 }
 
 // -------------------------------------------------------
@@ -519,3 +520,24 @@ function handleHP2Newsletter(event) {
     }, 1000);
 }
 
+// HP1 Newsletter Subscription with Redirect
+function handleHP1Newsletter(event) {
+    event.preventDefault();
+    const form = event.target;
+    const btn = form.querySelector('button[type="submit"]');
+    
+    // Show immediate feedback if utility is available
+    if (window.setButtonLoading) {
+        window.setButtonLoading(btn, true);
+    }
+
+    // Determine redirect path based on current location
+    let redirectUrl = 'html/NotFound.html';
+    if (window.location.pathname.includes('/html/')) {
+        redirectUrl = 'NotFound.html';
+    }
+
+    setTimeout(() => {
+        window.location.href = redirectUrl;
+    }, 1000);
+}

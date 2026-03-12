@@ -382,7 +382,7 @@
             <div class="footer-grid-main">
                 <!-- Col 1: Brand & Socials -->
                 <div class="footer-brand anim-el anim-left" style="transition-delay: 0.2s;">
-                    <div class="brand-logo">THE STACKLY</div>
+                    <div class="brand-logo">Home 1</div>
                     <p>Government Portal connects citizens with essential public services. Find policies, apply for schemes, and participate in digital governance with us.</p>
                     <div class="footer-socials">
                         <a href="NotFound.html" class="footer-social-icon"><i class="ph ph-facebook-logo"></i></a>
@@ -410,7 +410,7 @@
                 <div class="footer-links anim-el anim-up" style="transition-delay: 0.4s;">
                     <h4 class="footer-heading">Resources</h4>
                     <ul>
-                        <li><a href="NotFound.html">Press Releases</a></li>
+                        <li><a href="Media.html">Press Releases</a></li>
                         <li><a href="NotFound.html">Acts & Rules</a></li>
                         <li><a href="NotFound.html">Tenders</a></li>
                         <li><a href="NotFound.html">RTI Guidelines</a></li>
@@ -454,10 +454,10 @@
                     <h4>Get Government Updates</h4>
                     <p>Subscribe to receive daily news and service alerts</p>
                 </div>
-                <form class="newsletter-form" onsubmit="event.preventDefault();">
+                <form class="newsletter-form" onsubmit="handleHP1Newsletter(event)">
                     <i class="ph ph-envelope-simple" style="padding-left: 1rem; color: #64748b; font-size: 1.25rem;"></i>
                     <input type="email" placeholder="Enter your email address" required>
-                    <button type="submit">
+                    <button type="submit" id="newsletterBtn">
                         Subscribe <i class="ph ph-arrow-right"></i>
                     </button>
                 </form>

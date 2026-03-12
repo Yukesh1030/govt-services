@@ -654,7 +654,7 @@
             <div class="footer-grid-main">
                 <!-- Col 1: Brand & Socials -->
                 <div class="footer-brand anim-el anim-left" style="transition-delay: 0.2s;">
-                    <div class="brand-logo">THE STACKLY</div>
+                    <div class="brand-logo">Home 1</div>
                     <p>Government Portal connects citizens with essential public services. Find policies, apply for schemes, and participate in digital governance with us.</p>
                     <div class="footer-socials">
                         <a href="html/NotFound.html" class="footer-social-icon"><i class="ph ph-facebook-logo"></i></a>
@@ -726,7 +726,7 @@
                     <h4>Get Government Updates</h4>
                     <p>Subscribe to receive daily news and service alerts</p>
                 </div>
-                <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+                <form class="newsletter-form" onsubmit="handleHP1Newsletter(event)">
                     <i class="ph ph-envelope-simple" style="padding-left: 1rem; color: #64748b; font-size: 1.25rem;"></i>
                     <input type="email" placeholder="Enter your email address" required>
                     <button type="submit" id="newsletterBtn">
@@ -743,25 +743,6 @@
     </footer>
 
     <script src="javascripts/main.js"></script>
-    <script>
-
-        function handleNewsletter(e) {
-            e.preventDefault();
-            const btn = document.getElementById('newsletterBtn');
-            if (window.setButtonLoading) window.setButtonLoading(btn, true);
-            setTimeout(() => {
-                if (window.setButtonLoading) window.setButtonLoading(btn, false);
-                const originalText = btn.innerHTML;
-                btn.innerHTML = '<i class="ph ph-check-circle"></i> Subscribed!';
-                btn.style.background = '#059669';
-                setTimeout(() => {
-                    btn.innerHTML = originalText;
-                    btn.style.background = '';
-                    e.target.reset();
-                }, 2000);
-            }, 1000);
-        }
-    </script>
 </body>
 </html>
 
