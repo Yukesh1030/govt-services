@@ -190,7 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // -------------------------------------------------------
     function animateCounter(el) {
         const target = parseInt(el.dataset.target, 10);
-        const duration = 2000;
+        const duration = 500;
         const start = performance.now();
 
         function step(now) {
@@ -304,9 +304,8 @@ function validateGrievance(event) {
     }
 
     setTimeout(() => {
-        // Redirect to 404
         window.location.href = redirectUrl;
-    }, 1500);
+    }, 500);
 }
 
 // -------------------------------------------------------
@@ -337,11 +336,9 @@ function msPlayVideo(btn, id) {
         icon.className = 'ph ph-check-circle';
         icon.style.animation = '';
         icon.style.color = '#10b981';
-    }, 1200);
+    }, 400);
 }
 
-// -------------------------------------------------------
-// MS Section: Press Contact form confirmation
 // -------------------------------------------------------
 function msFormSubmit(form) {
     const btn = form.querySelector('.ms-submit-btn');
@@ -355,7 +352,7 @@ function msFormSubmit(form) {
         btn.style.background = '';
         // Redirect to 404
         window.location.href = 'NotFound.html';
-    }, 1500);
+    }, 500);
 }
 
 // Spinner keyframes via JS (avoids needing an extra CSS rule)
@@ -390,7 +387,7 @@ function msFormSubmit(form) {
 (function() {
     function hpAnimCounter(el) {
         const target = parseInt(el.dataset.target, 10);
-        const duration = 2000;
+        const duration = 500;
         const start = performance.now();
         (function step(now) {
             const p = Math.min((now - start) / duration, 1);
@@ -458,7 +455,7 @@ function msFormSubmit(form) {
             clearInterval(interval);
         }
         setProgress(progress);
-    }, 200);
+    }, 50);
 
     // Global utility to handle button loading states
     window.setButtonLoading = function(btn, isLoading) {
@@ -484,7 +481,7 @@ function msFormSubmit(form) {
                 setTimeout(() => {
                     window.dispatchEvent(new Event('scroll'));
                 }, 600);
-            }, 500); // Small delay for visual comfort
+            }, 100); // Fast transition for perceived speed
         }
     };
 
@@ -550,5 +547,5 @@ function handleHP1Newsletter(event) {
 
     setTimeout(() => {
         window.location.href = redirectUrl;
-    }, 1000);
+    }, 500);
 }
