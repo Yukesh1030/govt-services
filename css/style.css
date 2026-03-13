@@ -508,13 +508,32 @@ h1, h2, h3, h4 {
 }
 
 .dropdown-link {
-    padding: var(--space-3) var(--space-4);
+    padding: var(--space-4) var(--space-6);
     color: #ffffff;
     font-size: 0.85rem;
     font-weight: 600;
     text-decoration: none;
-    transition: background-color 0.2s, color 0.2s;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     border-bottom: 1px solid rgba(255,255,255,0.05);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+
+.dropdown-link::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%) scaleX(0);
+    height: 70%;
+    width: 4px;
+    background: var(--clr-gold);
+    border-radius: 0 4px 4px 0;
+    transition: transform 0.3s ease;
+    transform-origin: left;
 }
 
 .dropdown-link:last-child {
@@ -522,8 +541,28 @@ h1, h2, h3, h4 {
 }
 
 .dropdown-link:hover {
-    background-color: var(--clr-brand-brown);
+    background-color: rgba(93, 64, 55, 0.4);
     color: var(--clr-gold);
+    padding-left: calc(var(--space-6) + 8px);
+}
+
+.dropdown-link:hover::before {
+    transform: translateY(-50%) scaleX(1);
+}
+
+.dropdown-link::after {
+    content: '\f105'; /* Phosphor caret-right or similar arrow icon */
+    font-family: 'Phosphor';
+    position: absolute;
+    right: var(--space-4);
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+}
+
+.dropdown-link:hover::after {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 /* Premium Login Button Styling */
