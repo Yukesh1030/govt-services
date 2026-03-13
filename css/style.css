@@ -64,26 +64,6 @@
     --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* --- Dark Mode Variables --- */
-:root[data-theme="dark"] {
-    --clr-bg: #0f172a; /* Deep slate/black */
-    --clr-bg-surface: #1e293b; /* Slate surface */
-    --clr-bg-card: rgba(30, 41, 59, 0.8); /* Glass dark */
-    
-    --clr-brand-dark: #fde047; /* Gold switches from dark accent to bright accent */
-    --clr-brand-brown: #a88d6d; /* Lighter brown for readability */
-    --clr-gold: #f5d061;
-    
-    --clr-primary: #a88d6d;
-    --clr-text: #f8fafc; /* Near-white */
-    --clr-text-muted: #94a3b8; /* Light slate */
-    
-    --clr-border: rgba(255, 255, 255, 0.1);
-    --clr-border-hover: rgba(255, 255, 255, 0.2);
-    
-    --skeleton-bg: #334155;
-    --skeleton-highlight: #475569;
-}
 
 /* --- Reset & Base --- */
 *, *::before, *::after {
@@ -1878,12 +1858,12 @@ h1, h2, h3, h4 {
     font-size: 2.25rem;
     font-weight: 800;
     letter-spacing: -0.03em;
-    color: #0f172a;
+    color: var(--clr-text);
     margin: 0.5rem 0 0.5rem;
 }
 
 .hp-head p {
-    color: #64748b;
+    color: var(--clr-text-muted);
     font-size: 1rem;
     max-width: 600px;
     margin: 0 auto;
@@ -1923,6 +1903,7 @@ h1, h2, h3, h4 {
 
 /* ── Section 1: Departments ── */
 .hp-dept-section { background: #f8fafc; }
+
 
 .hp-dept-grid {
     display: grid;
@@ -2051,6 +2032,7 @@ h1, h2, h3, h4 {
 /* FAQ Accordion */
 .hp-faq-list { display: flex; flex-direction: column; gap: 0.6rem; }
 
+
 .hp-faq-item {
     border: 1.5px solid var(--clr-border);
     border-radius: 0.875rem;
@@ -2172,6 +2154,7 @@ h1, h2, h3, h4 {
 /* ── Section 4: Testimonials ── */
 .hp-testimonials-section { background: #f8fafc; }
 
+
 .hp-testimonials-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -2189,6 +2172,7 @@ h1, h2, h3, h4 {
     transition: all 0.3s ease;
     position: relative;
 }
+
 
 .hp-testi-card::before {
     content: '\201C';
@@ -2514,10 +2498,6 @@ h1, h2, h3, h4 {
     font-weight: 600;
 }
 
-[data-theme="dark"] .official-role {
-    color: var(--clr-gold);
-}
-
 /* --- Running Ticker Styles --- */
 .ticker-wrapper {
     background: var(--clr-bg-surface);
@@ -2639,36 +2619,3 @@ h1, h2, h3, h4 {
     display: inline-block; /* Ensure transform works correctly on spans */
 }
 
-/* --- Theme Toggle Button --- */
-.theme-toggle {
-    background: transparent;
-    border: 1px solid var(--clr-border);
-    color: var(--clr-text);
-    width: 40px;
-    height: 40px;
-    border-radius: var(--radius-md);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all var(--transition-fast);
-    font-size: 1.25rem;
-    margin: 0 0.5rem;
-}
-
-.theme-toggle:hover {
-    background-color: var(--clr-bg-surface);
-    border-color: var(--clr-brand-brown);
-    color: var(--clr-brand-brown);
-}
-
-[data-theme="dark"] .theme-toggle:hover {
-    color: var(--clr-gold);
-    border-color: var(--clr-gold);
-}
-
-.theme-toggle .ph-moon { display: block; }
-.theme-toggle .ph-sun { display: none; }
-
-[data-theme="dark"] .theme-toggle .ph-moon { display: none; }
-[data-theme="dark"] .theme-toggle .ph-sun { display: block; }
