@@ -15,7 +15,39 @@
     
     <!-- Base Styles & About Specific Styles -->
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/About.css">
+    <link rel="stylesheet" href="../css/About.css?v=1.3">
+    <style>
+        /* Force Centering for Achievements Section */
+        .achievements-section .section-header {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            text-align: center !important;
+            margin: 0 auto var(--space-10) !important;
+            max-width: 800px !important;
+            padding: 0 var(--space-6) !important;
+        }
+        .achievements-section .section-title {
+            text-align: center !important;
+            width: 100% !important;
+        }
+        .achievements-section .section-desc {
+            text-align: center !important;
+            margin: 0 auto !important;
+            max-width: 600px !important;
+        }
+        .achievements-section .container {
+            padding: 0 var(--space-12) !important; /* Increased gap as requested */
+        }
+        @media (max-width: 768px) {
+            .achievements-section .container {
+                padding: 0 var(--space-6) !important;
+            }
+            .achievements-section .section-header {
+                max-width: 100% !important;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Global Preloader -->
@@ -151,52 +183,52 @@
 
     <!-- Achievements Section -->
 <section class="about-section achievements-section">
-    
-    <div class="section-header anim-el anim-up">
-        <h2 class="section-title">Tamil Nadu Achievements</h2>
-        <p class="section-desc">Key milestones that define the growth and governance excellence of Tamil Nadu.</p>
+    <div class="container" style="padding: 0 var(--space-12) !important;">
+        <div class="section-header anim-el anim-up" style="display: flex !important; flex-direction: column !important; align-items: center !important; text-align: center !important; width: 100% !important; margin: 0 auto var(--space-10) !important;">
+            <h2 class="section-title" style="text-align: center !important; width: 100% !important; font-weight: 800 !important;">Tamil Nadu Achievements</h2>
+            <p class="section-desc" style="text-align: center !important; width: 100% !important; margin: 0 auto !important; max-width: 600px !important;">Key milestones that define the growth and governance excellence of Tamil Nadu.</p>
+        </div>
+
+        <div class="achievements-grid">
+
+            <div class="achievement-card anim-el anim-zoom" style="transition-delay: 0.1s;">
+                <i class="ph ph-chart-line-up achievement-icon"></i>
+                <h3>Rapid Economic Growth</h3>
+                <p>Tamil Nadu continues to be one of India's top contributors to GDP with strong industrial and IT sectors.</p>
+            </div>
+
+            <div class="achievement-card anim-el anim-zoom" style="transition-delay: 0.2s;">
+                <i class="ph ph-shield-check achievement-icon"></i>
+                <h3>Drug Free State Initiatives</h3>
+                <p>Strict enforcement and awareness programs ensure Tamil Nadu remains committed to a safe and healthy society.</p>
+            </div>
+
+            <div class="achievement-card anim-el anim-zoom" style="transition-delay: 0.3s;">
+                <i class="ph ph-graduation-cap achievement-icon"></i>
+                <h3>Education Excellence</h3>
+                <p>High literacy rate and world-class universities make Tamil Nadu a leading educational hub in India.</p>
+            </div>
+
+            <div class="achievement-card anim-el anim-zoom" style="transition-delay: 0.4s;">
+                <i class="ph ph-heartbeat achievement-icon"></i>
+                <h3>Healthcare Leadership</h3>
+                <p>Tamil Nadu has one of the best public healthcare systems with advanced medical infrastructure.</p>
+            </div>
+
+            <div class="achievement-card anim-el anim-zoom" style="transition-delay: 0.5s;">
+                <i class="ph ph-factory achievement-icon"></i>
+                <h3>Industrial Powerhouse</h3>
+                <p>Major global automobile, electronics, and manufacturing companies operate from Tamil Nadu.</p>
+            </div>
+
+            <div class="achievement-card anim-el anim-zoom" style="transition-delay: 0.6s;">
+                <i class="ph ph-leaf achievement-icon"></i>
+                <h3>Green Energy Leader</h3>
+                <p>Tamil Nadu is among India's largest producers of renewable wind energy.</p>
+            </div>
+
+        </div>
     </div>
-
-    <div class="achievements-grid">
-
-        <div class="achievement-card anim-el anim-zoom" style="transition-delay: 0.1s;">
-            <i class="ph ph-chart-line-up achievement-icon"></i>
-            <h3>Rapid Economic Growth</h3>
-            <p>Tamil Nadu continues to be one of India's top contributors to GDP with strong industrial and IT sectors.</p>
-        </div>
-
-        <div class="achievement-card anim-el anim-zoom" style="transition-delay: 0.2s;">
-            <i class="ph ph-shield-check achievement-icon"></i>
-            <h3>Drug Free State Initiatives</h3>
-            <p>Strict enforcement and awareness programs ensure Tamil Nadu remains committed to a safe and healthy society.</p>
-        </div>
-
-        <div class="achievement-card anim-el anim-zoom" style="transition-delay: 0.3s;">
-            <i class="ph ph-graduation-cap achievement-icon"></i>
-            <h3>Education Excellence</h3>
-            <p>High literacy rate and world-class universities make Tamil Nadu a leading educational hub in India.</p>
-        </div>
-
-        <div class="achievement-card anim-el anim-zoom" style="transition-delay: 0.4s;">
-            <i class="ph ph-heartbeat achievement-icon"></i>
-            <h3>Healthcare Leadership</h3>
-            <p>Tamil Nadu has one of the best public healthcare systems with advanced medical infrastructure.</p>
-        </div>
-
-        <div class="achievement-card anim-el anim-zoom" style="transition-delay: 0.5s;">
-            <i class="ph ph-factory achievement-icon"></i>
-            <h3>Industrial Powerhouse</h3>
-            <p>Major global automobile, electronics, and manufacturing companies operate from Tamil Nadu.</p>
-        </div>
-
-        <div class="achievement-card anim-el anim-zoom" style="transition-delay: 0.6s;">
-            <i class="ph ph-leaf achievement-icon"></i>
-            <h3>Green Energy Leader</h3>
-            <p>Tamil Nadu is among India's largest producers of renewable wind energy.</p>
-        </div>
-
-    </div>
-
 </section>
 
 

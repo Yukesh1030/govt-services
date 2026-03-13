@@ -673,3 +673,53 @@
         grid-template-columns: 1fr;
     }
 }
+
+/* Section Header Centering */
+body .about-section .section-header, 
+body .about-main .section-header {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    max-width: 800px !important;
+    margin: 0 auto var(--space-10) !important;
+    padding: 0 var(--space-6) !important;
+}
+
+body .about-section .section-title,
+body .about-main .section-title {
+    margin-bottom: var(--space-3) !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.02em !important;
+    width: 100% !important;
+    text-align: center !important;
+}
+
+body .about-section .section-desc,
+body .about-main .section-desc {
+    max-width: 600px !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+    text-align: center !important;
+}
+
+/* Ensure Achievements section container has proper gutter */
+.achievements-section .container {
+    padding: 0 var(--space-8);
+}
+@media (max-width: 768px) {
+    .achievements-section .container {
+        padding: 0 var(--space-4);
+    }
+}
+
+@media (max-width: 768px) {
+    .about-main .section-header {
+        margin-bottom: var(--space-8);
+        padding: 0 var(--space-4);
+    }
+    
+    .about-main .section-title {
+        font-size: 1.75rem;
+    }
+}
